@@ -4,7 +4,7 @@
     height="auto"
   >
     <v-container mx-auto>
-      <div class="footer_header">
+      <div class="footer_header" @click="iconClick">
         <v-img
           :src="require('@/assets/logo.png')"
           class="mr-5"
@@ -18,7 +18,7 @@
       <v-layout wrap>
         <v-flex xs2>
           <v-list class="white--text grey darken-3">
-            <v-list-tile v-for="(item, i) in navList1" :key="i">
+            <v-list-tile v-for="(item, i) in navList1" :key="i" @click="onClick($event, item)">
               <v-list-tile-action class="font-24">
                 <chervon-right/>
               </v-list-tile-action>
@@ -33,7 +33,7 @@
         <v-spacer />
         <v-flex xs2>
           <v-list class="white--text grey darken-3">
-            <v-list-tile v-for="(item, i) in navList2" :key="i">
+            <v-list-tile v-for="(item, i) in navList2" :key="i" @click="onClick($event, item)">
               <v-list-tile-action class="font-24">
                 <chervon-right/>
               </v-list-tile-action>
@@ -98,42 +98,42 @@
     data: () => ({
       items: [
         {
-          href: '#!',
+          to: '/active_consult',
           title: '活动资讯',
           subtitle: 'Activity Consultation'
         },
         {
-          href: '#!',
+          to: '/remark_channel',
           title: '备考通道',
           subtitle: 'Remarks Channel'
         },
         {
-         href: '#!',
+          to: '/project_intr',
           title: '项目介绍',
           subtitle: 'Project Introduction'
         },
         {
-          href: '#!',
+          to: '/college_guide',
           title: '院校指南',
           subtitle: 'College Guide'
         },
         {
-        href: '#!',
+          to: '/famous_style',
           title: '名校风采',
           subtitle: 'Famout Style'
         },
         {
-          href: '#!',
+          to: '/curriculum_stru',
           title: '课程体系',
           subtitle: 'Curriculum Structure'
         },
         {
-          href: '#!',
+          href: 'http://school.jiexuedu.com/',
           title: '杰旭网校',
           subtitle: 'Online School'
         },
          {
-          href: '#!',
+          to: '/about_jiexu',
           title: '关于杰旭',
           subtitle: 'About Jie Xu'
         }
@@ -150,6 +150,16 @@
     methods: {
       backtoTop() {
         window.scrollTo(0, 0)
+      },
+      onClick(e, item) {
+        if (item.to || !item.href) {
+          this.$router.push(item.to)
+          return
+        }
+        window.location.href = item.href
+      },
+      iconClick() {
+        this.$router.push('/')
       }
     },
     computed: {
