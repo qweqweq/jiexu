@@ -1,0 +1,17 @@
+.font-24 {
+  min-width: 0px;
+  margin-top: -26px;
+}
+.footer_header {
+  margin-bottom: 8px;
+  margin-top: -25px;
+}
+.footlist_background{
+  background-color: #455a64;
+}
+.foot_tile_title{
+  font-size: 14px;
+}
+.foot_sub_title{
+  color:#FAFAFA!important;
+}

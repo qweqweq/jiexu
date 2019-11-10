@@ -8,6 +8,8 @@
 
     <core-footer />
 
+    <core-jiexu />
+
   </v-app>
 </template>
 
@@ -19,7 +21,8 @@
       CoreDrawer: () => import('@/components/core/Drawer'),
       CoreFooter: () => import('@/components/core/Footer'),
       CoreToolbar: () => import('@/components/core/Toolbar'),
-      CoreView: () => import('@/components/core/View')
+      CoreView: () => import('@/components/core/View'),
+      CoreJiexu: () => import('@/components/core/Jiexu')
     },
     data () {
       return {

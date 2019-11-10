@@ -1,0 +1,21 @@
+<template>
+  <v-footer
+    height="auto"
+  >
+    <v-layout
+      justify-center
+      row
+      wrap
+    >
+      <v-flex
+        primary
+        py-3
+        text-xs-center
+        white--text
+        xs12
+      >
+        &copy;{{ new Date().getFullYear() }} — <strong>杰旭教育MBA</strong>
+      </v-flex>
+    </v-layout>
+  </v-footer>
+</template>
