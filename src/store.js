@@ -9,12 +9,44 @@ export default new Vuex.Store({
     drawer: false,
     items: [
       {
-        text: 'Home',
-        to: '/'
+        icon: 'mdi-apps',
+        text: '活动资讯',
+        to: '/active_consult'
       },
       {
-        text: 'About',
-        href: '#about'
+        icon: 'mdi-apps',
+        text: '备考通道',
+        to: '/remark_channel'
+      },
+      {
+        icon: 'mdi-apps',
+        text: '项目介绍',
+        to: '/project_intr'
+      },
+      {
+        icon: 'mdi-apps',
+        text: '院校指南',
+        to: '/college_guide'
+      },
+      {
+        icon: 'mdi-apps',
+        text: '名校风采',
+        to: '/famous_style'
+      },
+      {
+        icon: 'mdi-apps',
+        text: '课程体系',
+        to: '/curriculum_stru'
+      },
+      {
+        icon: 'mdi-apps',
+        text: '杰旭网校',
+        href: 'http://school.jiexuedu.com/'
+      },
+      {
+        icon: 'mdi-chart-bubble',
+        text: '关于杰旭',
+        to: '/about_jiexu'
       }
     ]
   },
@@ -38,8 +70,8 @@ export default new Vuex.Store({
 
       return categories.sort().slice(0, 4)
     },
-    links: (state, getters) => {
-      return state.items.concat(getters.categories)
+    links: (state) => {
+      return state.items
     }
   },
   mutations: {

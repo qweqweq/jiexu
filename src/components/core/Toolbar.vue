@@ -2,6 +2,7 @@
   <v-toolbar
     app
     flat
+    color="#1867c0"
   >
     <v-toolbar-side-icon
       class="hidden-md-and-up"
@@ -19,26 +20,18 @@
           height="48"
           width="48"
           max-width="48"
-          @click="$vuetify.goTo(0)"
+          @click="iconClcik"
         />
         <v-btn
           v-for="(link, i) in links"
           :key="i"
-          :to="link.to"
           class="ml-0 hidden-sm-and-down"
+          color="white"
           flat
-          @click="onClick($event, item)"
+          @click="onClick($event, link)"
         >
           {{ link.text }}
         </v-btn>
-        <v-spacer />
-        <v-text-field
-          append-icon="mdi-magnify"
-          flat
-          hide-details
-          solo-inverted
-          style="max-width: 300px;"
-        />
       </v-layout>
     </v-container>
   </v-toolbar>
@@ -60,10 +53,14 @@
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
         e.stopPropagation()
-
-        if (item.to || !item.href) return
-
-        this.$vuetify.goTo(item.href)
+        if (item.to || !item.href) {
+          this.$router.push(item.to)
+          return
+        } 
+        window.location.href = item.href
+      },
+      iconClcik(){
+        this.$router.push('/')
       }
     }
   }

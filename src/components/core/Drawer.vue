@@ -47,14 +47,14 @@
         e.stopPropagation()
 
         if (item.to === '/') {
-          this.$vuetify.goTo(0)
+          this.$router.push('/')
           this.setDrawer(false)
           return
         }
 
         if (item.to || !item.href) return
 
-        this.$vuetify.goTo(item.href)
+        window.location.href = item.href
         this.setDrawer(false)
       }
     }
