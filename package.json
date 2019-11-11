@@ -32,6 +32,8 @@
     "eslint": "^5.8.0",
     "eslint-config-vuetify": "*",
     "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "stylus": "^0.54.5",

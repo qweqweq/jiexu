@@ -18,11 +18,11 @@
   export default {
     name: 'Feed',
     components: {
-      FeedCard: () => import('@/components/FeedCard')
+      FeedCard: () => import('@/components/base/FeedCard')
     },
     props: {
       feeds: {
-        type: Object,
+        type: Array,
         default: () => ([])
       },
       layout: {

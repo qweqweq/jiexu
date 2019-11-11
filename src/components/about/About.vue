@@ -1,6 +1,5 @@
 <template>
   <v-container
-    id="about"
     tag="section"
   >
     <base-subheading>About Us</base-subheading>
@@ -14,6 +13,6 @@
 </template>
 <script>
   export default {
-    name: 'About'
+    name: 'AboutContent'
   }
 </script>

@@ -3,7 +3,7 @@
     class="py-4 grey darken-3"
     height="auto"
   >
-    <v-container mx-auto>
+    <v-container mx-auto wrap>
       <div
         class="footer_header"
         @click="iconClick"
@@ -19,7 +19,7 @@
         <v-divider />
       </div>
       <v-layout wrap>
-        <v-flex xs2>
+        <v-flex>
           <v-list class="white--text grey darken-3">
             <v-list-tile
               v-for="(item, i) in navList1"
@@ -42,7 +42,7 @@
           </v-list>
         </v-flex>
         <v-spacer />
-        <v-flex xs2>
+        <v-flex>
           <v-list class="white--text grey darken-3">
             <v-list-tile
               v-for="(item, i) in navList2"
@@ -65,7 +65,7 @@
           </v-list>
         </v-flex>
         <v-spacer />
-        <v-flex xs3>
+        <v-flex>
           <v-layout
             row
             wrap
@@ -111,7 +111,7 @@
           </v-layout>
         </v-flex>
         <v-spacer />
-        <v-flex xs3>
+        <v-flex>
           <v-layout
             align-center
             justify-space-between
@@ -215,3 +215,22 @@
 
   }
 </script>
+<style lang="less">
+.font-24{
+  min-width: 0px;
+  margin-top: -26px;
+}
+.footer_header {
+  margin-bottom: 8px;
+  margin-top: -25px;
+}
+.footlist_background{
+  background-color: #455a64;
+}
+.foot_tile_title{
+  font-size: 14px;
+}
+.foot_sub_title{
+  color:#FAFAFA!important;
+}
+</style>

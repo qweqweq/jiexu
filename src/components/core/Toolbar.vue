@@ -4,8 +4,8 @@
     flat
     color="#1867c0"
   >
-    <v-toolbar-side-icon
-      class="hidden-md-and-up"
+    <view-headline
+      class="hidden-md-and-up white--text font-22"
       @click="toggleDrawer"
     />
     <v-container
@@ -65,3 +65,8 @@
     }
   }
 </script>
+<style lang="less">
+.font-22{
+  font-size: 22px;
+}
+</style>

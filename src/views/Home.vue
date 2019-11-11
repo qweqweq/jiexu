@@ -3,11 +3,8 @@
     <articles>
       <banner src="imgs/home_bg.jpg" />
     </articles>
-
     <about />
-
     <subscribe />
-
     <social />
   </div>
 </template>
@@ -15,7 +12,6 @@
 <script>
   export default {
     name: 'Home',
-
     components: {
       About: () => import('@/components/about/About'),
       Articles: () => import('@/components/home/Articles'),
