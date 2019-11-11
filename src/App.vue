@@ -9,7 +9,6 @@
     <core-footer />
 
     <core-jiexu />
-
   </v-app>
 </template>
 

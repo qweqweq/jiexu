@@ -56,10 +56,10 @@
         if (item.to || !item.href) {
           this.$router.push(item.to)
           return
-        } 
+        }
         window.location.href = item.href
       },
-      iconClcik(){
+      iconClcik () {
         this.$router.push('/')
       }
     }

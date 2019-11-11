@@ -54,8 +54,7 @@ export default new Router({
       path: '/about_jiexu',
       name: 'about',
       component: About
-    },
-
+    }
 
   ]
 })

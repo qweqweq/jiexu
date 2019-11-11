@@ -52,7 +52,7 @@
           </v-flex>
         </v-layout>
         <v-layout v-if="value.prominent">
-            ssssss
+          ssssss
         </v-layout>
       </v-img>
     </base-card>

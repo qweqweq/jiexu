@@ -4,7 +4,10 @@
     height="auto"
   >
     <v-container mx-auto>
-      <div class="footer_header" @click="iconClick">
+      <div
+        class="footer_header"
+        @click="iconClick"
+      >
         <v-img
           :src="require('@/assets/logo.png')"
           class="mr-5"
@@ -13,19 +16,27 @@
           width="50"
           max-width="50"
         />
-        <v-divider></v-divider>
+        <v-divider />
       </div>
       <v-layout wrap>
         <v-flex xs2>
           <v-list class="white--text grey darken-3">
-            <v-list-tile v-for="(item, i) in navList1" :key="i" @click="onClick($event, item)">
+            <v-list-tile
+              v-for="(item, i) in navList1"
+              :key="i"
+              @click="onClick($event, item)"
+            >
               <v-list-tile-action class="font-24">
-                <chervon-right/>
+                <chervon-right />
               </v-list-tile-action>
 
-              <v-list-tile-content>   
-                <v-list-tile-title class="foot_tile_title">{{ item.title }}</v-list-tile-title>
-                <v-list-tile-sub-title class="foot_sub_title">{{ item.subtitle }}</v-list-tile-sub-title>
+              <v-list-tile-content>
+                <v-list-tile-title class="foot_tile_title">
+                  {{ item.title }}
+                </v-list-tile-title>
+                <v-list-tile-sub-title class="foot_sub_title">
+                  {{ item.subtitle }}
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
@@ -33,46 +44,65 @@
         <v-spacer />
         <v-flex xs2>
           <v-list class="white--text grey darken-3">
-            <v-list-tile v-for="(item, i) in navList2" :key="i" @click="onClick($event, item)">
+            <v-list-tile
+              v-for="(item, i) in navList2"
+              :key="i"
+              @click="onClick($event, item)"
+            >
               <v-list-tile-action class="font-24">
-                <chervon-right/>
+                <chervon-right />
               </v-list-tile-action>
 
-              <v-list-tile-content>   
-                <v-list-tile-title class="foot_tile_title">{{ item.title }}</v-list-tile-title>
-                <v-list-tile-sub-title class="foot_sub_title">{{ item.subtitle }}</v-list-tile-sub-title>
+              <v-list-tile-content>
+                <v-list-tile-title class="foot_tile_title">
+                  {{ item.title }}
+                </v-list-tile-title>
+                <v-list-tile-sub-title class="foot_sub_title">
+                  {{ item.subtitle }}
+                </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list>
         </v-flex>
         <v-spacer />
         <v-flex xs3>
-          <v-layout row wrap>
+          <v-layout
+            row
+            wrap
+          >
             <v-flex xs12>
-              <v-card flat class="white--text grey darken-3">
+              <v-card
+                flat
+                class="white--text grey darken-3"
+              >
                 <v-card-title primary-title>
                   <div>
                     <div class="headline">
                       <map-marker />
                       地址
                     </div>
-                    <span>徐汇区广元西路45号交大慧谷408室（近交通大学)；
+                    <span>
+                      徐汇区广元西路45号交大慧谷408室（近交通大学)；
                     </span>
-                    <br/>
+                    <br>
                     <span>浦东新区张杨路601号华诚大厦7楼7020（近南泉北路）</span>
                   </div>
                 </v-card-title>
               </v-card>
             </v-flex>
             <v-flex xs12>
-              <v-card flat class="white--text grey darken-3">
+              <v-card
+                flat
+                class="white--text grey darken-3"
+              >
                 <v-card-title primary-title>
                   <div>
                     <div class="headline">
                       <contact-phone />
                       电话
                     </div>
-                    <span>徐汇校区：   400-082-9866
+                    <span>
+                      徐汇校区：   400-082-9866
                     </span>
                   </div>
                 </v-card-title>
@@ -82,9 +112,21 @@
         </v-flex>
         <v-spacer />
         <v-flex xs3>
-          <v-layout align-center justify-space-between style="height: 100%">
-            <div v-for="(item, i) in wxImgs" :key="i" style="width: 148px; height: 148px;">
-              <v-img :src="require('@/assets/imgs/' + item.icon)" aspect-ratio="1" contain/>
+          <v-layout
+            align-center
+            justify-space-between
+            style="height: 100%"
+          >
+            <div
+              v-for="(item, i) in wxImgs"
+              :key="i"
+              style="width: 148px; height: 148px;"
+            >
+              <v-img
+                :src="require('@/assets/imgs/' + item.icon)"
+                aspect-ratio="1"
+                contain
+              />
             </div>
           </v-layout>
         </v-flex>
@@ -132,7 +174,7 @@
           title: '杰旭网校',
           subtitle: 'Online School'
         },
-         {
+        {
           to: '/about_jiexu',
           title: '关于杰旭',
           subtitle: 'About Jie Xu'
@@ -147,29 +189,29 @@
         }
       ]
     }),
+    computed: {
+      navList1: function () {
+        return this.items.slice(0, 4)
+      },
+      navList2: function () {
+        return this.items.slice(4, this.items.length)
+      }
+    },
     methods: {
-      backtoTop() {
+      backtoTop () {
         window.scrollTo(0, 0)
       },
-      onClick(e, item) {
+      onClick (e, item) {
         if (item.to || !item.href) {
           this.$router.push(item.to)
           return
         }
         window.location.href = item.href
       },
-      iconClick() {
+      iconClick () {
         this.$router.push('/')
       }
-    },
-    computed: {
-      navList1: function() {
-        return this.items.slice(0,4)
-      },
-      navList2: function() {
-        return this.items.slice(4, this.items.length)
-      }
-    },
-    
+    }
+
   }
 </script>
