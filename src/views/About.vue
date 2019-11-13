@@ -12,18 +12,23 @@
         height="100%"
         width="100%"
         contain
-        :aspect-ratio="16/9"
+        :aspect-ratio="aspectRatio"
       />
     </v-layout>
   </div>
 </template>
 
 <script>
+import { onResize } from '../mixin/mixin';
 export default {
   name: 'About',
+  mixins: [onResize],
   components: {
     Banner: () => import('@/components/base/Banner'),
     BackgroundImg: () => import('@/components/base/BackgroundImg'),
+  },
+  mounted: function() {
+    this.aspectRatio = this.$data.aspectRatio;
   }
 }
 </script>
