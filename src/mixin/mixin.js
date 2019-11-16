@@ -2,22 +2,22 @@ export const onResize = {
   data: () => ({
     aspectRatio: 1
   }),
-  created() {
+  created () {
     window.addEventListener('resize', this.handleResize)
-    this.handleResize();
+    this.handleResize()
   },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
-    gcd(a, b) {
-      return (b == 0) ? a : this.gcd (b, a % b);
+    gcd (a, b) {
+      return (b === 0) ? a : this.gcd(b, a % b)
     },
-    handleResize() {
-      const { width, height } = screen;
-      const ratio = this.gcd(width, height);
-      console.log('ratio', ratio, width, height, width/ratio, height/ratio);
-      this.aspectRatio = (width / ratio) / (height / ratio);
+    handleResize () {
+      const { width, height } = screen
+      const ratio = this.gcd(width, height)
+      console.log('ratio', ratio, width, height, width / ratio, height / ratio)
+      this.aspectRatio = (width / ratio) / (height / ratio)
     }
   }
 }

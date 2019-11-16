@@ -8,7 +8,7 @@
   export default {
     name: 'Active',
     components: {
-      About: () => import('@/components/about/About'),
+      About: () => import('@/components/about/About')
     }
   }
 </script>

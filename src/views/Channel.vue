@@ -1,14 +1,12 @@
 <template>
-  <div id="channel">
-    
-  </div>
+  <div id="channel" />
 </template>
 
 <script>
   export default {
     name: 'Channel',
     components: {
-     
+
     }
   }
 </script>

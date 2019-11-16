@@ -8,10 +8,9 @@
       wrap
     >
       <v-flex
-        primary
         py-3
         text-xs-center
-        white--text
+        black--text
         xs12
       >
         &copy;{{ new Date().getFullYear() }} — <strong>杰旭教育MBA</strong>

@@ -1,15 +1,9 @@
 <template>
-  <div id="project">
-   
-  </div>
+  <div id="project" />
 </template>
 
 <script>
   export default {
-    name: 'Project',
-    components: {
-      Articles: () => import('@/components/home/Articles'),
-      Banner: () => import('@/components/base/Banner')
-    }
+    name: 'Project'
   }
 </script>

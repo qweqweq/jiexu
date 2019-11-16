@@ -1,33 +1,58 @@
 <template>
   <div id="style">
-    <BackgroundImg>
+    <background-img>
       <div class="normalHeader">
-        <Banner src="imgs/style_bg.jpg"/>
-        <div class="nhCover"></div>
+        <banner src="imgs/teacher/style_bg.jpg" />
+        <div class="nhCover" />
       </div>
-    </BackgroundImg>
-      <v-card flat>
-        <v-container
-          fluid
-          grid-list-md
+    </background-img>
+    <v-card flat>
+      <v-container
+        fluid
+        grid-list-md
+      >
+        <v-layout
+          flex
+          xs12
+          align-center
+          justify-center
+          column
         >
-          <v-layout flex xs12 align-center justify-center column>
-            <p class="title light-blue--text lighten-1">十余年管理类联考资深授课教师</p>
-            <p class="subtitle-1 light-blue--text lighten-1">More than ten years of senior teachers in management exams</p>
-          </v-layout>
-          <v-layout row wrap style="margin:0 8%;">
-            <v-flex 
-            xs3
+          <p class="title light-blue--text lighten-1">
+            十余年管理类联考资深授课教师
+          </p>
+          <p class="subtitle-1 light-blue--text lighten-1">
+            More than ten years of senior teachers in management exams
+          </p>
+        </v-layout>
+        <v-layout
+          row
+          wrap
+          style="margin:0 8%;"
+        >
+          <v-flex
             v-for="(item, i) in teachers"
-            :key="i">
-            <v-card class="pa-3 ma-2" style="height: 680px">
+            :key="i"
+            xs3
+          >
+            <v-card
+              class="pa-3 ma-2"
+              style="height: 680px"
+            >
               <v-img
-                :src="require('@/assets/imgs/'+ item.avator)"
+                :src="require('@/assets/imgs/teacher/'+ item.avator)"
                 aspect-ratio="1"
-              ></v-img>
+              />
               <v-card-title primary-title>
-                <v-layout column align-center justify-center class="light-blue--text darken-4">
-                  <div class="headline">{{ item.name }}</div>
+                <v-layout
+                  column
+                  align-center
+                  justify-center
+                  class="light-blue--text darken-4"
+                >
+                  <div class="headline">
+                    {{ item.name }}
+                  </div>
                   <div>{{ item.title }}</div>
                   <div>{{ item.text }}</div>
                 </v-layout>
@@ -35,9 +60,9 @@
               <div>{{ item.desc }}</div>
             </v-card>
           </v-flex>
-          </v-layout>
-        </v-container>
-      </v-card>
+        </v-layout>
+      </v-container>
+    </v-card>
   </div>
 </template>
 
@@ -46,7 +71,7 @@
     name: 'Style',
     components: {
       Banner: () => import('@/components/base/Banner'),
-      BackgroundImg: () => import('@/components/base/BackgroundImg'),
+      BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     data: () => ({
       teachers: [
@@ -91,7 +116,7 @@
           text: 'Logic Instructor',
           desc: '复旦大学MBA，专业硕士考前辅导名师，多年来致力于专业硕士逻辑领域的研究和教学工作，精于把握命题方向和考生应试心理，对于考生的思维养成和应试方法有一套完整的理论；逻辑技巧独辟蹊径，可以帮助考生有效节省备考时间、提高成绩。',
           avator: 'teacher_6.jpg'
-        },
+        }
       ]
     })
   }

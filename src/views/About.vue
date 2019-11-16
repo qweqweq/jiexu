@@ -1,12 +1,17 @@
 <template>
   <div id="about">
-    <BackgroundImg>
+    <background-img>
       <div class="normalHeader">
-        <Banner src="imgs/about_bg.jpg"/>
-        <div class="nhCover"></div>
+        <banner src="imgs/about_bg.jpg" />
+        <div class="nhCover" />
       </div>
-    </BackgroundImg>
-    <v-layout class="normalContainer" flex align-center justify-center>
+    </background-img>
+    <v-layout
+      class="normalContainer"
+      flex
+      align-center
+      justify-center
+    >
       <v-img
         :src="require('@/assets/imgs/about.jpg')"
         height="100%"
@@ -19,18 +24,18 @@
 </template>
 
 <script>
-import { onResize } from '../mixin/mixin';
-export default {
-  name: 'About',
-  mixins: [onResize],
-  components: {
-    Banner: () => import('@/components/base/Banner'),
-    BackgroundImg: () => import('@/components/base/BackgroundImg'),
-  },
-  mounted: function() {
-    this.aspectRatio = this.$data.aspectRatio;
+  import { onResize } from '../mixin/mixin'
+  export default {
+    name: 'About',
+    components: {
+      Banner: () => import('@/components/base/Banner'),
+      BackgroundImg: () => import('@/components/base/BackgroundImg')
+    },
+    mixins: [onResize],
+    mounted: function () {
+      this.aspectRatio = this.$data.aspectRatio
+    }
   }
-}
 </script>
 <style lang="less">
 .normalHeader{

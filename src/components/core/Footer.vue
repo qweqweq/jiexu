@@ -3,7 +3,10 @@
     class="py-4 grey darken-3"
     height="auto"
   >
-    <v-container mx-auto wrap>
+    <v-container
+      mx-auto
+      wrap
+    >
       <div
         class="footer_header"
         @click="iconClick"
