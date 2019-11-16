@@ -67,10 +67,10 @@
         <v-spacer />
         <v-flex>
           <v-layout
-            row
+            column
             wrap
           >
-            <v-flex xs12>
+            <v-flex>
               <v-card
                 flat
                 class="white--text grey darken-3"
@@ -90,7 +90,7 @@
                 </v-card-title>
               </v-card>
             </v-flex>
-            <v-flex xs12>
+            <v-flex>
               <v-card
                 flat
                 class="white--text grey darken-3"

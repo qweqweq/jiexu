@@ -2,7 +2,7 @@
   <v-navigation-drawer
     v-model="drawer"
     app
-    dark
+    light
     temporary
   >
     <v-list>

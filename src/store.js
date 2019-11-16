@@ -30,7 +30,7 @@ export default new Vuex.Store({
       },
       {
         icon: 'mdi-apps',
-        text: '名校风采',
+        text: '名师风采',
         to: '/famous_style'
       },
       {

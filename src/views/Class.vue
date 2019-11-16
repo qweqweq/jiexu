@@ -12,7 +12,7 @@
         height="100%"
         width="100%"
         contain
-        :aspect-ratio="4/3"
+        :aspect-ratio="1"
       />
     </v-layout>
   </div>
