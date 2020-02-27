@@ -16,7 +16,6 @@ export const onResize = {
     handleResize () {
       const { width, height } = screen
       const ratio = this.gcd(width, height)
-      console.log('ratio', ratio, width, height, width / ratio, height / ratio)
       this.aspectRatio = (width / ratio) / (height / ratio)
     }
   }
