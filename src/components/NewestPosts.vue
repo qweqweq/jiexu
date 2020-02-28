@@ -34,11 +34,11 @@
 // Utilities
   import {
     mapState
-  } from 'vuex'
+  } from 'vuex';
 
   export default {
     computed: {
       ...mapState(['articles'])
     }
-  }
+  };
 </script>

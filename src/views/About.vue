@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import { onResize } from '../mixin/mixin'
+  import { onResize } from '../mixin/mixin';
   export default {
     name: 'About',
     components: {
@@ -33,9 +33,9 @@
     },
     mixins: [onResize],
     mounted: function () {
-      this.aspectRatio = this.$data.aspectRatio
+      this.aspectRatio = this.$data.aspectRatio;
     }
-  }
+  };
 </script>
 <style lang="less">
 .normalHeader{

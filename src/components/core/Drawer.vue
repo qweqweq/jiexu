@@ -24,7 +24,7 @@
   import {
     mapGetters,
     mapMutations
-  } from 'vuex'
+  } from 'vuex';
 
   export default {
     name: 'CoreDrawer',
@@ -33,10 +33,10 @@
       ...mapGetters(['links']),
       drawer: {
         get () {
-          return this.$store.state.drawer
+          return this.$store.state.drawer;
         },
         set (val) {
-          this.setDrawer(val)
+          this.setDrawer(val);
         }
       }
     },
@@ -44,19 +44,19 @@
     methods: {
       ...mapMutations(['setDrawer']),
       onClick (e, item) {
-        e.stopPropagation()
+        e.stopPropagation();
 
         if (item.to === '/') {
-          this.$router.push('/')
-          this.setDrawer(false)
-          return
+          this.$router.push('/');
+          this.setDrawer(false);
+          return;
         }
 
-        if (item.to || !item.href) return
+        if (item.to || !item.href) return;
 
-        window.location.href = item.href
-        this.setDrawer(false)
+        window.location.href = item.href;
+        this.setDrawer(false);
       }
     }
-  }
+  };
 </script>

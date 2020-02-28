@@ -11,5 +11,5 @@
     components: {
       Feed: () => import('@/components/base/Feed')
     }
-  }
+  };
 </script>

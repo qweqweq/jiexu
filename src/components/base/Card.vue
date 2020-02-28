@@ -14,5 +14,5 @@
     name: 'BaseCard',
 
     inheritAttrs: false
-  }
+  };
 </script>

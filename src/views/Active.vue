@@ -56,13 +56,13 @@
           { title: '名校招生政策宣讲会', imgUrl: require('@/assets/imgs/active/active3.jpg'), header: '一场讲座，改变你的命运', desc: ' 报考在职研究生的要求是什么？ 如何选择适合的研究生专业？ 背景不好能否有机会上名校？ 名校和非名校的MBA差异有多大？…' }
         ],
         showDetail: true
-      }
+      };
     },
     methods: {
       jumpToDetail () {
         // TODO
-        this.showDetail = false
-        }
+        this.showDetail = false;
+      }
     }
-  }
+  };
 </script>

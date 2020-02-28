@@ -19,11 +19,11 @@
 // Utilities
   import {
     mapGetters
-  } from 'vuex'
+  } from 'vuex';
 
   export default {
     computed: {
       ...mapGetters(['categories'])
     }
-  }
+  };
 </script>

@@ -39,5 +39,5 @@
         { src: 'sunset.jpg' }
       ]
     })
-  }
+  };
 </script>

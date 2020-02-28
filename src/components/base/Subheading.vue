@@ -13,5 +13,5 @@
     name: 'BaseSubheading',
 
     inheritAttrs: false
-  }
+  };
 </script>

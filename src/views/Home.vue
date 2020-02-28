@@ -19,5 +19,5 @@
       Social: () => import('@/components/home/Social'),
       Subscribe: () => import('@/components/home/Subscribe')
     }
-  }
+  };
 </script>

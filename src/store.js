@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
@@ -52,26 +52,26 @@ export default new Vuex.Store({
     },
     getters: {
         categories: state => {
-            const categories = []
+            const categories = [];
 
             for (const article of state.articles) {
                 if (
                     !article.category ||
           categories.find(category => category.text === article.category)
-                ) continue
+                ) continue;
 
-                const text = article.category
+                const text = article.category;
 
                 categories.push({
                     text,
                     to: `/category/${text}`
-                })
+                });
             }
 
-            return categories.sort().slice(0, 4)
+            return categories.sort().slice(0, 4);
         },
         links: (state) => {
-            return state.items
+            return state.items;
         }
     },
     mutations: {
@@ -81,4 +81,4 @@ export default new Vuex.Store({
     actions: {
 
     }
-})
+});

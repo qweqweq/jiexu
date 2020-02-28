@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuetify from 'vuetify/lib'
-import 'vuetify/src/stylus/app.styl'
-import 'vue-material-design-icons/styles.css'
+import Vue from 'vue';
+import Vuetify from 'vuetify/lib';
+import 'vuetify/src/stylus/app.styl';
+import 'vue-material-design-icons/styles.css';
 
 Vue.use(Vuetify, {
     theme: {
@@ -9,4 +9,4 @@ Vue.use(Vuetify, {
         secondary: '#083759'
     },
     iconfont: 'mdi'
-})
+});

@@ -77,10 +77,10 @@
         return {
           'md6': this.size === 2,
           'md4': this.size === 3
-        }
+        };
       }
     }
-  }
+  };
 </script>
 
 <style>

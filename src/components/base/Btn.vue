@@ -25,8 +25,8 @@
       styles () {
         return {
           borderRadius: this.square ? '2px' : undefined
-        }
+        };
       }
     }
-  }
+  };
 </script>

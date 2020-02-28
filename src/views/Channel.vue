@@ -8,5 +8,5 @@
     components: {
 
     }
-  }
+  };
 </script>

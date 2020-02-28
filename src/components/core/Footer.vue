@@ -194,29 +194,29 @@
     }),
     computed: {
       navList1: function () {
-        return this.items.slice(0, 4)
+        return this.items.slice(0, 4);
       },
       navList2: function () {
-        return this.items.slice(4, this.items.length)
+        return this.items.slice(4, this.items.length);
       }
     },
     methods: {
       backtoTop () {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
       },
       onClick (e, item) {
         if (item.to || !item.href) {
-          this.$router.push(item.to)
-          return
+          this.$router.push(item.to);
+          return;
         }
-        window.location.href = item.href
+        window.location.href = item.href;
       },
       iconClick () {
-        this.$router.push('/')
+        this.$router.push('/');
       }
     }
 
-  }
+  };
 </script>
 <style lang="less">
 .font-24{

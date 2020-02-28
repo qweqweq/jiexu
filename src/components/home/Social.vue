@@ -34,5 +34,5 @@
       Instagram: () => import('@/components/Instagram'),
       Tags: () => import('@/components/Tags')
     }
-  }
+  };
 </script>

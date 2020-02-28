@@ -1,15 +1,15 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Active from './views/Active.vue'
-import Channel from './views/Channel.vue'
-import Project from './views/Project.vue'
-import School from './views/School.vue'
-import Style from './views/Style.vue'
-import Class from './views/Class.vue'
-import About from './views/About.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Home from './views/Home.vue';
+import Active from './views/Active.vue';
+import Channel from './views/Channel.vue';
+import Project from './views/Project.vue';
+import School from './views/School.vue';
+import Style from './views/Style.vue';
+import Class from './views/Class.vue';
+import About from './views/About.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',
@@ -57,4 +57,4 @@ export default new Router({
         }
 
     ]
-})
+});

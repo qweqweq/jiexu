@@ -42,7 +42,7 @@
   import {
     mapGetters,
     mapMutations
-  } from 'vuex'
+  } from 'vuex';
 
   export default {
     computed: {
@@ -52,18 +52,18 @@
     methods: {
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
-        e.stopPropagation()
+        e.stopPropagation();
         if (item.to || !item.href) {
-          this.$router.push(item.to)
-          return
+          this.$router.push(item.to);
+          return;
         }
-        window.location.href = item.href
+        window.location.href = item.href;
       },
       iconClcik () {
-        this.$router.push('/')
+        this.$router.push('/');
       }
     }
-  }
+  };
 </script>
 <style lang="less">
 .font-22{
