@@ -16,7 +16,7 @@
 </template>
 
 <script>
-  // Utilities
+// Utilities
   import {
     mapGetters
   } from 'vuex'

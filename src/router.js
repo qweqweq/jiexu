@@ -12,49 +12,49 @@ import About from './views/About.vue'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/active_consult',
-      name: 'active',
-      component: Active
-    },
-    {
-      path: '/remark_channel',
-      name: 'channel',
-      component: Channel
-    },
-    {
-      path: '/project_intr',
-      name: 'project',
-      component: Project
-    },
-    {
-      path: '/college_guide',
-      name: 'school',
-      component: School
-    },
-    {
-      path: '/famous_style',
-      name: 'style',
-      component: Style
-    },
-    {
-      path: '/curriculum_stru',
-      name: 'class',
-      component: Class
-    },
-    {
-      path: '/about_jiexu',
-      name: 'about',
-      component: About
-    }
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/active_consult',
+            name: 'active',
+            component: Active
+        },
+        {
+            path: '/remark_channel',
+            name: 'channel',
+            component: Channel
+        },
+        {
+            path: '/project_intr',
+            name: 'project',
+            component: Project
+        },
+        {
+            path: '/college_guide',
+            name: 'school',
+            component: School
+        },
+        {
+            path: '/famous_style',
+            name: 'style',
+            component: Style
+        },
+        {
+            path: '/curriculum_stru',
+            name: 'class',
+            component: Class
+        },
+        {
+            path: '/about_jiexu',
+            name: 'about',
+            component: About
+        }
 
-  ]
+    ]
 })

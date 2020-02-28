@@ -38,7 +38,7 @@
 </template>
 
 <script>
-  // Utilities
+// Utilities
   import {
     mapGetters,
     mapMutations

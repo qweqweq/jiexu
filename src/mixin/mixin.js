@@ -1,24 +1,24 @@
 export const onResize = {
-  data: () => ({
-    aspectRatio: 1
-  }),
-  created () {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize()
-  },
-  destroyed () {
-    window.removeEventListener('resize', this.handleResize)
-  },
-  methods: {
-    gcd (a, b) {
-      return (b === 0) ? a : this.gcd(b, a % b)
+    data: () => ({
+        aspectRatio: 1
+    }),
+    created () {
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize()
     },
-    handleResize () {
-      const { width, height } = screen
-      const ratio = this.gcd(width, height)
-      this.aspectRatio = (width / ratio) / (height / ratio)
+    destroyed () {
+        window.removeEventListener('resize', this.handleResize)
+    },
+    methods: {
+        gcd (a, b) {
+            return (b === 0) ? a : this.gcd(b, a % b)
+        },
+        handleResize () {
+            const { width, height } = screen
+            const ratio = this.gcd(width, height)
+            this.aspectRatio = (width / ratio) / (height / ratio)
+        }
     }
-  }
 }
 /** https://codeday.me/bug/20170818/55016.html
  * <script type="text/javascript">
