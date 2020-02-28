@@ -1,54 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import { channels, projects, items } from './data/mutable';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
         articles: require('@/data/articles.json'),
         drawer: false,
-        items: [
-            {
-                icon: 'mdi-apps',
-                text: '活动资讯',
-                to: '/active_consult'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '备考通道',
-                to: '/remark_channel'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '项目介绍',
-                to: '/project_intr'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '院校指南',
-                to: '/college_guide'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '名师风采',
-                to: '/famous_style'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '课程体系',
-                to: '/curriculum_stru'
-            },
-            {
-                icon: 'mdi-apps',
-                text: '杰旭网校',
-                href: 'http://school.jiexuedu.com/'
-            },
-            {
-                icon: 'mdi-chart-bubble',
-                text: '关于杰旭',
-                to: '/about_jiexu'
-            }
-        ]
+        channels,
+        projects,
+        items
     },
     getters: {
         categories: state => {
@@ -70,9 +31,9 @@ export default new Vuex.Store({
 
             return categories.sort().slice(0, 4);
         },
-        links: (state) => {
-            return state.items;
-        }
+        links: (state) => state.items,
+        projects: (state) => state.projects,
+        channels: (state) => state.channels
     },
     mutations: {
         setDrawer: (state, payload) => (state.drawer = payload),
