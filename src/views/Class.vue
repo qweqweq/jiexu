@@ -53,6 +53,6 @@
   }
 }
 .normalContainer{
-  padding: 90px 0;
+  padding-top: 0px!important;
 }
 </style>

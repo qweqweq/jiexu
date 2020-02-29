@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { channels, projects, items, teachers, shcools } from './data/mutable';
+import { channels, projects, items, teachers, shcools, homeProjects } from './data/mutable';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,7 +11,8 @@ export default new Vuex.Store({
         projects,
         items,
         teachers,
-        shcools
+        shcools,
+        homeProjects
     },
     getters: {
         categories: state => {
@@ -37,7 +38,8 @@ export default new Vuex.Store({
         projects: (state) => state.projects,
         channels: (state) => state.channels,
         teachers: (state) => state.teachers,
-        shcools: (state) => state.shcools
+        shcools: (state) => state.shcools,
+        homeProjects: (state) => state.homeProjects
     },
     mutations: {
         setDrawer: (state, payload) => (state.drawer = payload),
