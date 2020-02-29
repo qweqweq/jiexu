@@ -2,7 +2,6 @@
   "name": "@jiexuedy",
   "alias": "123",
   "version": 1,
-  "type": "static",
   "static": {
     "public": "dist",
     "rewrites": [
