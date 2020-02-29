@@ -100,7 +100,10 @@
         下载2
       </v-card-text>
       <v-divider />
-      <form-modal :show="dialog" @showModal="showModal"/>
+      <form-modal
+        :show="dialog"
+        @showModal="showModal"
+      />
     </v-container>
   </div>
 </template>
@@ -132,7 +135,7 @@
       openDialog () {
         this.dialog = true;
       },
-      showModal(data){
+      showModal (data) {
         this.dialog = data;
       }
     }
