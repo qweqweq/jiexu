@@ -36,11 +36,11 @@
           GET MORE
         </a>
       </v-flex>
-      <v-flex style="display: flex;justify-content: space-between;">
+      <v-flex style="display: flex;justify-content: space-between; flex-wrap: wrap;">
         <v-card
           width="33%"
           flat
-          style="padding: 5px;"
+          style="padding: 5px; min-width: 300px;"
         >
           <v-card-text class="project_name">
             杰旭日新闻
@@ -77,6 +77,7 @@
         <v-card
           width="33%"
           flat
+          style="min-width: 300px;"
         >
           <v-card-text class="project_name">
             MBA之问答
@@ -91,6 +92,7 @@
         <v-card
           width="33%"
           flat
+          style="min-width: 300px;"
         >
           <v-card-text class="project_name">
             资料下载
