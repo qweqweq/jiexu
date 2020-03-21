@@ -2,7 +2,7 @@
   <div id="about">
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/about_bg.jpg" />
+        <banner :src="`${ORIGIN}/about_bg.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -13,7 +13,7 @@
       justify-center
     >
       <v-img
-        :src="require('@/assets/imgs/about.jpg')"
+        :src="`${ORIGIN}/about.jpg`"
         height="100%"
         width="100%"
         contain
@@ -24,6 +24,7 @@
 </template>
 
 <script>
+  import ORIGIN from '@/data/global.js';
   import { onResize } from '../mixin/mixin';
   export default {
     name: 'About',
@@ -34,6 +35,11 @@
     mixins: [onResize],
     mounted: function () {
       this.aspectRatio = this.$data.aspectRatio;
+    },
+    data() {
+      return {
+        ORIGIN
+      }
     }
   };
 </script>

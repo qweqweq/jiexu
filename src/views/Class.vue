@@ -2,7 +2,7 @@
   <div id="class">
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/class_bg.jpg" />
+        <banner :src="`${ORIGIN}/class_bg.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -13,7 +13,7 @@
       justify-center
     >
       <v-img
-        :src="require('@/assets/imgs/class_arrange.png')"
+        :src="`${ORIGIN}/class_arrange.png`"
         height="100%"
         width="100%"
         contain
@@ -25,6 +25,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Class',
     components: {
@@ -34,6 +35,11 @@
     mixins: [onResize],
     mounted: function () {
       this.aspectRatio = this.$data.aspectRatio;
+    },
+    data(){
+      return {
+        ORIGIN
+      }
     }
   };
 </script>

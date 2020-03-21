@@ -1,70 +1,71 @@
+import ORIGIN from '@/data/global.js';
 export const channels = [
     {
       name: '交大安泰',
-      imgUrl: require('@/assets/imgs/channel/channel1.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel1.jpg`,
       linkUrl: 'https://mba.sjtu.edu.cn/',
       applyUrl: 'https://mba.sjtu.edu.cn/mba/login.html',
       desc: 'ANTAI MBA'
     },
     {
       name: '上海高级金融学院',
-      imgUrl: require('@/assets/imgs/channel/channel2.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel2.jpg`,
       linkUrl: 'http://www.saif.sjtu.edu.cn/',
       applyUrl: 'http://regonline.saif.sjtu.edu.cn/c/login',
       desc: 'GAOJIN FMBA'
     },
     {
       name: '复旦大学',
-      imgUrl: require('@/assets/imgs/channel/channel3.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel3.jpg`,
       linkUrl: 'https://www.fdsm.fudan.edu.cn/AboutUs/index.aspx',
       applyUrl: 'https://www.fdsm.fudan.edu.cn/fdmba/info_apply.html',
       desc: 'FUDAN MBA'
     },
     {
       name: '复旦泛海国际金融学院',
-      imgUrl: require('@/assets/imgs/channel/channel4.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel4.jpg`,
       linkUrl: 'https://fisf.fudan.edu.cn/',
       applyUrl: 'https://application.fisf.fudan.edu.cn/mba/external/login',
       desc: 'FANHAI FMBA'
     },
     {
       name: '同济大学',
-      imgUrl: require('@/assets/imgs/channel/channel5.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel5.jpg`,
       linkUrl: 'https://mba.tongji.edu.cn/',
       applyUrl: 'https://applymba.tongji.edu.cn/c/login',
       desc: 'TONGJI MBA'
     },
     {
       name: '上海财大',
-      imgUrl: require('@/assets/imgs/channel/channel6.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel6.jpg`,
       linkUrl: 'https://cob.sufe.edu.cn/',
       applyUrl: 'https://usercenter.sufe.edu.cn/Account/Login',
       desc: 'CAIDA MBA'
     },
     {
       name: '华东师范大学',
-      imgUrl: require('@/assets/imgs/channel/channel7.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel7.jpg`,
       linkUrl: 'http://www.mba.ecnu.edu.cn/',
       applyUrl: 'http://ecnumbazs.mikecrm.com/8bWDFr0',
       desc: 'HUASHIDA MBA'
     },
     {
       name: '上海外国语大学',
-      imgUrl: require('@/assets/imgs/channel/channel8.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel8.jpg`,
       linkUrl: 'http://mba.shisu.edu.cn/',
       applyUrl: 'http://218.193.160.198:8080/mba-adm/login',
       desc: 'SHANGWAI MBA'
     },
     {
       name: '东华大学',
-      imgUrl: require('@/assets/imgs/channel/channel9.jpg'),
+      imgUrl: `${ORIGIN}/channel/channel9.jpg`,
       linkUrl: 'http://mba.dhu.edu.cn/',
       applyUrl: 'http://mba.dhu.edu.cn/index',
       desc: 'DONGHUA MBA'
     },
     {
       name: '华东理工大学',
-      imgUrl: require('@/assets/imgs/channel/channel10.png'),
+      imgUrl: `${ORIGIN}/channel/channel10.png`,
       linkUrl: 'https://bs.ecust.edu.cn/',
       applyUrl: 'http://ecust.netapply.cn/user/login/ecust',
       desc: 'HUALI MBA'

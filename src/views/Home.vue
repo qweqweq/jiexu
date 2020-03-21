@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <articles><banner src="imgs/home_bg.jpg" /></articles>
+    <articles><banner :src="`${ORIGIN}/home_bg.jpg`" /></articles>
     <v-container>
       <v-flex
         row
@@ -51,7 +51,7 @@
               @click="jumpToDetail"
             >
               <v-img
-                :src="require('@/assets/imgs/active/active1.jpg')"
+                :src="`${ORIGIN}/active/active1.jpg`"
                 width="144px"
                 hight="144px"
               />
@@ -64,7 +64,7 @@
               @click="jumpToDetail"
             >
               <v-img
-                :src="require('@/assets/imgs/active/active2.jpg')"
+                :src="`${ORIGIN}/active/active2.jpg`"
                 width="144px"
                 hight="144px"
               />
@@ -83,7 +83,7 @@
             MBA之问答
           </v-card-text>
           <v-img
-            :src="require('@/assets/imgs/home3.jpg')"
+            :src="`${ORIGIN}/home3.jpg`"
             width="100%"
             height="250px"
           />
@@ -105,7 +105,7 @@
               下载1
             </v-card-text>
             <v-img
-              :src="require('@/assets/imgs/home4.jpg')"
+              :src="`${ORIGIN}/home4.jpg`"
               contain
               height="50%"
               width="70%"
@@ -118,7 +118,7 @@
           >
             <v-card-text>下载1</v-card-text>
             <v-img
-              :src="require('@/assets/imgs/home4.jpg')"
+              :src="`${ORIGIN}/home4.jpg`"
               contain
               height="50%"
               width="70%"
@@ -230,7 +230,7 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="require('@/assets/imgs/home1.jpg')"
+          :src="`${ORIGIN}/home1.jpg`"
           height="100%"
           width="100%"
           contain
@@ -262,7 +262,7 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="require('@/assets/imgs/home2.jpg')"
+          :src="`${ORIGIN}/home2.jpg`"
           height="100%"
           width="100%"
           contain
@@ -294,7 +294,7 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="require('@/assets/imgs/about.jpg')"
+          :src="`${ORIGIN}/about.jpg`"
           height="100%"
           width="100%"
           contain
@@ -317,6 +317,7 @@
   import {
     mapGetters
   } from 'vuex';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Home',
     components: {
@@ -329,7 +330,8 @@
     mixins: [onResize],
     data () {
       return {
-        dialog: false
+        dialog: false,
+        ORIGIN
       };
     },
     computed: {

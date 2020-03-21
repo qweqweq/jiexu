@@ -10,7 +10,7 @@
       :href="value.href"
     >
       <v-img
-        :src="require(`@/assets/${value.imgSrc}`)"
+        :src="`${value.imgSrc}`"
         height="100%"
         gradient="rgba(0, 0, 0, .42), rgba(0, 0, 0, .42)"
       >

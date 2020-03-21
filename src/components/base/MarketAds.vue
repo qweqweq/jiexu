@@ -34,14 +34,15 @@
 </template>
 
 <script>
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'MarketAds',
     data () {
       return {
         actives: [
-          { title: '杰旭面试班', imgUrl: require('@/assets/imgs/active/active1.jpg'), header: '杰旭面试班，面试优秀的保障', desc: '学历背景不好，有机会面试拿优秀吗？ 没有管理经验，有机会面试拿优秀吗？ 机遇和挑战并存，成功永远只眷顾有所准备的人。' },
-          { title: '杰旭全程班', imgUrl: require('@/assets/imgs/active/active2.jpg'), header: '备战2021，杰旭启航班正式开班', desc: '学习，何时开始都不算晚， 备考，何时开始都不算早。 名校，其实离你不算遥远， 杰旭，备战2021正式启航。' },
-          { title: '名校招生政策宣讲会', imgUrl: require('@/assets/imgs/active/active3.jpg'), header: '一场讲座，改变你的命运', desc: ' 报考在职研究生的要求是什么？ 如何选择适合的研究生专业？ 背景不好能否有机会上名校？ 名校和非名校的MBA差异有多大？…' }
+          { title: '杰旭面试班', imgUrl: `${ORIGIN}/active/active1.jpg`, header: '杰旭面试班，面试优秀的保障', desc: '学历背景不好，有机会面试拿优秀吗？ 没有管理经验，有机会面试拿优秀吗？ 机遇和挑战并存，成功永远只眷顾有所准备的人。' },
+          { title: '杰旭全程班', imgUrl: `${ORIGIN}/active/active2.jpg`, header: '备战2021，杰旭启航班正式开班', desc: '学习，何时开始都不算晚， 备考，何时开始都不算早。 名校，其实离你不算遥远， 杰旭，备战2021正式启航。' },
+          { title: '名校招生政策宣讲会', imgUrl: `${ORIGIN}/active/active3.jpg`, header: '一场讲座，改变你的命运', desc: ' 报考在职研究生的要求是什么？ 如何选择适合的研究生专业？ 背景不好能否有机会上名校？ 名校和非名校的MBA差异有多大？…' }
         ],
         showDetail: true
       };

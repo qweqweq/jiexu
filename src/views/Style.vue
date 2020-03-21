@@ -2,7 +2,7 @@
   <div id="style">
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/teacher/style_bg.jpg" />
+        <banner :src="`${ORIGIN}/teacher/style_bg.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -44,7 +44,7 @@
               style="height: 680px"
             >
               <v-img
-                :src="require('@/assets/imgs/teacher/'+ item.avator)"
+                :src="`${ORIGIN}/teacher/${item.avator}`"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -80,7 +80,7 @@
               style="height: 680px"
             >
               <v-img
-                :src="require('@/assets/imgs/teacher/'+ item.avator)"
+                :src="`${ORIGIN}/teacher/${item.avator}`"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -110,6 +110,7 @@
   import {
     mapGetters
   } from 'vuex';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Style',
     components: {
@@ -118,6 +119,11 @@
     },
     computed: {
       ...mapGetters(['teachers'])
+    },
+    data(){
+      return{
+        ORIGIN
+      }
     }
   };
 </script>

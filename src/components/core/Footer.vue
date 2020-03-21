@@ -126,7 +126,7 @@
               style="width: 148px; height: 148px;"
             >
               <v-img
-                :src="require('@/assets/imgs/' + item.icon)"
+                :src="`${ORIGIN}/${item.icon}`"
                 aspect-ratio="1"
                 contain
               />
@@ -139,8 +139,10 @@
 </template>
 
 <script>
+  import ORIGIN from '@/data/global.js'
   export default {
     data: () => ({
+      ORIGIN,
       items: [
         {
           to: '/active_consult',

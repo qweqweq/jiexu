@@ -6,7 +6,7 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/project/project_bg1.jpg" />
+        <banner :src="`${ORIGIN}/project/project_bg1.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -35,7 +35,7 @@
             flat
             tile
           >
-            <v-img :src="require('@/assets/imgs/project/project_bg1.jpg')" />
+            <v-img :src="`${ORIGIN}/project/project_bg1.jpg`" />
             <v-card-text>{{ projects[i].header }}</v-card-text>
             <v-card-text>{{ projects[i].text }}</v-card-text>
             <v-card-text>{{ projects[i].secondTitle }}</v-card-text>
@@ -66,6 +66,7 @@
   import {
     mapGetters
   } from 'vuex';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Project',
     components: {
@@ -78,6 +79,11 @@
     methods: {
       openUrlWindow: function (url) {
         window.open(url, '_blank');
+      }
+    },
+    data() {
+      return {
+        ORIGIN
       }
     }
   };

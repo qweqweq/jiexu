@@ -2,7 +2,7 @@
   <div id="school">
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/school/schoolguide_bg.jpg" />
+        <banner :src="`${ORIGIN}/school/schoolguide_bg.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -16,6 +16,7 @@
   import {
     mapGetters
   } from 'vuex';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'School',
     components: {
@@ -25,6 +26,11 @@
     },
     computed: {
       ...mapGetters(['shcools'])
+    },
+    data(){
+      return{
+        ORIGIN
+      }
     }
   };
 </script>

@@ -2,7 +2,7 @@
   <div id="channel">
     <background-img>
       <div class="normalHeader">
-        <banner src="imgs/channel/channel_bg1.jpg" />
+        <banner :src="`${ORIGIN}/channel/channel_bg1.jpg`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -112,6 +112,7 @@
   import {
     mapGetters
   } from 'vuex';
+  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Channel',
     components: {
@@ -122,7 +123,8 @@
     },
     data () {
       return {
-        dialog: false
+        dialog: false,
+        ORIGIN
       };
     },
     computed: {
