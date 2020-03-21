@@ -28,3 +28,24 @@
     }
   };
 </script>
+<style>
+  html,body {
+    height: 100%;
+    font-family: Helvetica Neue,Helvetica,Hiragino Sans GB,Microsoft YaHei,\5FAE软雅黑,Arial,sans-serif;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+  .clearfix:after {
+    content: " ";
+    display: block;;
+    line-height: 0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+  </style>
