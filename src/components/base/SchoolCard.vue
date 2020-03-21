@@ -133,10 +133,10 @@
         required: true
       }
     },
-    data(){
-      return{
+    data () {
+      return {
         ORIGIN
-      }
+      };
     }
   };
 </script>

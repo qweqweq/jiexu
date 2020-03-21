@@ -117,13 +117,13 @@
       Banner: () => import('@/components/base/Banner'),
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
+    data () {
+      return {
+        ORIGIN
+      };
+    },
     computed: {
       ...mapGetters(['teachers'])
-    },
-    data(){
-      return{
-        ORIGIN
-      }
     }
   };
 </script>

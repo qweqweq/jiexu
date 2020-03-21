@@ -19,7 +19,7 @@
       CoreToolbar: () => import('@/components/core/Toolbar'),
       CoreView: () => import('@/components/core/View'),
       CoreJiexu: () => import('@/components/core/Jiexu'),
-      CoreFloatBtn: () => import('@/components/core/FloatBtn')
+      //CoreFloatBtn: () => import('@/components/core/FloatBtn')
     },
     data () {
       return {

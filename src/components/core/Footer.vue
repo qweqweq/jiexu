@@ -139,7 +139,7 @@
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js'
+  import ORIGIN from '@/data/global.js';
   export default {
     data: () => ({
       ORIGIN,

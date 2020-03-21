@@ -24,13 +24,13 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg'),
       SchoolCard: () => import('@/components/base/SchoolCard')
     },
+    data () {
+      return {
+        ORIGIN
+      };
+    },
     computed: {
       ...mapGetters(['shcools'])
-    },
-    data(){
-      return{
-        ORIGIN
-      }
     }
   };
 </script>

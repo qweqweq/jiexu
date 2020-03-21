@@ -73,17 +73,17 @@
       Banner: () => import('@/components/base/Banner'),
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
+    data () {
+      return {
+        ORIGIN
+      };
+    },
     computed: {
       ...mapGetters(['projects'])
     },
     methods: {
       openUrlWindow: function (url) {
         window.open(url, '_blank');
-      }
-    },
-    data() {
-      return {
-        ORIGIN
       }
     }
   };

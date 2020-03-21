@@ -19,10 +19,10 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg'),
       MarketAds: () => import('@/components/base/MarketAds')
     },
-    data(){
+    data () {
       return {
         ORIGIN
-      }
+      };
     }
   };
 </script>

@@ -33,13 +33,13 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     mixins: [onResize],
-    mounted: function () {
-      this.aspectRatio = this.$data.aspectRatio;
-    },
-    data() {
+    data () {
       return {
         ORIGIN
-      }
+      };
+    },
+    mounted: function () {
+      this.aspectRatio = this.$data.aspectRatio;
     }
   };
 </script>
