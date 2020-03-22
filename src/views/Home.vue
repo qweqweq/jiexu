@@ -1,6 +1,8 @@
 <template>
   <div id="home">
-    <articles><banner :src="`${ORIGIN}/home_bg.jpg`" /></articles>
+    <articles>
+      <banner :src="`${ORIGIN}/home_bg.jpg`" />
+    </articles>
     <v-container>
       <v-flex
         row
@@ -55,7 +57,9 @@
                 width="144px"
                 hight="144px"
               />
-              <v-card-text style="padding-top: 0px;">
+              <v-card-text
+                style="padding-top: 0px;"
+              >
                 报考在职研究生的要求是什么？ 如何选择适合的研究生专业？ 背景不好能否有机会上名校？ 名校和非名校的MBA差异有多大？…
               </v-card-text>
             </div>
@@ -68,7 +72,9 @@
                 width="144px"
                 hight="144px"
               />
-              <v-card-text style="padding-top: 0px;">
+              <v-card-text
+                style="padding-top: 0px;"
+              >
                 学历背景不好，有机会面试拿优秀吗？ 没有管理经验，有机会面试拿优秀吗？ 机遇和挑战并存，成功永远只眷顾有所准备的人.
               </v-card-text>
             </div>
@@ -98,10 +104,10 @@
             资料下载
           </v-card-text>
           <v-flex
-            style="display: flex; flex-direction: column;"
+            style="display: flex; flex-direction: column; align-items: center;"
             @click="dialog = true"
           >
-            <v-card-text style="padding-top:0px;">
+            <v-card-text style="padding-top:0px;text-align: center;">
               下载1
             </v-card-text>
             <v-img
@@ -113,10 +119,12 @@
             />
           </v-flex>
           <v-flex
-            style="display: flex; flex-direction: column;"
+            style="display: flex; flex-direction: column; align-items: center;"
             @click="dialog = true"
           >
-            <v-card-text>下载1</v-card-text>
+            <v-card-text style="text-align: center;">
+              下载2
+            </v-card-text>
             <v-img
               :src="`${ORIGIN}/home4.jpg`"
               contain
@@ -301,8 +309,8 @@
         />
       </v-layout>
       <v-card-text>
-        杰旭各科授课教师均为十余年管理类联考资深授课教师，深入浅出授课方式使学员更容易理解并快速吸收课堂内容。非工作日上课更贴合在职人群的时间安排。小班授课，使老师能照顾到每一位学员的情况。助教团队贴身服务，班主任随堂解决服务问题，让您在短时间内收到学习效果，我们追求的不光是效率更是成效!<br>
-        杰旭，只提供最专业高效的备考方案！
+        杰旭各科授课教师均为十余年管理类联考资深授课教师，深入浅出授课方式使学员更容易理解并快速吸收课堂内容。非工作日上课更贴合在职人群的时间安排。小班授课，使老师能照顾到每一位学员的情况。助教团队贴身服务，班主任随堂解决服务问题，让您在短时间内收到学习效果，我们追求的不光是效率更是成效!
+        <br>杰旭，只提供最专业高效的备考方案！
       </v-card-text>
       <form-modal
         :show="dialog"
@@ -314,9 +322,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import {
-    mapGetters
-  } from 'vuex';
+  import { mapGetters } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
     name: 'Home',
@@ -348,7 +354,7 @@
         this.$router.push({ path: `/${route}` });
       },
       jumpToDetail () {
-        //
+      //
       },
       showModal (data) {
         this.dialog = data;
@@ -357,36 +363,36 @@
   };
 </script>
 <style lang="less">
-.url_text{
+.url_text {
   font-size: 16px;
   font-weight: bold;
 }
-.outline{
+.outline {
   border: 1px solid #ccc;
   text-align: right;
   width: 122px;
   cursor: pointer;
 }
-.divider{
+.divider {
   background: gray;
   height: 5px;
   max-height: 5px;
   border: 1px solid gray;
 }
-.project_container{
+.project_container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  .project_title{
+  .project_title {
     font-size: 16px;
     font-weight: bold;
   }
-  .project_desc{
+  .project_desc {
     font-size: 14px;
     padding-bottom: 25px;
   }
 }
-.project_name{
+.project_name {
   font-size: 15px;
   font-weight: 500;
 }

@@ -53,6 +53,7 @@
                   text
                   color="deep-purple accent-4"
                   style="color:#fff;"
+                  @click="jumpToDetail(i)"
                 >
                   详细信息
                 </v-btn>
@@ -110,6 +111,7 @@
                   text
                   color="deep-purple accent-4"
                   style="color:#fff;"
+                  @click="jumpToDetail(i)"
                 >
                   详细信息
                 </v-btn>
@@ -129,7 +131,7 @@
     props: {
       list: {
         type: Array,
-        default: () => ([]),
+        default: () => [],
         required: true
       }
     },
@@ -137,6 +139,11 @@
       return {
         ORIGIN
       };
+    },
+    methods: {
+      jumpToDetail (index) {
+        this.$router.push({ name: 'detail', params: { id: index } });
+      }
     }
   };
 </script>

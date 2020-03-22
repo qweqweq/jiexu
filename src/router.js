@@ -8,6 +8,7 @@ import School from './views/School.vue';
 import Style from './views/Style.vue';
 import Class from './views/Class.vue';
 import About from './views/About.vue';
+import SchoolDetail from './views/SchoolDetail.vue';
 
 Vue.use(Router);
 
@@ -54,6 +55,11 @@ export default new Router({
             path: '/about_jiexu',
             name: 'about',
             component: About
+        },
+        {
+            path: '/school_detail/:id',
+            name: 'detail',
+            component: SchoolDetail
         }
 
     ]
