@@ -16,7 +16,7 @@
         >
           <v-card
             class="pa-3 ma-2"
-            style="height: 675px"
+            style="height: 100%; min-height: 675px;"
           >
             <v-card-title primary-title>
               <div class="headline">
