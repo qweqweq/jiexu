@@ -1,1 +1,1 @@
-export default 'http://q6i08h1gf.bkt.clouddn.com';
+export default 'http://didaten.com';
