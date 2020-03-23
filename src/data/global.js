@@ -1,1 +1,1 @@
-export default 'http://didaten.com';
+export default 'http://cloud.didaten.com';
