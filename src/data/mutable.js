@@ -1,3 +1,4 @@
+// 后续换成api CMS系统维护
 import ORIGIN from '@/data/global.js';
 export const channels = [
     {

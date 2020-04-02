@@ -1,5 +1,3 @@
-# theme-blog
-
 ## Project setup
 ```
 yarn install
@@ -35,7 +33,7 @@ yarn run test:e2e
 yarn run test:unit
 ```
 
-### Customize configuration
+### vue配置
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### icon
