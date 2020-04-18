@@ -14,8 +14,6 @@ import Page404 from './views/page404.vue';
 Vue.use(Router);
 
 export default new Router({
-    mode: 'history',
-    base: process.env.BASE_URL,
     routes: [
         { path: '*', component: Page404 },
         {
