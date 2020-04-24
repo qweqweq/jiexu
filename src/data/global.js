@@ -1,1 +1,1 @@
-export default 'http://cloud.didaten.com';
+export default 'http://cloud.jiexuedu.com';
