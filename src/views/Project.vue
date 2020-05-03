@@ -36,9 +36,14 @@
             tile
           >
             <v-img :src="`${ORIGIN}/project/project_bg1.jpg`" />
-            <v-card-text>{{ projects[i].header }}</v-card-text>
-            <v-card-text>{{ projects[i].text }}</v-card-text>
-            <v-card-text>{{ projects[i].secondTitle }}</v-card-text>
+            <div v-if="projects[i].headImg" >
+              <v-img :src="`${ORIGIN}/project/${projects[i].headImg}`" />
+            </div>
+            <div v-else>
+              <v-card-text>{{ projects[i].header }}</v-card-text>
+              <v-card-text>{{ projects[i].text }}</v-card-text>
+              <v-card-text>{{ projects[i].secondTitle }}</v-card-text>
+            </div>
             <v-flex
               row
               align-center
