@@ -6,7 +6,7 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/project/project_bg1.jpg`" />
+        <banner :src="`${ORIGIN}/project/project_bg3.png`" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -35,8 +35,8 @@
             flat
             tile
           >
-            <v-img :src="`${ORIGIN}/project/project_bg1.jpg`" />
-            <div v-if="projects[i].headImg" >
+            <v-img :src="`${ORIGIN}/project/${projects[i].backImg}`" />
+            <div v-if="projects[i].headImg">
               <v-img :src="`${ORIGIN}/project/${projects[i].headImg}`" />
             </div>
             <div v-else>
