@@ -131,6 +131,9 @@
     computed: {
       ...mapGetters(['channels'])
     },
+    mounted () {
+      this.fetchChannels();
+    },
     methods: {
       ...mapActions(['fetchChannels']),
       jumpToSchool (url) {
@@ -143,9 +146,7 @@
         this.dialog = data;
       }
     },
-    mounted () {
-      this.fetchChannels();
-    }
+   
   };
 </script>
 <style lang="less">

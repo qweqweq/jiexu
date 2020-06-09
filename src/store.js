@@ -35,7 +35,7 @@ export default new Vuex.Store({
   mutations: {
     setDrawer: (state, payload) => (state.drawer = payload),
     toggleDrawer: state => (state.drawer = !state.drawer),
-    updateState: (state, payload) => (state.channels = payload),
+    updateState: (state, payload) => (state.channels = payload)
   },
   actions: {
     fetchChannels: async ({
@@ -45,11 +45,11 @@ export default new Vuex.Store({
         .then((res) => {
           if (res) {
             res.channels.forEach(item => {
-              item.imgUrl = `http://localhost:1337` +item.imgUrl.url;
-            })
-            commit('updateState',res.channels);
+              item.imgUrl = `http://localhost:1337` + item.imgUrl.url;
+            });
+            commit('updateState', res.channels);
           }
-        })
+        });
     }
   }
 });

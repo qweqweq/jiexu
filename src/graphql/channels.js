@@ -20,14 +20,13 @@ const getChannels = () => {
         .query(data)
         .then((res) => {
             if (res.status === 200) {
-                resolve(res.body.data)
+                resolve(res.body.data);
             }
-            resolve(null)
+            resolve(null);
         })
         .catch(e => {
-            reject(e)
-        })
-    })
-    
-}
+            reject(e);
+        });
+    });
+};
 export default getChannels;
