@@ -110,7 +110,8 @@
 
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
@@ -131,6 +132,7 @@
       ...mapGetters(['channels'])
     },
     methods: {
+      ...mapActions(['fetchChannels']),
       jumpToSchool (url) {
         window.open(url, '_blank');
       },
@@ -140,6 +142,9 @@
       showModal (data) {
         this.dialog = data;
       }
+    },
+    mounted () {
+      this.fetchChannels();
     }
   };
 </script>

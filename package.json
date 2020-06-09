@@ -12,6 +12,7 @@
     "start": "yarn run serve"
   },
   "dependencies": {
+    "superagent": "^5.2.2",
     "vue": "^2.6.6",
     "vue-material-design-icons": "^4.1.0",
     "vue-router": "^3.0.1",
