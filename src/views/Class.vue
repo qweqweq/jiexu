@@ -2,7 +2,7 @@
   <div id="class">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/class_bg.jpg`" />
+        <banner  v-if="banner.imgLink" :src="banner.imgLink"  />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -13,7 +13,8 @@
       justify-center
     >
       <v-img
-        :src="`${ORIGIN}/class_arrange.png`"
+        v-if="content.imgLink"
+        :src="content.imgLink"
         height="100%"
         width="100%"
         contain
@@ -25,7 +26,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import ORIGIN from '@/data/global.js';
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Class',
     components: {
@@ -33,10 +34,14 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     mixins: [onResize],
-    data () {
-      return {
-        ORIGIN
-      };
+    computed: {
+      ...mapGetters(['classPage']),
+      banner() {
+        return this.classPage && this.classPage.bannerImg;
+      },
+      content() {
+        return this.classPage && this.classPage.content;
+      }
     },
     mounted: function () {
       this.aspectRatio = this.$data.aspectRatio;

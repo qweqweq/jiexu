@@ -2,7 +2,7 @@
   <div id="active">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/active/active_bg1.jpg`" />
+        <banner v-if="banner.imgLink" :src="banner.imgLink" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -11,7 +11,6 @@
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Active',
     components: {
@@ -19,10 +18,10 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg'),
       MarketAds: () => import('@/components/base/MarketAds')
     },
-    data () {
-      return {
-        ORIGIN
-      };
+    computed: {
+      banner() {
+        return this.activePage && this.activePage.bannerImg
+      }
     }
   };
 </script>

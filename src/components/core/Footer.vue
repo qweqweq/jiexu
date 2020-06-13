@@ -35,10 +35,10 @@
 
               <v-list-tile-content>
                 <v-list-tile-title class="foot_tile_title">
-                  {{ item.title }}
+                  {{ item.text }}
                 </v-list-tile-title>
                 <v-list-tile-sub-title class="foot_sub_title">
-                  {{ item.subtitle }}
+                  {{ item.subTitle }}
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
@@ -58,10 +58,10 @@
 
               <v-list-tile-content>
                 <v-list-tile-title class="foot_tile_title">
-                  {{ item.title }}
+                  {{ item.text }}
                 </v-list-tile-title>
                 <v-list-tile-sub-title class="foot_sub_title">
-                  {{ item.subtitle }}
+                  {{ item.subTitle }}
                 </v-list-tile-sub-title>
               </v-list-tile-content>
             </v-list-tile>
@@ -126,7 +126,8 @@
               style="width: 148px; height: 148px;"
             >
               <v-img
-                :src="`${ORIGIN}/${item.icon}`"
+                v-if="item.icon"
+                :src="item.icon"
                 aspect-ratio="1"
                 contain
               />
@@ -139,61 +140,14 @@
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js';
   export default {
-    data: () => ({
-      ORIGIN,
-      items: [
-        {
-          to: '/active_consult',
-          title: '活动资讯',
-          subtitle: 'Activity Consultation'
-        },
-        {
-          to: '/remark_channel',
-          title: '备考通道',
-          subtitle: 'Remarks Channel'
-        },
-        {
-          to: '/project_intr',
-          title: '项目介绍',
-          subtitle: 'Project Introduction'
-        },
-        {
-          to: '/college_guide',
-          title: '院校指南',
-          subtitle: 'College Guide'
-        },
-        {
-          to: '/famous_style',
-          title: '名校风采',
-          subtitle: 'Famout Style'
-        },
-        {
-          to: '/curriculum_stru',
-          title: '课程体系',
-          subtitle: 'Curriculum Structure'
-        },
-        {
-          href: 'http://school.jiexuedu.com/',
-          title: '杰旭网校',
-          subtitle: 'Online School'
-        },
-        {
-          to: '/about_jiexu',
-          title: '关于杰旭',
-          subtitle: 'About Jie Xu'
-        }
-      ],
-      wxImgs: [
-        {
-          icon: 'wechat1.jpg'
-        },
-        {
-          icon: 'wechat2.jpg'
-        }
-      ]
-    }),
+    props: {
+      items: {
+        type: Array,
+        default: () => []
+      },
+      wxImgs: Array
+    },
     computed: {
       navList1: function () {
         return this.items.slice(0, 4);

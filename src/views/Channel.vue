@@ -2,7 +2,7 @@
   <div id="channel">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/channel/channel_bg1.jpg`" />
+        <banner v-if="banner.imgLink" :src="banner.imgLink" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -113,7 +113,6 @@
     mapGetters,
     mapActions
   } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Channel',
     components: {
@@ -125,11 +124,13 @@
     data () {
       return {
         dialog: false,
-        ORIGIN
       };
     },
     computed: {
-      ...mapGetters(['channels'])
+      ...mapGetters(['channels', 'channelPage']),
+      banner() {
+        return this.channelPage && this.channelPage.bannerImg;
+      },
     },
     mounted () {
       this.fetchChannels();

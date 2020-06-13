@@ -129,7 +129,6 @@
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'SchoolCard',
     props: {
@@ -138,11 +137,6 @@
         default: () => [],
         required: true
       }
-    },
-    data () {
-      return {
-        ORIGIN
-      };
     },
     methods: {
       jumpToDetail (index) {

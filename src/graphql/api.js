@@ -63,6 +63,7 @@ export const getLinks = () => {
        icon
         to
         text
+        subTitle
       }
     }`
   };
@@ -115,6 +116,32 @@ export const getSchoolDetails = () => {
           secondImg { url }
           secondDesc
         }
+      }
+    }`
+  };
+  return request(data);
+};
+
+export const getActives = () => {
+  let data = {
+    query: `query{
+      actives{
+        title
+        imgUrl{url}
+        header
+        desc
+      }
+    }`
+  };
+  return request(data);
+};
+
+export const getBanners = () => {
+  let data = {
+    query: `query{
+      banners{
+        id
+        imgLink{url}
       }
     }`
   };

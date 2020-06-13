@@ -17,7 +17,9 @@ import {
   getLinks, // 页面通用链接
   getTeachers, // 名师风采
   getSchoolDetails, // 院校详情
-  getSchools // 院校指南
+  getSchools, // 院校指南
+  getActives,
+  getBanners
 } from '@/graphql/api.js';
 
 Vue.use(Vuex);
@@ -25,13 +27,23 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     drawer: false,
-    channels,
-    projects,
-    items,
-    teachers,
-    schools,
-    homeProjects,
-    schoolDetails
+    channels: [],
+    projects: [],
+    items: [],
+    teachers: [],
+    schools: [],
+    homeProjects: [],
+    schoolDetails: [],
+    actives: [],
+    banners: [],
+    wxImgs: [
+      {
+        icon: HOST + '/uploads/wechat1_10c3dbc096.jpeg'
+      },
+      {
+        icon: HOST + '/uploads/wechat2_c360ad0b01.jpeg'
+      }
+    ]
   },
   getters: {
     links: (state) => state.items,
@@ -40,7 +52,29 @@ export default new Vuex.Store({
     teachers: (state) => state.teachers,
     schools: (state) => state.schools,
     homeProjects: (state) => state.homeProjects,
-    schoolDetails: (state) => state.schoolDetails
+    schoolDetails: (state) => state.schoolDetails,
+    aboutPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '2'),
+        content: state.banners.find(v => v.id === '9')
+      }
+    },
+    activePage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '1'),
+      }
+    },
+    channelPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '3'),
+      }
+    },
+    classPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '4'),
+        content: state.banners.find(v => v.id === '10')
+      }
+    },
   },
   mutations: {
     setDrawer: (state, payload) => (state.drawer = payload),
@@ -52,7 +86,8 @@ export default new Vuex.Store({
     updateTeachers: (state, payload) => (state.teachers = payload),
     updateSchools: (state, payload) => (state.schools = payload),
     updateSchoolDetails: (state, payload) => (state.schoolDetails = payload),
-
+    updateActives: (state, payload) => (state.actives = payload),
+    updateBanners: (state, payload) => (state.banners = payload),
   },
   actions: {
     fetchHomePage: ({ commit }) => {
@@ -126,6 +161,26 @@ export default new Vuex.Store({
           commit('updateSchoolDetails', res.schoolDetails);
         }
       });
+    },
+    fetchActives: ({commit}) => {
+      getActives().then(res => {
+        if (res) {
+          res.actives.forEach(item => {
+            item.imgUrl = item.imgUrl && HOST + item.imgUrl.url;
+          });
+          commit('updateActives', res.actives);
+        }
+      })
+    },
+    fetchBanners:  ({commit}) => {
+      getBanners().then(res => {
+        if (res) {
+          res.banners.forEach(item => {
+            item.imgLink = item.imgLink && HOST + item.imgLink.url;
+          });
+          commit('updateBanners', res.banners);
+        }
+      })
     },
   }
 });
