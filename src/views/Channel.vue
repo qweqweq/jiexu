@@ -145,8 +145,8 @@
       showModal (data) {
         this.dialog = data;
       }
-    },
-   
+    }
+
   };
 </script>
 <style lang="less">

@@ -27,7 +27,7 @@
         </v-tab>
 
         <v-tab-item
-          v-for="(item, i) in projects"
+          v-for="(data, i) in projects"
           :key="i"
           :value="`tab-${i}`"
         >
@@ -35,14 +35,14 @@
             flat
             tile
           >
-            <v-img :src="`${ORIGIN}/project/${projects[i].backImg}`" />
-            <div v-if="projects[i].headImg">
-              <v-img :src="`${ORIGIN}/project/${projects[i].headImg}`" />
+            <v-img :src="`${data.backImg}`" />
+            <div v-if="data.headImg">
+              <v-img :src="`${data.headImg}`" />
             </div>
             <div v-else>
-              <v-card-text>{{ projects[i].header }}</v-card-text>
-              <v-card-text>{{ projects[i].text }}</v-card-text>
-              <v-card-text>{{ projects[i].secondTitle }}</v-card-text>
+              <v-card-text>{{ data.header }}</v-card-text>
+              <v-card-text>{{ data.text }}</v-card-text>
+              <v-card-text>{{ data.secondTitle }}</v-card-text>
             </div>
             <v-flex
               row
@@ -51,7 +51,7 @@
               style="display: flex;flex-wrap: wrap;"
             >
               <v-card-text
-                v-for="(ele, j) in projects[i].schools"
+                v-for="(ele, j) in data.schools"
                 :key="j"
                 style="width: 40%; word-break: break-all; cursor: pointer;"
               >
@@ -69,7 +69,8 @@
 
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
@@ -86,7 +87,11 @@
     computed: {
       ...mapGetters(['projects'])
     },
+    mounted () {
+      this.fetchProjects();
+    },
     methods: {
+      ...mapActions(['fetchProjects']),
       openUrlWindow: function (url) {
         window.open(url, '_blank');
       }

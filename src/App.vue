@@ -18,6 +18,9 @@
       CoreToolbar: () => import('@/components/core/Toolbar'),
       CoreView: () => import('@/components/core/View'),
       CoreJiexu: () => import('@/components/core/Jiexu')
+    },
+    mounted () {
+      // todo footer
     }
   };
 </script>

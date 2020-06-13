@@ -322,7 +322,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import { mapGetters } from 'vuex';
+  import { mapGetters, mapActions } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
     name: 'Home',
@@ -347,9 +347,11 @@
       }
     },
     mounted: function () {
+      this.fetchHomePage();
       this.aspectRatio = this.$data.aspectRatio;
     },
     methods: {
+      ...mapActions(['fetchHomePage']),
       jumpToPage (route) {
         this.$router.push({ path: `/${route}` });
       },
