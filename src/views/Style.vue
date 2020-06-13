@@ -44,7 +44,8 @@
               style="height: 680px"
             >
               <v-img
-                :src="`${ORIGIN}/teacher/${item.avator}`"
+                v-if="item.avator"
+                :src="item.avator"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -80,7 +81,8 @@
               style="height: 680px"
             >
               <v-img
-                :src="`${ORIGIN}/teacher/${item.avator}`"
+                v-if="item.avator"
+                :src="item.avator"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -108,7 +110,7 @@
 
 <script>
   import {
-    mapGetters
+    mapGetters, mapActions
   } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
@@ -124,6 +126,12 @@
     },
     computed: {
       ...mapGetters(['teachers'])
+    },
+    mounted() {
+      this.fetchTeachers();
+    },
+    methods: {
+      ...mapActions(['fetchTeachers'])
     }
   };
 </script>

@@ -41,16 +41,20 @@
 // Utilities
   import {
     mapGetters,
-    mapMutations
+    mapMutations,
+    mapActions
   } from 'vuex';
 
   export default {
     computed: {
       ...mapGetters(['links'])
     },
-
+    mounted() {
+      this.fetchLinks();
+    },
     methods: {
       ...mapMutations(['toggleDrawer']),
+      ...mapActions(['fetchLinks']),
       onClick (e, item) {
         e.stopPropagation();
         if (item.to || !item.href) {

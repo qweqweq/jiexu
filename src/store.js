@@ -5,7 +5,7 @@ import {
   projects,
   items,
   teachers,
-  shcools,
+  schools,
   homeProjects,
   schoolDetails
 } from './data/mutable';
@@ -14,7 +14,10 @@ import {
   getHomePage, // 首页
   getChannels, // 备考通道
   getProjects, // 项目介绍
-  getFooter // 页面通用底部
+  getLinks, // 页面通用链接
+  getTeachers, // 名师风采
+  getSchoolDetails, // 院校详情
+  getSchools // 院校指南
 } from '@/graphql/api.js';
 
 Vue.use(Vuex);
@@ -26,7 +29,7 @@ export default new Vuex.Store({
     projects,
     items,
     teachers,
-    shcools,
+    schools,
     homeProjects,
     schoolDetails
   },
@@ -35,7 +38,7 @@ export default new Vuex.Store({
     projects: (state) => state.projects,
     channels: (state) => state.channels,
     teachers: (state) => state.teachers,
-    shcools: (state) => state.shcools,
+    schools: (state) => state.schools,
     homeProjects: (state) => state.homeProjects,
     schoolDetails: (state) => state.schoolDetails
   },
@@ -45,7 +48,11 @@ export default new Vuex.Store({
     updateChannels: (state, payload) => (state.channels = payload),
     updateProjects: (state, payload) => (state.projects = payload),
     updateHomePageProjects: (state, payload) => (state.homeProjects = payload),
-    updateFooter: (state, payload) => (state.items = payload)
+    updateFooter: (state, payload) => (state.items = payload),
+    updateTeachers: (state, payload) => (state.teachers = payload),
+    updateSchools: (state, payload) => (state.schools = payload),
+    updateSchoolDetails: (state, payload) => (state.schoolDetails = payload),
+
   },
   actions: {
     fetchHomePage: ({ commit }) => {
@@ -60,7 +67,7 @@ export default new Vuex.Store({
         .then((res) => {
           if (res) {
             res.channels.forEach(item => {
-              item.imgUrl = HOST + item.imgUrl.url;
+              item.imgUrl = item.imgUrl && HOST + item.imgUrl.url;
             });
             commit('updateChannel', res.channels);
           }
@@ -70,16 +77,55 @@ export default new Vuex.Store({
       getProjects().then(res => {
         if (res) {
           res.projects.forEach(item => {
-            item.backImg = HOST + item.backImg.url;
-            item.headImg = HOST + item.headImg.url;
+            item.backImg = item.backImg && HOST + item.backImg.url;
+            item.headImg = item.headImg && HOST + item.headImg.url;
           });
-          debugger;
           commit('updateProjects', res.projects);
         }
       });
     },
-    fetchFooter: ({ commit }) => {
-      getFooter().then(res => commit('updateFooter', res.pageFooters));
-    }
+    fetchLinks: ({ commit }) => {
+      getLinks().then(res => {
+        if(res){
+          commit('updateFooter', res.pageFooters);
+        }
+      })
+    },
+    fetchTeachers:  ({ commit }) => {
+      getTeachers().then(res => {
+        if(res){
+          res.teachers.forEach(item => {
+            item.avator = item.avator && HOST + item.avator.url;
+          });
+          commit('updateTeachers', res.teachers);
+        }
+      })
+    },
+    fetchSchools: ({commit}) => {
+      getSchools().then(res => {
+        if (res) {
+          res.schools.forEach(item => {
+            item.bgImage = item.bgImage && HOST + item.bgImage.url;
+            item.icon = item.icon && HOST + item.icon.url;
+          });
+          commit('updateTeachers', res.schools);
+        }
+      })
+    },
+    fetchSchoolDetails:({ commit }) => {
+      getSchoolDetails().then(res => {
+        if (res) {
+          res.schoolDetails.forEach(item => {
+            item.headerImg = item.headerImg && HOST + item.headerImg.url;
+            item.projects = item.projects.map(elem => {
+              elem.secondImg =  elem.secondImg && HOST + elem.secondImg.url;
+              elem.thirdImg = elem.thirdImg && HOST + elem.thirdImg.url;
+              return elem;
+            });
+          });
+          commit('updateSchoolDetails', res.schoolDetails);
+        }
+      });
+    },
   }
 });

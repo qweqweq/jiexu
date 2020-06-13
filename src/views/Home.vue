@@ -341,17 +341,18 @@
       };
     },
     computed: {
-      ...mapGetters(['shcools', 'homeProjects']),
+      ...mapGetters(['schools', 'homeProjects']),
       schoolCards: function () {
-        return this.shcools.slice(0, 3);
+        return this.schools.slice(0, 3);
       }
     },
     mounted: function () {
+      this.fetchSchools();
       this.fetchHomePage();
       this.aspectRatio = this.$data.aspectRatio;
     },
     methods: {
-      ...mapActions(['fetchHomePage']),
+      ...mapActions(['fetchHomePage', 'fetchSchools']),
       jumpToPage (route) {
         this.$router.push({ path: `/${route}` });
       },

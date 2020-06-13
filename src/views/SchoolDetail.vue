@@ -18,23 +18,13 @@
         height="100%"
         width="100%"
         contain
-        :src="`${ORIGIN}/detail/${details.headerImg}`"
+        :src="details.headerImg"
         :aspect-ratio="aspectRatio"
       />
       <v-card-text class="title_blod font18">
         {{ details.title }}
       </v-card-text>
-      <template v-if="Array.isArray(details.desc)">
-        <v-card-text
-          v-for="(ele, index) in details.desc"
-          :key="`desc_${index}`"
-        >
-          {{ ele }}
-        </v-card-text>
-      </template>
-      <v-card-text v-else>
-        {{ details.desc }}
-      </v-card-text>
+      <v-card-text v-html="details.desc"></v-card-text>
       <v-card
         v-for="(ele, k) in details.projects"
         :key="k"
@@ -46,7 +36,7 @@
         </v-card-text>
         <v-img
           v-if="ele.secondImg"
-          :src="`${ORIGIN}/detail/${ele.secondImg}`"
+          :src="ele.secondImg"
         />
         <v-flex
           v-for="(data, j) in ele.secondDesc"
@@ -62,14 +52,14 @@
         </v-flex>
         <v-img
           v-if="ele.thirdImg"
-          :src="`${ORIGIN}/detail/${ele.thirdImg}`"
+          :src="ele.thirdImg"
         />
       </v-card>
     </v-flex>
   </div>
 </template>
 <script>
-  import { mapGetters } from 'vuex';
+  import { mapGetters, mapActions } from 'vuex';
   import ORIGIN from '@/data/global.js';
   import { onResize } from '../mixin/mixin';
   export default {
@@ -88,10 +78,19 @@
     computed: {
       ...mapGetters(['schoolDetails'])
     },
+    watch: {
+      schoolDetails(newVal, oldVal) {
+        if (newVal !== oldVal) {
+          this.details = newVal[+this.$route.params.id]
+        }
+      }
+    },
     mounted: function () {
+      this.fetchSchoolDetails();
       this.aspectRatio = this.$data.aspectRatio;
-      this.details = this.schoolDetails[+this.$route.params.id];
-      console.log(this.details);
+    },
+    methods: {
+      ...mapActions(['fetchSchoolDetails'])
     }
   };
 </script>

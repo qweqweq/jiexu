@@ -23,12 +23,12 @@
 // Utilities
   import {
     mapGetters,
-    mapMutations
+    mapMutations,
+    mapActions
   } from 'vuex';
 
   export default {
     name: 'CoreDrawer',
-
     computed: {
       ...mapGetters(['links']),
       drawer: {
@@ -40,8 +40,11 @@
         }
       }
     },
-
+    mounted() {
+      this.fetchLinks();
+    },
     methods: {
+      ...mapActions(['fetchLinks']),
       ...mapMutations(['setDrawer']),
       onClick (e, item) {
         e.stopPropagation();

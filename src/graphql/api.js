@@ -56,13 +56,65 @@ export const getProjects = () => {
   return request(data);
 };
 
-export const getFooter = () => {
+export const getLinks = () => {
   let data = {
     query: `query {
       pageFooters {
        icon
         to
         text
+      }
+    }`
+  };
+  return request(data);
+};
+
+export const getTeachers = () => {
+  let data = {
+    query: `query{
+      teachers{
+        name
+        title
+        text
+        desc
+        avator{url}
+      }
+    }`
+  };
+  return request(data);
+};
+
+
+export const getSchools = () => {
+  let data = {
+    query: `query{
+      schools{
+        title
+        bgImage { url }
+        desc
+        icon {url}
+        schoolName
+        schoolText
+      }
+    }`
+  }
+  return request(data);
+}
+
+export const getSchoolDetails = () => {
+  let data = {
+    query: `query{
+      schoolDetails{
+        headerImg {
+          url
+        }
+        title
+        desc
+        projects {
+          secondTitle
+          secondImg { url }
+          secondDesc
+        }
       }
     }`
   };

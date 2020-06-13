@@ -74,10 +74,10 @@ export const channels = [{
 export const projects = [{
     title: 'MBA/EMBA',
     header: '工商/高级工商管理硕士简介',
-    headImg: 'project2.jpg',
+    headImg: `${ORIGIN}/project/project2.jpg`,
     text: '工商管理硕士（MBA）是工商管理类硕士研究生学位，MBA是培养能够胜任工商企业和经济管理部门高层管理工作需要的务实型、复合型和应用型高层次管理人才，兼具理论与实践相结合，而其他硕士研究生只是培养科研型和教学型人才，偏向理论，不参与实践；MBA的招生对象一般为大学本科毕业、并有三年以上工作实践经验的国家机关事业单位干部和工商企业管理人员及技术人员，而其他硕士研究生可以招收应届毕业生，也可以招收在职人员；培养方式不同，MBA教育从本质上讲是一种专业实践，特别强调在掌握现代管理理论和方法的基础上，通过商业案例分析、实战观摩、分析与决策技能训练等培养学生的实际操作技能，使学生接受知识与技能、个性与心理、目标与愿望等方面的挑战，更具有职业竞争的实力，而其他研究生则侧重于理论学习、学术研究。MBA 学位由美国哈佛大学商学院（HBS）创立，并逐步被全球各大商学院认可，开设相关课程，设立相关学位。',
     secondTitle: '上海目前十二所高校十四个院校招收MBA项目',
-    backImg: 'project_bg4.png',
+    backImg: `${ORIGIN}/project/project_bg4.png`,
     schools: [{
         name: '上海交大安泰经济管理学院 ',
         url: 'http://mba.sjtu.edu.cn/index.html'
@@ -169,8 +169,8 @@ export const projects = [{
   // },
   {
     title: 'MEM',
-    headImg: 'project4.jpg',
-    backImg: 'project_bg5.png',
+    headImg: `${ORIGIN}/project/project4.jpg`,
+    backImg: `${ORIGIN}/project/project_bg5.png`,
     header: '工程管理硕士',
     text: '工程管理硕士（Master of Engineering Management，简称MEM）是2010由中国工程院提议，委托清华大学进行学科论证，同年批复新设置的一种专业学位。工程管理是针对工程实践而进行的决策、计划、组织、指挥、协调与控制。包括：重大工程建设项目决策的技术经济论证和实施中的管理;重要复杂的新产品、设备、装备在开发、制造、生产过程中的管理;技术创新、技术改造、转型、转轨、与国际接轨的管理;产业、工程和科技的重大布局与发展战略的研究与管理等。随着现代工程出现了规模巨大、决策流程复杂、涉及技术种类众多、组织结构庞大、历时漫长、参与人员众多等趋势。工程管理在现代工程中的重要性使得工程管理人员在现代工程实践中扮演着越来越重要的角色。',
     secondTitle: '上海目前八所高校十个院校招收MEM项目',
@@ -227,8 +227,8 @@ export const projects = [{
   {
     title: 'MPAcc',
     header: '会计硕士',
-    headImg: 'project3.jpg',
-    backImg: 'project_bg6.png',
+    headImg: `${ORIGIN}/project/project3.jpg`,
+    backImg: `${ORIGIN}/project/project_bg6.png`,
     text: '会计硕士（Masterof Professional Accounting，简称MPAcc，是经教育部、国务院学位办批准设立的一种专业学位，是培养具有良好职业道德，系统掌握现代会计理论与实务以及相关领域的知识与技能，具备会计工作领导能力的高素质会计人才。会计硕士MPAcc是国家基于培养面向会计职业的应用型、高层次、高素质会计专门人才的需要而新设立的一种学位类型。与会计学学术性学位相比，更侧重实际能力的培养；更突出会计职业实务工作的要求；更注重学术性与职业性的紧密结合；更强调系统掌握现代会计学、审计学、财务管理以及相关领域的知识和技能，对会计实务有充分的了解，具有很强的解决实际问题的能力。',
     secondTitle: '上海目前八家高校招收在职项目，七家高校招收全日制项目',
     schools: [{
@@ -272,8 +272,8 @@ export const projects = [{
   {
     title: 'MPA',
     header: '公共管理硕士',
-    headImg: 'project1.jpg',
-    backImg: 'project_bg7.png',
+    headImg: `${ORIGIN}/project/project1.jpg`,
+    backImg: `${ORIGIN}/project/project_bg7.png`,
     text: '公共管理硕士(Master of Public Administration，缩写为MPA)专业学位是以公共管理学科及其他相关学科为基础的研究生教育项目，是为政府部门及非政府公共机构培养从事公共管理、公共事务和公共政策研究分析等方面的高层次应用型、复合型公共管理专门人才。公共管理硕士专业学位研究生教育的产生与公共管理事业的发展密切相关。从1924年美国锡拉丘兹大学马克斯韦尔公民与公共事务学院率先开展后，公共管理硕士专业学位教育在世界范围内蓬勃发展，目前已经成为很多国家培养高层次应用型公共管理人才的主要途径之一。',
     secondTitle: '上海目前十二所高校招收MPA项目',
     schools: [{
@@ -374,95 +374,95 @@ export const teachers = [{
     title: '英语辅导教师',
     text: 'English Instructor',
     desc: '十六年英文培训经验，帮助逾五万名学子进入研究生学府，培训出3年英语头魁（94分），帮助很多四级没过的学员如愿考入理想院校。十余年应试与非应试英文教学经验，考研大纲解析人，考研原题解析人。独创多种阅读理解“快速解题方法。被复旦大学商学院邀请为EMBA学生辅导考前冲刺课程，获得大量积极评价，连续两年受复旦大学邀请，为管理学院IMBA新生讲授英语课程。曾为新东方集团2005年教师擂台大赛第一名，2004、2005、2006年连续三年被评为”新东方年度教师“称号。',
-    avator: 'teacher_1.jpg'
+    avator: `${ORIGIN}/teacher/teacher_1.jpg`
   },
   {
     name: '杨方荣',
     title: '英语辅导教师',
     text: 'English Instructor',
     desc: '长期从事管理类联考、托福、雅思、四六级等英语培训，并参与四六级及研究生入学考试阅卷工作，对管理类联考英语讲解生动，授课应用性高、信息量大，讲解多种英语考试技巧，使学员英语水平在短期内发生质变，帮助考生顺利通过英语考试。',
-    avator: 'teacher_2.jpg'
+    avator: `${ORIGIN}/teacher/teacher_2.jpg`
   },
   {
     name: '叶笑',
     title: '数学辅导教师',
     text: 'Math Instructor',
     desc: '十多年管理类联考数学教学经验。主讲MBA数学联考题型，数学试题解题方法新颖，提倡一题多解、巧解选择题，并在如何控制解题时间等多种技巧方面有深刻理解，授课通俗易懂，风趣幽默，深受学员好评。',
-    avator: 'teacher_3.jpg'
+    avator: `${ORIGIN}/teacher/teacher_3.jpg`
   },
   {
     name: '殷玖利',
     title: '数学辅导教师',
     text: 'Math Instructor',
     desc: '殷玖利，数学博士，江苏省高校青年骨干教师，管理类联考数学培训名师，上课富有激情，善于总结归纳解题方法和技巧，对数学考试快速解题有独到的见解，被历届考生称为实战大师。',
-    avator: 'teacher_4.jpg'
+    avator: `${ORIGIN}/teacher/teacher_4.jpg`
   },
   {
     name: '胡一百',
     title: '语文辅导教师',
     text: 'Writing Instructor',
     desc: '复旦大学博士后. 多年管理类联考语文写作教学经验，谙习考试技巧，强调批判思维的训练以及应试技巧的培养，能够让考生在较短时间内掌握写作技巧及套路，提倡举一反三、以不变应万变的方式快速完成写作部分。授课内容化复杂为简单，通俗易懂，诙谐有趣。风格诙谐有趣，谙习考试技巧。',
-    avator: 'teacher_5.jpg'
+    avator: `${ORIGIN}/teacher/teacher_5.jpg`
   },
   {
     name: '王诚',
     title: '逻辑辅导教师',
     text: 'Logic Instructor',
     desc: '复旦大学MBA，专业硕士考前辅导名师，多年来致力于专业硕士逻辑领域的研究和教学工作，精于把握命题方向和考生应试心理，对于考生的思维养成和应试方法有一套完整的理论；逻辑技巧独辟蹊径，可以帮助考生有效节省备考时间、提高成绩。',
-    avator: 'teacher_6.jpg'
+    avator: `${ORIGIN}/teacher/teacher_6.jpg`
   }
 ];
 
-export const shcools = [{
+export const schools = [{
     title: '上海同济大学工商管理学硕士（MBA）',
-    bgImage: 'school_bg1.jpg',
+    bgImage: `${ORIGIN}/school/school_bg1.jpg`,
     desc: '同济大学经济与管理学院 MBA项目始于 1993年，是经国务院学位办首批认定的工商管理硕士专业（MBA）教学正式单位之一。该项目的目标是培养具有全球视野，社会责任感及创新精神，…',
-    icon: 'school_icon1.jpg',
+    icon: `${ORIGIN}/school/school_icon1.jpg`,
     schoolName: '同济大学',
     schoolText: 'TONGJI UNIVERSITY',
     linkUrl: ''
   },
   {
     title: '复旦泛海国际金融学院工商管理硕士（MBA）',
-    bgImage: 'school_bg2.jpg',
+    bgImage: `${ORIGIN}/school/school_bg2.jpg`,
     desc: '复旦大学泛海国际金融学院（Fanhai International School of Finance, Fudan University，简称FISF）是复旦大学联袂中国泛海…',
-    icon: 'school_icon2.jpg',
+    icon: `${ORIGIN}/school/school_icon2.jpg`,
     schoolName: '复旦泛海',
     schoolText: 'FANHAI INTERNATIONAL SCHOOL OF FINANCE',
     linkUrl: ''
   },
   {
     title: '上海财经大学工商管理学硕士（MBA）',
-    bgImage: 'school_bg3.jpg',
+    bgImage: `${ORIGIN}/school/school_bg3.jpg`,
     desc: '上海财经大学的商学教育始于1917年南京高等师范学校创办的商科，是我国最早开始举办MBA教育的高校之一。作为我国最具实力的一所财经院校，在举校体制的有力支持下其MBA教育已经成…',
-    icon: 'school_icon3.jpg',
+    icon: `${ORIGIN}/school/school_icon3.jpg`,
     schoolName: '上海财经大学',
     schoolText: 'COLLEGE OF BUSINESS',
     linkUrl: ''
   },
   {
     title: '上海交大高金工商管理学硕士(MBA)',
-    bgImage: 'school_bg4.jpg',
+    bgImage: `${ORIGIN}/school/school_bg4.jpg`,
     desc: '上海交通大学上海高级金融学院（高金）是上海市人民政府为实现将上海建设成为国际金融中心的国家战略，依托上海交通大学，由著名海外华人学者牵头，按照国际一流商学院模式创立的国际化金融…',
-    icon: 'school_icon4.jpg',
+    icon: `${ORIGIN}/school/school_icon4.jpg`,
     schoolName: '交大高金',
     schoolText: 'SHANGHAI ADVANCED INSTITUTE OF FINANCE',
     linkUrl: ''
   },
   {
     title: '上海交大安泰工商管理学硕士（MBA）',
-    bgImage: 'school_bg5.jpg',
+    bgImage: `${ORIGIN}/school/school_bg5.jpg`,
     desc: '上海交通大学是我国历史最悠久、享誉海内外的著名高等学府之一，是教育部直属并与上海市共建的全国重点大学。经过122年的不懈努力，上海交通大学已经成为一所“综合性、研究型、国际化”…',
-    icon: 'school_icon5.png',
+    icon: `${ORIGIN}/school/school_icon5.png`,
     schoolName: '交大安泰',
     schoolText: 'ANTAI COLLEGE',
     linkUrl: ''
   },
   {
     title: '复旦大学工商管理学硕士（MBA）',
-    bgImage: 'school_bg6.jpg',
+    bgImage: `${ORIGIN}/school/school_bg6.jpg`,
     desc: '复旦大学是我国大学中最早设立工商管理教育体系的学校，早在1917年就创设了商科，并在1929年正式成立了商学院。 原国务院副总理李岚清就是商学院1952年的毕业生,...',
-    icon: 'school_icon6.jpg',
+    icon: `${ORIGIN}/school/school_icon6.jpg`,
     schoolName: '复旦大学',
     schoolText: 'FUDAN UNIVERSITY',
     linkUrl: ''
@@ -497,12 +497,12 @@ export const homeProjects = [{
 ];
 
 export const schoolDetails = [{
-    headerImg: 'detail1_2.png',
+    headerImg: `${ORIGIN}/detail/detail1_2.png1`,
     title: '项目介绍',
     desc: '同济MBA为有管理潜质的青年才俊和高级技术型人才转为管理岗位、中高级管理者加速事业升级提供的高端MBA项目。该项目以强化管理能力为核心，注重为学生创造更多价值，适合那些已经在管理岗位和创业中体现出实力，欲进一步提升未来事业发展能力和空间的考生报考。',
     projects: [{
         secondTitle: '综合MBA项目（非全日制）',
-        secondImg: 'detail1_3.jpg',
+        secondImg: `${ORIGIN}/detail/detail1_3.jpg`,
         secondDesc: [{
             title: '百年积淀的多学科优势',
             desc: '同济大学在建筑、土木、海洋、环境、车辆、交通等专业领域全国领先，MBA项目以此为基石，并依托学院在工程管理、服务运营管理和城市发展与管理学科的优势，逐渐形成了MBA自己的特色专业方向，特别是项目管理与房地产，服务与运营管理和金融方向。'
@@ -516,7 +516,7 @@ export const schoolDetails = [{
             desc: '同济MBA校友近7000人，他们遍及全国各地，特别是在上海、长三角、华东地区和珠三角的国有大型企业、著名跨国企业、政府机构中担任中高级管理职务，为国家经济发展做出了突出的贡献。同济MBA通过校友理事会、校友讲坛、校友微博、校友社区网等渠道为学员搭建与校友广泛交流的平台。'
           }
         ],
-        thirdImg: 'detail1_4.png'
+        thirdImg: `${ORIGIN}/detail/detail1_4.png`
       },
       {
         secondTitle: '同济-曼切斯特项目（非全日制）',
@@ -550,7 +550,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: '同济-凯斯西储项目（非全日制）',
-        secondImg: 'detail1_5.jpg',
+        secondImg: `${ORIGIN}/detail/detail1_5.jpg`,
         secondDesc: [{
             title: '项目特色',
             desc: '第一家美国一流大学在大陆授予该校金融硕士文凭的国际项目；'
@@ -584,7 +584,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: '同济-明尼苏达项目（非全日制）',
-        secondImg: 'detail1_6.jpg',
+        secondImg: `${ORIGIN}/detail/detail1_6.jpg`,
         secondDesc: [{
             title: '项目特色',
             desc: '中国唯一一个融合医疗管理和工商管理的双学位MBA项目；'
@@ -614,7 +614,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: 'IMBA项目（全日制）',
-        secondImg: 'detail1_1.png',
+        secondImg: `${ORIGIN}/detail/detail1_1.png`,
         secondDesc: [{
             title: '面向全球招生',
             desc: '国际MBA项目于2004年启动，面向全球招生，旨在培养通晓跨国文化，具有全球化视野和国际化经营管理能力的商业精英。IMBA学员由英语成绩优秀的国内申请人、海外留学生及交换学生共同构成。'
@@ -637,12 +637,12 @@ export const schoolDetails = [{
     ]
   },
   {
-    headerImg: 'detail2_1.jpg',
+    headerImg: `${ORIGIN}/detail/detail2_1.jpg`,
     title: '项目介绍',
     desc: '项目旨在培养兼备国际金融视野、精晓国际金融之术，同时深谙中国金融实战、运筹中国金融之道的，能够为中国金融事业的崛起和国际金融时代的变革献计献力的全球金融领袖。',
     projects: [{
         secondTitle: '金融工商管理硕士（非全日制）',
-        secondImg: 'detail2_2.png',
+        secondImg: `${ORIGIN}/detail/detail2_2.png`,
         secondDesc: [{
             title: '独创“1+3”课程模式',
             desc: '摒弃传统“2+2”固有模式，原创全新“1+3”课程模式——第一学期必修课程 + 后三学期选修课程，实现课程组合弹性与课程学习个性的最佳融合，同时为第二学年国际模块的强化学习提供完美过渡。'
@@ -660,7 +660,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: '高级金融工商管理硕士（非全日制）',
-        secondImg: 'detail2_3.jpg',
+        secondImg: `${ORIGIN}/detail/detail2_3.jpg`,
         secondDesc: [{
             title: '立足金融，赋能突破',
             desc: 'FISF FEMBA培养体系中金融相关课程超过 80%， 聚焦与实业深度融合的金融知识系统。'
@@ -683,7 +683,7 @@ export const schoolDetails = [{
     ]
   },
   {
-    headerImg: 'detail3_1.png',
+    headerImg: `${ORIGIN}/detail/detail3_1.png`,
     title: '项目培养目标',
     desc: '培养具有使命意识、全球思维和领导智慧，掌握全面的财经和管理知识并具备高效实践与创新能力的商界精英。',
     projects: [{
@@ -693,18 +693,17 @@ export const schoolDetails = [{
         title: '',
         desc: '厚德博学，大气谦和，传承创新，经济匡时。'
       }],
-      thirdImg: 'detail3_2.png'
+      thirdImg: `${ORIGIN}/detail/detail3_2.png`
     }]
   },
   {
-    headerImg: 'detail4_1.jpg',
+    headerImg: `${ORIGIN}/detail/detail3_1.jpg`,
     title: '项目介绍',
-    desc: [
-      'SAIF金融EMBA项目旨在整合全球顶级教育资源，通过知识创造和传播，提供金融及管理领域最前沿的系统知识，致力于在新的金融环境下为中国成就一批具有全球视野的金融家、深谙金融的实业家、拥有优异专业素养和创新能力的金融行业中高级管理人才。',
-      'SAIF 金融EMBA 课程在体系的完整性和前瞻创新性上拥有无可比拟的领先优势。课程分为核心课程、特色课程，并打造多元化学习体验。核心课程聚焦全球视野、全面覆盖现代金融的核心领域，还配备了提升领导力的修炼课程；特色课程则进一步细分为“国际政治经济 形势分析”、“投资战略布局”、“金融创新和可持续发展”、“金融市场”、“企业综合管理”、“人文社会”等，供学员深入进修。此外，提供旨在拓展视野的多元化学习体验，并开设海外模块选修课程。授课方式将以教授讲学、案例分析、小组讨论为主，辅以实案项目模拟及专家点评。',
-      'SAIF金融EMBA项目十分注重提升学员在全球化背景下的国际视野，目前已与帝国理工学院、乔治城大学、加州大学伯克利分校、沃顿商学院、芝加哥大学布斯商学院、欧洲管理技术学院等众多全球顶级商学院建立了紧密而平等的战略合作关系，加强了国际学术交流，整合了全球优质管理教育资源，开展交流合作项目。',
-      '自2010年6月至今，SAIF金融EMBA 已招收1000余位来自全国各行各业的学员，他们既有来自金融机构的业界精英，也有来自实体企业的领军管理者。学员普遍拥有本科及以上学历，其中不乏已拥有硕士、博士学位的学员。无论是从地域分布、行业分布及公司属性等方面，均呈现出多元化、高层次的特点。'
-    ],
+    desc: 
+      'SAIF金融EMBA项目旨在整合全球顶级教育资源，通过知识创造和传播，提供金融及管理领域最前沿的系统知识，致力于在新的金融环境下为中国成就一批具有全球视野的金融家、深谙金融的实业家、拥有优异专业素养和创新能力的金融行业中高级管理人才。<br/>'+
+      'SAIF 金融EMBA 课程在体系的完整性和前瞻创新性上拥有无可比拟的领先优势。课程分为核心课程、特色课程，并打造多元化学习体验。核心课程聚焦全球视野、全面覆盖现代金融的核心领域，还配备了提升领导力的修炼课程；特色课程则进一步细分为“国际政治经济 形势分析”、“投资战略布局”、“金融创新和可持续发展”、“金融市场”、“企业综合管理”、“人文社会”等，供学员深入进修。此外，提供旨在拓展视野的多元化学习体验，并开设海外模块选修课程。授课方式将以教授讲学、案例分析、小组讨论为主，辅以实案项目模拟及专家点评。<br/>'+
+      'SAIF金融EMBA项目十分注重提升学员在全球化背景下的国际视野，目前已与帝国理工学院、乔治城大学、加州大学伯克利分校、沃顿商学院、芝加哥大学布斯商学院、欧洲管理技术学院等众多全球顶级商学院建立了紧密而平等的战略合作关系，加强了国际学术交流，整合了全球优质管理教育资源，开展交流合作项目。<br/>'+
+      '自2010年6月至今，SAIF金融EMBA 已招收1000余位来自全国各行各业的学员，他们既有来自金融机构的业界精英，也有来自实体企业的领军管理者。学员普遍拥有本科及以上学历，其中不乏已拥有硕士、博士学位的学员。无论是从地域分布、行业分布及公司属性等方面，均呈现出多元化、高层次的特点。',
     projects: [{
         secondTitle: '金融MBA（非全日制）',
         secondImg: '',
@@ -712,27 +711,27 @@ export const schoolDetails = [{
           title: '',
           desc: 'SAIF金融MBA项目力求为学生夯实全方位、立体化的金融与管理课程体系，分为“金融必修课”、“必修选修课”和“金融选修课”，其中50多门金融选修课程覆盖金融各个领域的学习需求。项目致力于在新的金融环境下为中国成就一批具有本土影响力和全球竞争力的金融人才、深谙金融的创业家、拥有优异金融思维和创新能力的高端人才。'
         }],
-        thirdImg: 'detail4_2.png'
+        thirdImg: `${ORIGIN}/detail/detail4_2.png`
       },
       {
         secondTitle: '金融MBA（非全日制）',
         secondImg: '',
         secondDesc: [],
-        thirdImg: 'detail4_3.png'
+        thirdImg: `${ORIGIN}/detail/detail4_3.png`
       }
     ]
   },
   {
-    headerImg: 'detail5_1.png',
+    headerImg: `${ORIGIN}/detail/detail5_1.png`,
     title: '项目介绍',
-    desc: [
-      '上海交通大学安泰经济与管理学院MBA教育项目系国家教育部和国务院学位办认定的工商管理硕士（MBA）学位点，提供学历和学位教育。自1994年开始，办学24年，共招收了上万名MBA学员。',
-      '学院秉承交大百年办学的优良传统，整合优质教育资源，以进取务实的态度，在规范、质量、品牌、特色上下工夫，项目开展至今，已具备了良好的品牌效应。2008年至2011年间，交大安泰陆续获得了AMBA、EQUIS和AACSB三项国际顶级权威管理教育体系认证，是中国大陆首家同时获得三项国际认证的商学院。2018年1月，交大安泰MBA项目在2018年度英国《金融时报》（Financial Times）全球MBA排名中荣登全球第34位，稳居全球四十强，其中薪资增长率和就业率排名全球第一。同时，交大安泰经管学院也成为国内唯一一家MBA、EMBA、管理科学硕士、高管教育四大核心项目全部进入英国《金融时报》全球40强的商学院。',
+    desc: 
+      '上海交通大学安泰经济与管理学院MBA教育项目系国家教育部和国务院学位办认定的工商管理硕士（MBA）学位点，提供学历和学位教育。自1994年开始，办学24年，共招收了上万名MBA学员。<br/>'+
+      '学院秉承交大百年办学的优良传统，整合优质教育资源，以进取务实的态度，在规范、质量、品牌、特色上下工夫，项目开展至今，已具备了良好的品牌效应。2008年至2011年间，交大安泰陆续获得了AMBA、EQUIS和AACSB三项国际顶级权威管理教育体系认证，是中国大陆首家同时获得三项国际认证的商学院。2018年1月，交大安泰MBA项目在2018年度英国《金融时报》（Financial Times）全球MBA排名中荣登全球第34位，稳居全球四十强，其中薪资增长率和就业率排名全球第一。同时，交大安泰经管学院也成为国内唯一一家MBA、EMBA、管理科学硕士、高管教育四大核心项目全部进入英国《金融时报》全球40强的商学院。<br/>'+
       '安泰MBA项目致力于培养具有品行正、视野宽、基础实、创新力强、人文底蕴深厚的商界领袖和业界精英，培养学生具有较高道德情操、全球化视野、系统的工商管理知识、综合运用知识和自主创新的能力。通过努力力争成为国际一流、具有中国特色的MBA项目。'
-    ],
+    ,
     projects: [{
         secondTitle: 'MBA综合班（非全日制）',
-        secondImg: 'detail5_2.png',
+        secondImg: `${ORIGIN}/detail/detail5_2.png`,
         secondDesc: [{
             title: '培养目标',
             desc: '本项目致力于培养懂管理、会经营，具有国际视野和创新精神的复合型人才。'
@@ -841,15 +840,15 @@ export const schoolDetails = [{
     ]
   },
   {
-    headerImg: 'detail6_1.png',
+    headerImg: `${ORIGIN}/detail/detail6_1.png`,
     title: '项目总览',
-    desc: [
-      '复旦MBA项目是中国开办最早、最具品牌影响力和最受考生欢迎的MBA项目。自1991年成立至今，复旦MBA项目坚持专业化的精神，荟萃精英、开拓进取、努力打造亚洲一流、世界著名的MBA项目。历经多年的实践和探索，并吸收欧美工商管理教育的先进理念，复旦MBA已经形成了自身的独特优势和品牌价值。',
+    desc: 
+      '复旦MBA项目是中国开办最早、最具品牌影响力和最受考生欢迎的MBA项目。自1991年成立至今，复旦MBA项目坚持专业化的精神，荟萃精英、开拓进取、努力打造亚洲一流、世界著名的MBA项目。历经多年的实践和探索，并吸收欧美工商管理教育的先进理念，复旦MBA已经形成了自身的独特优势和品牌价值。<br/>'+
       '复旦MBA项目的使命是：借助中国经济高速发展的强劲动力和复旦大学管理学院的优质资源，培养具有全球视野又深谙中国国情的青年精英、未来领袖。为经济繁荣和社会发展做出贡献！复旦MBA项目目前已经培养了9000余名MBA毕业生，他们遍布在全国以及世界各地众多行业和领域，很多已经成为企业的中高级管理人才。'
-    ],
+    ,
     projects: [{
         secondTitle: '复旦MBA项目（非全日制）',
-        secondImg: 'detail6_2.png',
+        secondImg: `${ORIGIN}/detail/detail6_2.png`,
         secondDesc: [{
             title: '先进的教学模式和雄厚的师资力量',
             desc: '项目教学倡导理论与实践并重、国际化与本土化并行的理念。授课教师兼具深厚学术造诣和丰富管理实践经验，教学体系完整、教学方法先进。'
@@ -879,7 +878,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: '复旦国际MBA项目（全日制）',
-        secondImg: 'detail6_3.png',
+        secondImg: `${ORIGIN}/detail/detail6_3.png`,
         secondDesc: [{
             title: '强大的国际化师资',
             desc: '任课教师拥有深厚的学术底蕴与丰富的教学经验，其中30%-40%为国际师资。此外，MIT Sloan教授、行业资深人士和企业高管也应邀授课，帮助学生开阔视野，全面学习前沿管理理论与知识。'
@@ -905,7 +904,7 @@ export const schoolDetails = [{
       },
       {
         secondTitle: '复旦S3 Asia MBA项目（全日制）',
-        secondImg: 'detail6_4.png',
+        secondImg: `${ORIGIN}/detail/detail6_4.png`,
         secondDesc: [{
             title: '定位独特',
             desc: '培养亚洲未来领导者，三校均开设亚洲经济洞察；被ACCSB列为 “特色合作模范项目'

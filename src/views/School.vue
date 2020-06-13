@@ -7,14 +7,15 @@
       </div>
     </background-img>
     <v-container>
-      <school-card :list="shcools" />
+      <school-card :list="schools" />
     </v-container>
   </div>
 </template>
 
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from 'vuex';
   import ORIGIN from '@/data/global.js';
   export default {
@@ -30,7 +31,13 @@
       };
     },
     computed: {
-      ...mapGetters(['shcools'])
+      ...mapGetters(['schools'])
+    },
+    mounted() {
+      this.fetchSchools();
+    },
+    methods: {
+      ...mapActions(['fetchSchools']),
     }
   };
 </script>
