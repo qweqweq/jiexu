@@ -126,10 +126,12 @@ export const getActives = () => {
   let data = {
     query: `query{
       actives{
+        id
         title
         imgUrl{url}
         header
         desc
+        subDesc
       }
     }`
   };

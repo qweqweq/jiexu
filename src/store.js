@@ -1,14 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import {
-  channels,
-  projects,
-  items,
-  teachers,
-  schools,
-  homeProjects,
-  schoolDetails
-} from './data/mutable';
 import HOST from '@/graphql/env.js';
 import {
   getHomePage, // 首页
@@ -47,6 +38,7 @@ export default new Vuex.Store({
   },
   getters: {
     links: (state) => state.items,
+    actives: (state) => state.actives,
     projects: (state) => state.projects,
     channels: (state) => state.channels,
     teachers: (state) => state.teachers,
@@ -75,6 +67,32 @@ export default new Vuex.Store({
         content: state.banners.find(v => v.id === '10')
       }
     },
+    homePage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '5'),
+        content: state.banners.find(v => v.id === '9'),
+        activeImg: state.actives.filter(v => v.id === '1' || v.id ==='2'),
+        downloadImg: state.banners.filter(v => v.id === '11' || v.id === '12'),
+        answerImg: state.banners.find(v => v.id === '13'),
+        teacherImg: state.banners.find(v => v.id === '8'),
+        classImg: state.banners.find(v => v.id === '14')
+      }
+    },
+    projectPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '6'),
+      }
+    },
+    schoolPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '7'),
+      }
+    },
+    stylePage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '8'),
+      }
+    }
   },
   mutations: {
     setDrawer: (state, payload) => (state.drawer = payload),

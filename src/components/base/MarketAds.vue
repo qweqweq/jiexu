@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
   export default {
     name: 'MarketAds',
     data () {
@@ -43,7 +43,7 @@ import { mapActions, mapState } from 'vuex';
       };
     },
     computed: {
-      ...mapState(['actives'])
+      ...mapGetters(['actives'])
     },
     mounted() {
       this.fetchActives();

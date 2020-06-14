@@ -6,7 +6,7 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/school/schoolguide_bg.jpg`" />
+        <banner v-if="banner.imgLink" :src="banner.imgLink" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -60,7 +60,6 @@
 </template>
 <script>
   import { mapGetters, mapActions } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   import { onResize } from '../mixin/mixin';
   export default {
     name: 'SchoolDetail',
@@ -71,12 +70,14 @@
     mixins: [onResize],
     data () {
       return {
-        ORIGIN,
         details: []
       };
     },
     computed: {
-      ...mapGetters(['schoolDetails'])
+      ...mapGetters(['schoolDetails', 'schoolPage']),
+      banner() {
+        return this.schoolPage && this.schoolPage.bannerImg;
+      }
     },
     watch: {
       schoolDetails(newVal, oldVal) {

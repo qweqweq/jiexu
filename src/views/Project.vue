@@ -6,7 +6,7 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/project/project_bg3.png`" />
+        <banner v-if="banner.imgLink" :src="banner.imgLink" />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -72,20 +72,17 @@
     mapGetters,
     mapActions
   } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Project',
     components: {
       Banner: () => import('@/components/base/Banner'),
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
-    data () {
-      return {
-        ORIGIN
-      };
-    },
     computed: {
-      ...mapGetters(['projects'])
+      ...mapGetters(['projects', 'projectPage']),
+      banner() {
+        return this.projectPage && this.projectPage.bannerImg;
+      }
     },
     mounted () {
       this.fetchProjects();
