@@ -122,7 +122,7 @@ export default new Vuex.Store({
             res.channels.forEach(item => {
               item.imgUrl = item.imgUrl && HOST + item.imgUrl.url;
             });
-            commit('updateChannel', res.channels);
+            commit('updateChannels', res.channels);
           }
         });
     },
