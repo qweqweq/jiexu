@@ -34,24 +34,21 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapGetters } from 'vuex';
   export default {
     name: 'MarketAds',
+    props: {
+      actives: {
+        type: Array,
+        default: () => []
+      }
+    },
     data () {
       return {
         showDetail: true
       };
     },
-    computed: {
-      ...mapGetters(['actives'])
-    },
-    mounted() {
-      this.fetchActives();
-    },
     methods: {
-      ...mapActions('fetchActives'),
       jumpToDetail () {
-        // TODO
         this.showDetail = false;
       }
     }

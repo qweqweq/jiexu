@@ -40,11 +40,7 @@
         }
       }
     },
-    mounted() {
-      this.fetchLinks();
-    },
     methods: {
-      ...mapActions(['fetchLinks']),
       ...mapMutations(['setDrawer']),
       onClick (e, item) {
         e.stopPropagation();

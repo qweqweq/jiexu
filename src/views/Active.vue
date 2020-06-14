@@ -6,11 +6,12 @@
         <div class="nhCover" />
       </div>
     </background-img>
-    <market-ads />
+    <market-ads :actives="actives" />
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
   export default {
     name: 'Active',
     components: {
@@ -19,6 +20,7 @@
       MarketAds: () => import('@/components/base/MarketAds')
     },
     computed: {
+      ...mapGetters(['actives', 'activePage']),
       banner() {
         return this.activePage && this.activePage.bannerImg
       }

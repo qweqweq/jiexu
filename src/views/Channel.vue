@@ -81,7 +81,7 @@
         杰旭新闻
         <v-divider class="divider" />
       </v-card-text>
-      <market-ads />
+      <market-ads :actives="actives"/>
       <v-card-text class="channel_title">
         资料下载
         <v-divider class="divider" />
@@ -127,7 +127,7 @@
       };
     },
     computed: {
-      ...mapGetters(['channels', 'channelPage']),
+      ...mapGetters(['channels', 'channelPage', 'actives']),
       banner() {
         return this.channelPage && this.channelPage.bannerImg;
       },

@@ -19,7 +19,7 @@
           GET MORE
         </a>
       </v-flex>
-      <market-ads />
+      <market-ads :actives="actives" />
     </v-container>
     <v-divider class="divider" />
     <v-container>
@@ -318,7 +318,7 @@
       };
     },
     computed: {
-      ...mapGetters(['schools', 'homeProjects', 'homePage']),
+      ...mapGetters(['schools', 'homeProjects', 'homePage', 'actives']),
       schoolCards: function () {
         return this.schools.slice(0, 3);
       },

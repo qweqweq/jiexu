@@ -161,7 +161,7 @@ export default new Vuex.Store({
             item.bgImage = item.bgImage && HOST + item.bgImage.url;
             item.icon = item.icon && HOST + item.icon.url;
           });
-          commit('updateTeachers', res.schools);
+          commit('updateSchools', res.schools);
         }
       })
     },

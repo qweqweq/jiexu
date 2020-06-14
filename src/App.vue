@@ -26,9 +26,10 @@
     mounted () {
       this.fetchLinks();
       this.fetchBanners();
+      this.fetchActives();
     },
     methods: {
-      ...mapActions(['fetchLinks', 'fetchBanners'])
+      ...mapActions(['fetchLinks', 'fetchBanners', 'fetchActives'])
     }
   };
 </script>
