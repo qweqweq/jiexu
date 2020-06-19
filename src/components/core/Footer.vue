@@ -146,7 +146,10 @@
         type: Array,
         default: () => []
       },
-      wxImgs: Array
+      wxImgs: {
+        type: Array,
+        default: () => []
+      }
     },
     computed: {
       navList1: function () {

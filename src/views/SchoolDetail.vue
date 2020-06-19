@@ -6,7 +6,10 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -24,7 +27,7 @@
       <v-card-text class="title_blod font18">
         {{ details.title }}
       </v-card-text>
-      <v-card-text v-html="details.desc"></v-card-text>
+      <v-card-text v-html="details.desc" />
       <v-card
         v-for="(ele, k) in details.projects"
         :key="k"
@@ -75,14 +78,14 @@
     },
     computed: {
       ...mapGetters(['schoolDetails', 'schoolPage']),
-      banner() {
+      banner () {
         return this.schoolPage && this.schoolPage.bannerImg;
       }
     },
     watch: {
-      schoolDetails(newVal, oldVal) {
+      schoolDetails (newVal, oldVal) {
         if (newVal !== oldVal) {
-          this.details = newVal[+this.$route.params.id]
+          this.details = newVal[+this.$route.params.id];
         }
       }
     },

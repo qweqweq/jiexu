@@ -1,7 +1,10 @@
 <template>
   <div id="home">
     <articles>
-      <banner v-if="banner.imgLink" :src="banner.imgLink" />
+      <banner
+        v-if="banner.imgLink"
+        :src="banner.imgLink"
+      />
     </articles>
     <v-container>
       <v-flex
@@ -49,7 +52,8 @@
           </v-card-text>
           <v-flex style="display: flex; flex-direction:column; align-items:center;">
             <div
-              v-for="(item, index) in active" :key="index"
+              v-for="(item, index) in active"
+              :key="index"
               style="display: flex; flex-direction:row; margin-top: 5px;"
               @click="jumpToDetail"
             >
@@ -98,7 +102,7 @@
             @click="dialog = true"
           >
             <v-card-text style="padding-top:0px;text-align: center;">
-              下载{{ index + 1}}
+              下载{{ index + 1 }}
             </v-card-text>
             <v-img
               v-if="item.imgLink"
@@ -322,26 +326,26 @@
       schoolCards: function () {
         return this.schools.slice(0, 3);
       },
-      banner() {
-        return this.homePage && this.homePage.bannerImg || {};
+      banner () {
+        return (this.homePage && this.homePage.bannerImg) || {};
       },
-      content() {
-        return this.homePage && this.homePage.content || {};
+      content () {
+        return (this.homePage && this.homePage.content) || {};
       },
-      download() {
-        return this.homePage && this.homePage.downloadImg || [];
+      download () {
+        return (this.homePage && this.homePage.downloadImg) || [];
       },
-      answer() {
-        return this.homePage && this.homePage.answerImg || {};
+      answer () {
+        return (this.homePage && this.homePage.answerImg) || {};
       },
-      teacher() {
-        return this.homePage && this.homePage.teacherImg || {};
+      teacher () {
+        return (this.homePage && this.homePage.teacherImg) || {};
       },
-      classes() {
-        return this.homePage && this.homePage.classImg || {};
+      classes () {
+        return (this.homePage && this.homePage.classImg) || {};
       },
-      active() {
-        return this.homePage && this.homePage.activeImg || [];
+      active () {
+        return (this.homePage && this.homePage.activeImg) || [];
       }
     },
     mounted: function () {

@@ -2,7 +2,10 @@
   <div id="school">
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -26,15 +29,15 @@
     },
     computed: {
       ...mapGetters(['schools', 'schoolPage']),
-      banner() {
+      banner () {
         return this.schoolPage && this.schoolPage.bannerImg;
       }
     },
-    mounted() {
+    mounted () {
       this.fetchSchools();
     },
     methods: {
-      ...mapActions(['fetchSchools']),
+      ...mapActions(['fetchSchools'])
     }
   };
 </script>

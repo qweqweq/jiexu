@@ -2,7 +2,10 @@
   <div id="channel">
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -81,7 +84,7 @@
         杰旭新闻
         <v-divider class="divider" />
       </v-card-text>
-      <market-ads :actives="actives"/>
+      <market-ads :actives="actives" />
       <v-card-text class="channel_title">
         资料下载
         <v-divider class="divider" />
@@ -123,14 +126,14 @@
     },
     data () {
       return {
-        dialog: false,
+        dialog: false
       };
     },
     computed: {
       ...mapGetters(['channels', 'channelPage', 'actives']),
-      banner() {
+      banner () {
         return this.channelPage && this.channelPage.bannerImg;
-      },
+      }
     },
     mounted () {
       this.fetchChannels();

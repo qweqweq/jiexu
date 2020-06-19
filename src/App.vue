@@ -3,7 +3,10 @@
     <core-toolbar />
     <core-drawer />
     <core-view />
-    <core-footer :items="links" :wxImgs="wxImgs" />
+    <core-footer
+      :items="links"
+      :wx-imgs="wxImgs"
+    />
     <core-jiexu />
   </v-app>
 </template>

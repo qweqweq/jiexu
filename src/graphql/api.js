@@ -85,7 +85,6 @@ export const getTeachers = () => {
   return request(data);
 };
 
-
 export const getSchools = () => {
   let data = {
     query: `query{
@@ -98,9 +97,9 @@ export const getSchools = () => {
         schoolText
       }
     }`
-  }
+  };
   return request(data);
-}
+};
 
 export const getSchoolDetails = () => {
   let data = {

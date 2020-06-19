@@ -2,7 +2,10 @@
   <div id="about">
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -36,10 +39,10 @@
     mixins: [onResize],
     computed: {
       ...mapGetters(['aboutPage']),
-      banner() {
+      banner () {
         return this.aboutPage && this.aboutPage.bannerImg;
       },
-      content() {
+      content () {
         return this.aboutPage && this.aboutPage.content;
       }
     },

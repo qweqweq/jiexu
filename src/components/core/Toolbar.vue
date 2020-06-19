@@ -41,8 +41,7 @@
 // Utilities
   import {
     mapGetters,
-    mapMutations,
-    mapActions
+    mapMutations
   } from 'vuex';
 
   export default {

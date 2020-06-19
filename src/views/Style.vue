@@ -2,7 +2,10 @@
   <div id="style">
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -120,11 +123,11 @@
     },
     computed: {
       ...mapGetters(['teachers', 'stylePage']),
-      banner() {
+      banner () {
         return this.stylePage && this.stylePage.bannerImg;
       }
     },
-    mounted() {
+    mounted () {
       this.fetchTeachers();
     },
     methods: {

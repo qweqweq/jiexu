@@ -2,7 +2,10 @@
   <div id="active">
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -11,7 +14,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Active',
     components: {
@@ -21,8 +24,8 @@ import { mapGetters } from 'vuex';
     },
     computed: {
       ...mapGetters(['actives', 'activePage']),
-      banner() {
-        return this.activePage && this.activePage.bannerImg
+      banner () {
+        return this.activePage && this.activePage.bannerImg;
       }
     }
   };

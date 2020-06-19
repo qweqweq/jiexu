@@ -6,7 +6,10 @@
   >
     <background-img>
       <div class="normalHeader">
-        <banner v-if="banner.imgLink" :src="banner.imgLink" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -80,7 +83,7 @@
     },
     computed: {
       ...mapGetters(['projects', 'projectPage']),
-      banner() {
+      banner () {
         return this.projectPage && this.projectPage.bannerImg;
       }
     },

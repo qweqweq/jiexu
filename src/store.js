@@ -49,49 +49,49 @@ export default new Vuex.Store({
       return {
         bannerImg: state.banners.find(v => v.id === '2'),
         content: state.banners.find(v => v.id === '9')
-      }
+      };
     },
     activePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '1'),
-      }
+        bannerImg: state.banners.find(v => v.id === '1')
+      };
     },
     channelPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '3'),
-      }
+        bannerImg: state.banners.find(v => v.id === '3')
+      };
     },
     classPage: (state) => {
       return {
         bannerImg: state.banners.find(v => v.id === '4'),
         content: state.banners.find(v => v.id === '10')
-      }
+      };
     },
     homePage: (state) => {
       return {
         bannerImg: state.banners.find(v => v.id === '5'),
         content: state.banners.find(v => v.id === '9'),
-        activeImg: state.actives.filter(v => v.id === '1' || v.id ==='2'),
+        activeImg: state.actives.filter(v => v.id === '1' || v.id === '2'),
         downloadImg: state.banners.filter(v => v.id === '11' || v.id === '12'),
         answerImg: state.banners.find(v => v.id === '13'),
         teacherImg: state.banners.find(v => v.id === '8'),
         classImg: state.banners.find(v => v.id === '14')
-      }
+      };
     },
     projectPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '6'),
-      }
+        bannerImg: state.banners.find(v => v.id === '6')
+      };
     },
     schoolPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '7'),
-      }
+        bannerImg: state.banners.find(v => v.id === '7')
+      };
     },
     stylePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '8'),
-      }
+        bannerImg: state.banners.find(v => v.id === '8')
+      };
     }
   },
   mutations: {
@@ -105,7 +105,7 @@ export default new Vuex.Store({
     updateSchools: (state, payload) => (state.schools = payload),
     updateSchoolDetails: (state, payload) => (state.schoolDetails = payload),
     updateActives: (state, payload) => (state.actives = payload),
-    updateBanners: (state, payload) => (state.banners = payload),
+    updateBanners: (state, payload) => (state.banners = payload)
   },
   actions: {
     fetchHomePage: ({ commit }) => {
@@ -139,22 +139,22 @@ export default new Vuex.Store({
     },
     fetchLinks: ({ commit }) => {
       getLinks().then(res => {
-        if(res){
+        if (res) {
           commit('updateFooter', res.pageFooters);
         }
-      })
+      });
     },
-    fetchTeachers:  ({ commit }) => {
+    fetchTeachers: ({ commit }) => {
       getTeachers().then(res => {
-        if(res){
+        if (res) {
           res.teachers.forEach(item => {
             item.avator = item.avator && HOST + item.avator.url;
           });
           commit('updateTeachers', res.teachers);
         }
-      })
+      });
     },
-    fetchSchools: ({commit}) => {
+    fetchSchools: ({ commit }) => {
       getSchools().then(res => {
         if (res) {
           res.schools.forEach(item => {
@@ -163,15 +163,15 @@ export default new Vuex.Store({
           });
           commit('updateSchools', res.schools);
         }
-      })
+      });
     },
-    fetchSchoolDetails:({ commit }) => {
+    fetchSchoolDetails: ({ commit }) => {
       getSchoolDetails().then(res => {
         if (res) {
           res.schoolDetails.forEach(item => {
             item.headerImg = item.headerImg && HOST + item.headerImg.url;
             item.projects = item.projects.map(elem => {
-              elem.secondImg =  elem.secondImg && HOST + elem.secondImg.url;
+              elem.secondImg = elem.secondImg && HOST + elem.secondImg.url;
               elem.thirdImg = elem.thirdImg && HOST + elem.thirdImg.url;
               return elem;
             });
@@ -180,7 +180,7 @@ export default new Vuex.Store({
         }
       });
     },
-    fetchActives: ({commit}) => {
+    fetchActives: ({ commit }) => {
       getActives().then(res => {
         if (res) {
           res.actives.forEach(item => {
@@ -188,9 +188,9 @@ export default new Vuex.Store({
           });
           commit('updateActives', res.actives);
         }
-      })
+      });
     },
-    fetchBanners:  ({commit}) => {
+    fetchBanners: ({ commit }) => {
       getBanners().then(res => {
         if (res) {
           res.banners.forEach(item => {
@@ -198,7 +198,7 @@ export default new Vuex.Store({
           });
           commit('updateBanners', res.banners);
         }
-      })
-    },
+      });
+    }
   }
 });
