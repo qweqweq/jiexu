@@ -3,5 +3,5 @@ module.exports = {
         disableHostCheck: true
     },
     productionSourceMap: false,
-    publicPath: 'beta'
+    publicPath: process.env.NODE_ENV === 'beta' ? 'beta' : ''
 };
