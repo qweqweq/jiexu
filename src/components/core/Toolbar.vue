@@ -62,7 +62,7 @@
         this.$router.push('/');
       },
       isUrl (url) {
-        return /^https?:\/\/.+/.test(url)
+        return /^https?:\/\/.+/.test(url);
       }
     }
   };
