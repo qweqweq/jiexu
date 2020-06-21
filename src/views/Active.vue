@@ -2,16 +2,19 @@
   <div id="active">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/active/active_bg1.jpg`" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
-    <market-ads />
+    <market-ads :actives="actives" />
   </div>
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js';
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Active',
     components: {
@@ -19,10 +22,11 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg'),
       MarketAds: () => import('@/components/base/MarketAds')
     },
-    data () {
-      return {
-        ORIGIN
-      };
+    computed: {
+      ...mapGetters(['actives', 'activePage']),
+      banner () {
+        return this.activePage && this.activePage.bannerImg;
+      }
     }
   };
 </script>

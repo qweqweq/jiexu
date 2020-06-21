@@ -2,7 +2,10 @@
   <div id="style">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/teacher/style_bg.jpg`" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -44,7 +47,8 @@
               style="height: 680px"
             >
               <v-img
-                :src="`${ORIGIN}/teacher/${item.avator}`"
+                v-if="item.avator"
+                :src="item.avator"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -80,7 +84,8 @@
               style="height: 680px"
             >
               <v-img
-                :src="`${ORIGIN}/teacher/${item.avator}`"
+                v-if="item.avator"
+                :src="item.avator"
                 aspect-ratio="1"
               />
               <v-card-title primary-title>
@@ -108,22 +113,25 @@
 
 <script>
   import {
-    mapGetters
+    mapGetters, mapActions
   } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Style',
     components: {
       Banner: () => import('@/components/base/Banner'),
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
-    data () {
-      return {
-        ORIGIN
-      };
-    },
     computed: {
-      ...mapGetters(['teachers'])
+      ...mapGetters(['teachers', 'stylePage']),
+      banner () {
+        return this.stylePage && this.stylePage.bannerImg;
+      }
+    },
+    mounted () {
+      this.fetchTeachers();
+    },
+    methods: {
+      ...mapActions(['fetchTeachers'])
     }
   };
 </script>

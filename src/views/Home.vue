@@ -1,7 +1,10 @@
 <template>
   <div id="home">
     <articles>
-      <banner :src="`${ORIGIN}/home_bg.jpg`" />
+      <banner
+        v-if="banner.imgLink"
+        :src="banner.imgLink"
+      />
     </articles>
     <v-container>
       <v-flex
@@ -19,7 +22,7 @@
           GET MORE
         </a>
       </v-flex>
-      <market-ads />
+      <market-ads :actives="actives" />
     </v-container>
     <v-divider class="divider" />
     <v-container>
@@ -49,33 +52,21 @@
           </v-card-text>
           <v-flex style="display: flex; flex-direction:column; align-items:center;">
             <div
-              style="display: flex; flex-direction:row;"
-              @click="jumpToDetail"
-            >
-              <v-img
-                :src="`${ORIGIN}/active/active1.jpg`"
-                width="144px"
-                hight="144px"
-              />
-              <v-card-text
-                style="padding-top: 0px;"
-              >
-                报考在职研究生的要求是什么？ 如何选择适合的研究生专业？ 背景不好能否有机会上名校？ 名校和非名校的MBA差异有多大？…
-              </v-card-text>
-            </div>
-            <div
+              v-for="(item, index) in active"
+              :key="index"
               style="display: flex; flex-direction:row; margin-top: 5px;"
               @click="jumpToDetail"
             >
               <v-img
-                :src="`${ORIGIN}/active/active2.jpg`"
+                v-if="item.imgUrl"
+                :src="item.imgUrl"
                 width="144px"
                 hight="144px"
               />
               <v-card-text
                 style="padding-top: 0px;"
               >
-                学历背景不好，有机会面试拿优秀吗？ 没有管理经验，有机会面试拿优秀吗？ 机遇和挑战并存，成功永远只眷顾有所准备的人.
+                {{ item.subDesc }}
               </v-card-text>
             </div>
           </v-flex>
@@ -89,7 +80,8 @@
             MBA之问答
           </v-card-text>
           <v-img
-            :src="`${ORIGIN}/home3.jpg`"
+            v-if="answer.imgLink"
+            :src="answer.imgLink"
             width="100%"
             height="250px"
           />
@@ -104,29 +96,17 @@
             资料下载
           </v-card-text>
           <v-flex
+            v-for="(item, index) in download"
+            :key="index"
             style="display: flex; flex-direction: column; align-items: center;"
             @click="dialog = true"
           >
             <v-card-text style="padding-top:0px;text-align: center;">
-              下载1
+              下载{{ index + 1 }}
             </v-card-text>
             <v-img
-              :src="`${ORIGIN}/home4.jpg`"
-              contain
-              height="50%"
-              width="70%"
-              style="margin-left: 16px;"
-            />
-          </v-flex>
-          <v-flex
-            style="display: flex; flex-direction: column; align-items: center;"
-            @click="dialog = true"
-          >
-            <v-card-text style="text-align: center;">
-              下载2
-            </v-card-text>
-            <v-img
-              :src="`${ORIGIN}/home4.jpg`"
+              v-if="item.imgLink"
+              :src="item.imgLink"
               contain
               height="50%"
               width="70%"
@@ -238,7 +218,8 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="`${ORIGIN}/home1.jpg`"
+          v-if="teacher.imgLink"
+          :src="teacher.imgLink"
           height="100%"
           width="100%"
           contain
@@ -270,7 +251,8 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="`${ORIGIN}/home2.jpg`"
+          v-if="classes.imgLink"
+          :src="classes.imgLink"
           height="100%"
           width="100%"
           contain
@@ -302,7 +284,8 @@
         style="padding-bottom: 0px; padding-top: 16px;"
       >
         <v-img
-          :src="`${ORIGIN}/about.jpg`"
+          v-if="content.imgLink"
+          :src="content.imgLink"
           height="100%"
           width="100%"
           contain
@@ -322,8 +305,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import { mapGetters } from 'vuex';
-  import ORIGIN from '@/data/global.js';
+  import { mapGetters, mapActions } from 'vuex';
   export default {
     name: 'Home',
     components: {
@@ -336,20 +318,44 @@
     mixins: [onResize],
     data () {
       return {
-        dialog: false,
-        ORIGIN
+        dialog: false
       };
     },
     computed: {
-      ...mapGetters(['shcools', 'homeProjects']),
+      ...mapGetters(['schools', 'homeProjects', 'homePage', 'actives']),
       schoolCards: function () {
-        return this.shcools.slice(0, 3);
+        return this.schools.slice(0, 3);
+      },
+      banner () {
+        return (this.homePage && this.homePage.bannerImg) || {};
+      },
+      content () {
+        return (this.homePage && this.homePage.content) || {};
+      },
+      download () {
+        return (this.homePage && this.homePage.downloadImg) || [];
+      },
+      answer () {
+        return (this.homePage && this.homePage.answerImg) || {};
+      },
+      teacher () {
+        return (this.homePage && this.homePage.teacherImg) || {};
+      },
+      classes () {
+        return (this.homePage && this.homePage.classImg) || {};
+      },
+      active () {
+        return (this.homePage && this.homePage.activeImg) || [];
       }
     },
     mounted: function () {
+      this.fetchSchools();
+      this.fetchHomePage();
+      this.fetchActives();
       this.aspectRatio = this.$data.aspectRatio;
     },
     methods: {
+      ...mapActions(['fetchHomePage', 'fetchSchools', 'fetchActives']),
       jumpToPage (route) {
         this.$router.push({ path: `/${route}` });
       },

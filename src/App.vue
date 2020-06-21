@@ -3,13 +3,16 @@
     <core-toolbar />
     <core-drawer />
     <core-view />
-    <core-footer />
+    <core-footer
+      :items="links"
+      :wx-imgs="wxImgs"
+    />
     <core-jiexu />
   </v-app>
 </template>
 
 <script>
-
+  import { mapGetters, mapActions, mapState } from 'vuex';
   export default {
     name: 'App',
     components: {
@@ -18,6 +21,18 @@
       CoreToolbar: () => import('@/components/core/Toolbar'),
       CoreView: () => import('@/components/core/View'),
       CoreJiexu: () => import('@/components/core/Jiexu')
+    },
+    computed: {
+      ...mapState(['wxImgs']),
+      ...mapGetters(['links'])
+    },
+    mounted () {
+      this.fetchLinks();
+      this.fetchBanners();
+      this.fetchActives();
+    },
+    methods: {
+      ...mapActions(['fetchLinks', 'fetchBanners', 'fetchActives'])
     }
   };
 </script>

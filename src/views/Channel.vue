@@ -2,7 +2,10 @@
   <div id="channel">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/channel/channel_bg1.jpg`" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
@@ -81,7 +84,7 @@
         杰旭新闻
         <v-divider class="divider" />
       </v-card-text>
-      <market-ads />
+      <market-ads :actives="actives" />
       <v-card-text class="channel_title">
         资料下载
         <v-divider class="divider" />
@@ -110,9 +113,9 @@
 
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'Channel',
     components: {
@@ -123,14 +126,20 @@
     },
     data () {
       return {
-        dialog: false,
-        ORIGIN
+        dialog: false
       };
     },
     computed: {
-      ...mapGetters(['channels'])
+      ...mapGetters(['channels', 'channelPage', 'actives']),
+      banner () {
+        return this.channelPage && this.channelPage.bannerImg;
+      }
+    },
+    mounted () {
+      this.fetchChannels();
     },
     methods: {
+      ...mapActions(['fetchChannels']),
       jumpToSchool (url) {
         window.open(url, '_blank');
       },
@@ -141,6 +150,7 @@
         this.dialog = data;
       }
     }
+
   };
 </script>
 <style lang="less">

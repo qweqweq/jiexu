@@ -2,21 +2,24 @@
   <div id="school">
     <background-img>
       <div class="normalHeader">
-        <banner :src="`${ORIGIN}/school/schoolguide_bg.jpg`" />
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+        />
         <div class="nhCover" />
       </div>
     </background-img>
     <v-container>
-      <school-card :list="shcools" />
+      <school-card :list="schools" />
     </v-container>
   </div>
 </template>
 
 <script>
   import {
-    mapGetters
+    mapGetters,
+    mapActions
   } from 'vuex';
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'School',
     components: {
@@ -24,13 +27,17 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg'),
       SchoolCard: () => import('@/components/base/SchoolCard')
     },
-    data () {
-      return {
-        ORIGIN
-      };
-    },
     computed: {
-      ...mapGetters(['shcools'])
+      ...mapGetters(['schools', 'schoolPage']),
+      banner () {
+        return this.schoolPage && this.schoolPage.bannerImg;
+      }
+    },
+    mounted () {
+      this.fetchSchools();
+    },
+    methods: {
+      ...mapActions(['fetchSchools'])
     }
   };
 </script>

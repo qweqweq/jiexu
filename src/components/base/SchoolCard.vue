@@ -24,7 +24,8 @@
               </div>
             </v-card-title>
             <v-img
-              :src="`${ORIGIN}/school/${item.bgImage}`"
+              v-if="item.bgImage"
+              :src="item.bgImage"
               aspect-ratio="1"
             />
             <p>{{ item.desc }}</p>
@@ -35,7 +36,8 @@
             >
               <v-flex>
                 <v-img
-                  :src="`${ORIGIN}/school/${item.icon}`"
+                  v-if="item.icon"
+                  :src="item.icon"
                   aspect-ratio="1"
                 />
               </v-flex>
@@ -82,7 +84,8 @@
               </div>
             </v-card-title>
             <v-img
-              :src="`${ORIGIN}/school/${item.bgImage}`"
+              v-if="item.bgImage"
+              :src="item.bgImage"
               aspect-ratio="1"
             />
             <p>{{ item.desc }}</p>
@@ -93,7 +96,8 @@
             >
               <v-flex>
                 <v-img
-                  :src="`${ORIGIN}/school/${item.icon}`"
+                  v-if="item.icon"
+                  :src="item.icon"
                   aspect-ratio="1"
                 />
               </v-flex>
@@ -125,7 +129,6 @@
 </template>
 
 <script>
-  import ORIGIN from '@/data/global.js';
   export default {
     name: 'SchoolCard',
     props: {
@@ -134,11 +137,6 @@
         default: () => [],
         required: true
       }
-    },
-    data () {
-      return {
-        ORIGIN
-      };
     },
     methods: {
       jumpToDetail (index) {

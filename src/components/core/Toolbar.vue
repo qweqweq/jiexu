@@ -48,19 +48,21 @@
     computed: {
       ...mapGetters(['links'])
     },
-
     methods: {
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
         e.stopPropagation();
-        if (item.to || !item.href) {
+        if (this.isUrl(item.to)) {
+          window.location.href = item.to;
+        } else {
           this.$router.push(item.to);
-          return;
         }
-        window.location.href = item.href;
       },
       iconClcik () {
         this.$router.push('/');
+      },
+      isUrl (url) {
+        return url.includes('http://');
       }
     }
   };

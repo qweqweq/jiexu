@@ -28,7 +28,6 @@
 
   export default {
     name: 'CoreDrawer',
-
     computed: {
       ...mapGetters(['links']),
       drawer: {
@@ -40,7 +39,6 @@
         }
       }
     },
-
     methods: {
       ...mapMutations(['setDrawer']),
       onClick (e, item) {

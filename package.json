@@ -5,13 +5,20 @@
   "scripts": {
     "deploy": "yarn build && now && now alias",
     "serve": "vue-cli-service serve",
+    "prebuild": "rm -rf dist/*",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "start": "yarn run serve"
+    "start:develop": "NODE_ENV=develop yarn run serve",
+    "start:beta": "NODE_ENV=beta yarn run serve",
+    "start:production": "NODE_ENV=production yarn run serve",
+    "build:development": "NODE_ENV=development npm run build",
+    "build:beta": "NODE_ENV=beta yarn run build",
+    "build:production": "NODE_ENV=production yarn run build"
   },
   "dependencies": {
+    "superagent": "^5.2.2",
     "vue": "^2.6.6",
     "vue-material-design-icons": "^4.1.0",
     "vue-router": "^3.0.1",
