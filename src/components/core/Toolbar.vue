@@ -53,7 +53,7 @@
       onClick (e, item) {
         e.stopPropagation();
         if (this.isUrl(item.to)) {
-          window.location.href = item.href;
+          window.location.href = item.to;
         } else {
           this.$router.push(item.to);
         }
@@ -62,7 +62,7 @@
         this.$router.push('/');
       },
       isUrl (url) {
-        return /^https?:\/\/.+/.test(url);
+        return url.includes('http://');
       }
     }
   };

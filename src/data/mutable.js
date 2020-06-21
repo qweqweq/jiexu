@@ -361,7 +361,7 @@ export const items = [{
   {
     icon: 'mdi-apps',
     text: '杰旭网校',
-    href: 'http://school.jiexuedu.com/'
+    to: 'http://school.jiexuedu.com/'
   },
   {
     icon: 'mdi-chart-bubble',
