@@ -10,13 +10,17 @@ import {
   getSchoolDetails, // 院校详情
   getSchools, // 院校指南
   getActives,
-  getBanners
+  getBanners,
+  getSchedules
 } from '@/graphql/api.js';
+// import { schedules } from '@/data/mutable.js';
+import sortBy from 'lodash/sortBy';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    schedules: [],
     drawer: false,
     channels: [],
     projects: [],
@@ -92,6 +96,12 @@ export default new Vuex.Store({
       return {
         bannerImg: state.banners.find(v => v.id === '8')
       };
+    },
+    schedulePage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === '4'),
+        schedules: state.schedules
+      };
     }
   },
   mutations: {
@@ -105,7 +115,8 @@ export default new Vuex.Store({
     updateSchools: (state, payload) => (state.schools = payload),
     updateSchoolDetails: (state, payload) => (state.schoolDetails = payload),
     updateActives: (state, payload) => (state.actives = payload),
-    updateBanners: (state, payload) => (state.banners = payload)
+    updateBanners: (state, payload) => (state.banners = payload),
+    updateSchedules: (state, payload) => (state.schedules = payload)
   },
   actions: {
     fetchHomePage: ({ commit }) => {
@@ -140,7 +151,8 @@ export default new Vuex.Store({
     fetchLinks: ({ commit }) => {
       getLinks().then(res => {
         if (res) {
-          commit('updateFooter', res.pageFooters);
+          const links = sortBy(res.pageFooters, 'index');
+          commit('updateFooter', links);
         }
       });
     },
@@ -197,6 +209,13 @@ export default new Vuex.Store({
             item.imgLink = item.imgLink && HOST + item.imgLink.url;
           });
           commit('updateBanners', res.banners);
+        }
+      });
+    },
+    fetchSchedules: ({ commit }) => {
+      getSchedules().then(res => {
+        if (res) {
+          commit('updateSchedules', res.schedules);
         }
       });
     }

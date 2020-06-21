@@ -141,6 +141,7 @@
 
 <script>
   export default {
+    name: 'CoreFooter',
     props: {
       items: {
         type: Array,

@@ -7,6 +7,7 @@ import Project from './views/Project.vue';
 import School from './views/School.vue';
 import Style from './views/Style.vue';
 import Class from './views/Class.vue';
+import Schedule from './views/Schedule.vue';
 import About from './views/About.vue';
 import SchoolDetail from './views/SchoolDetail.vue';
 import Page404 from './views/page404.vue';
@@ -50,6 +51,11 @@ export default new Router({
             path: '/curriculum_stru',
             name: 'class',
             component: Class
+        },
+        {
+            path: '/class_schedule',
+            name: 'schedule',
+            component: Schedule
         },
         {
             path: '/about_jiexu',

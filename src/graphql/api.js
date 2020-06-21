@@ -64,6 +64,7 @@ export const getLinks = () => {
         to
         text
         subTitle
+        index
       }
     }`
   };
@@ -143,6 +144,25 @@ export const getBanners = () => {
       banners{
         id
         imgLink{url}
+      }
+    }`
+  };
+  return request(data);
+};
+
+export const getSchedules = () => {
+  let data = {
+    query: `query {
+      schedules {
+        title
+        subClasses {
+          title
+          tableData
+          time
+          address
+          vhtml
+          notice
+        }
       }
     }`
   };
