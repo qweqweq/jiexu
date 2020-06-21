@@ -52,7 +52,7 @@
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
         e.stopPropagation();
-        if (isUrl(item.to)) {
+        if (this.isUrl(item.to)) {
           window.location.href = item.href;
         } else {
           this.$router.push(item.to);
