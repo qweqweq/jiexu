@@ -52,14 +52,17 @@
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
         e.stopPropagation();
-        if (item.to || !item.href) {
+        if (isUrl(item.to)) {
+          window.location.href = item.href;
+        } else {
           this.$router.push(item.to);
-          return;
         }
-        window.location.href = item.href;
       },
       iconClcik () {
         this.$router.push('/');
+      },
+      isUrl (url) {
+        return /^https?:\/\/.+/.test(url)
       }
     }
   };
