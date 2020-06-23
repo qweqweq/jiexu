@@ -9,8 +9,6 @@
       <v-list-tile
         v-for="(link, i) in links"
         :key="i"
-        :to="link.to"
-        :href="link.href"
         @click="onClick($event, link)"
       >
         <v-list-tile-title v-text="link.text" />
@@ -43,17 +41,15 @@
       ...mapMutations(['setDrawer']),
       onClick (e, item) {
         e.stopPropagation();
-
-        if (item.to === '/') {
-          this.$router.push('/');
-          this.setDrawer(false);
-          return;
+        if (this.isUrl(item.to)) {
+          window.open(item.to, '_blank');
+        } else {
+          this.$router.push(item.to);
         }
-
-        if (item.to || !item.href) return;
-
-        window.location.href = item.href;
         this.setDrawer(false);
+      },
+      isUrl (url) {
+        return url.includes('http://');
       }
     }
   };

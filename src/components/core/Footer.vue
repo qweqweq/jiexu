@@ -165,14 +165,17 @@
         window.scrollTo(0, 0);
       },
       onClick (e, item) {
-        if (item.to || !item.href) {
+        if (this.isUrl(item.to)) {
+          window.open(item.to, '_blank');
+        } else {
           this.$router.push(item.to);
-          return;
         }
-        window.location.href = item.href;
       },
       iconClick () {
         this.$router.push('/');
+      },
+      isUrl (url) {
+        return url.includes('http://');
       }
     }
 

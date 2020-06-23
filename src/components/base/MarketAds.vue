@@ -16,7 +16,6 @@
           class="pa-2"
           outlined
           tile
-          @click="jumpToDetail()"
         >
           <v-card-text style="font-size: 18px;font-weight: bold;">
             {{ item.title }}
@@ -46,11 +45,6 @@
       return {
         showDetail: true
       };
-    },
-    methods: {
-      jumpToDetail () {
-        this.showDetail = false;
-      }
     }
   };
 </script>

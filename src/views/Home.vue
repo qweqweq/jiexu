@@ -55,7 +55,6 @@
               v-for="(item, index) in active"
               :key="index"
               style="display: flex; flex-direction:row; margin-top: 5px;"
-              @click="jumpToDetail"
             >
               <v-img
                 v-if="item.imgUrl"
@@ -359,9 +358,6 @@
       jumpToPage (route) {
         this.$router.push({ path: `/${route}` });
       },
-      jumpToDetail () {
-      //
-      },
       showModal (data) {
         this.dialog = data;
       }
@@ -392,6 +388,7 @@
   .project_title {
     font-size: 16px;
     font-weight: bold;
+    background: antiquewhite;
   }
   .project_desc {
     font-size: 14px;

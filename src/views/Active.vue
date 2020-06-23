@@ -6,7 +6,7 @@
           v-if="banner.imgLink"
           :src="banner.imgLink"
         />
-        <div class="nhCover" />
+        <!-- <div class="nhCover" /> -->
       </div>
     </background-img>
     <market-ads :actives="actives" />

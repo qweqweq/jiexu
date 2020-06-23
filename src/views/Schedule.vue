@@ -6,7 +6,7 @@
           v-if="banner && banner.imgLink"
           :src="banner.imgLink"
         />
-        <div class="nhCover" />
+        <!-- <div class="nhCover" /> -->
       </div>
     </background-img>
     <v-card-text
@@ -76,22 +76,22 @@
                     <td style="background: #6b758d; color: #fff;">
                       {{ props.item.rowkey }}
                     </td>
-                    <td class="text-xs-right">
+                    <td class="text-xs-center">
                       {{ props.item.day1 }}
                     </td>
-                    <td class="text-xs-right">
+                    <td class="text-xs-center">
                       {{ props.item.day2 }}
                     </td>
-                    <td class="text-xs-right">
+                    <td class="text-xs-center">
                       {{ props.item.day3 }}
                     </td>
-                    <td class="text-xs-right">
+                    <td class="text-xs-center">
                       {{ props.item.day4 }}
                     </td>
                   </tr>
                 </template>
               </v-data-table>
-              <div v-if="data.subClasses[activeIndex] && !data.subClasses[activeIndex].vhtml">
+              <div v-if="data.subClasses[activeIndex]">
                 <v-card-text class="title_blod font18">
                   上课时间：
                 </v-card-text>
@@ -99,13 +99,12 @@
                 <v-card-text class="title_blod font18">
                   上课地点：
                 </v-card-text>
-                <v-card-text>{{ data.subClasses[activeIndex].address }}</v-card-text>
+                <v-card-text v-html="data.subClasses[activeIndex].address" />
                 <v-card-text class="title_blod font18">
                   注意事项：
                 </v-card-text>
-                <v-card-text>{{ data.subClasses[activeIndex].notice }}</v-card-text>
+                <v-card-text v-html="data.subClasses[activeIndex].notice" />
               </div>
-              <v-card-text v-html="data.subClasses[activeIndex].vhtml" />
             </v-card>
           </div>
         </v-tab-item>

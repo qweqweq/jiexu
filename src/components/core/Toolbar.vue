@@ -51,9 +51,8 @@
     methods: {
       ...mapMutations(['toggleDrawer']),
       onClick (e, item) {
-        e.stopPropagation();
         if (this.isUrl(item.to)) {
-          window.location.href = item.to;
+          window.open(item.to, '_blank');
         } else {
           this.$router.push(item.to);
         }

@@ -10,7 +10,7 @@
           v-if="banner.imgLink"
           :src="banner.imgLink"
         />
-        <div class="nhCover" />
+        <!-- <div class="nhCover" /> -->
       </div>
     </background-img>
     <v-flex
