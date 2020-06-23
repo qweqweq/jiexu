@@ -13,7 +13,7 @@
         black--text
         xs12
       >
-        &copy;{{ new Date().getFullYear() }} — <strong>杰旭教育MBA</strong>
+        &copy;{{ new Date().getFullYear() }}<strong>杰旭教育MBA</strong> — 沪ICP备18028291号-1
       </v-flex>
     </v-layout>
   </v-footer>
