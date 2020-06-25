@@ -33,6 +33,7 @@
               row
               align-center
               flex
+              style="align-items: flex-start;"
             >
               <v-flex>
                 <v-img
