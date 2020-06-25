@@ -45,7 +45,7 @@
   } from 'vuex';
   import { navLinkClick } from '@/mixin/mixin.js';
   export default {
-    name: 'tool-bar',
+    name: 'ToolBar',
     mixins: [ navLinkClick ],
     computed: {
       ...mapGetters(['links'])
@@ -54,7 +54,7 @@
       ...mapMutations(['toggleDrawer']),
       iconClcik () {
         this.$router.push('/');
-      },
+      }
     }
   };
 </script>

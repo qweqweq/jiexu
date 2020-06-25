@@ -39,7 +39,7 @@
       }
     },
     methods: {
-      ...mapMutations(['setDrawer']),
+      ...mapMutations(['setDrawer'])
     }
   };
 </script>

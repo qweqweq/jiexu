@@ -2,18 +2,18 @@ export const onResize = {
   data: () => ({
     aspectRatio: 1
   }),
-  created() {
+  created () {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
   },
-  destroyed() {
+  destroyed () {
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
-    gcd(a, b) {
+    gcd (a, b) {
       return (b === 0) ? a : this.gcd(b, a % b);
     },
-    handleResize() {
+    handleResize () {
       const {
         width,
         height
@@ -41,15 +41,15 @@ export const onResize = {
 
 export const utils = {
   methods: {
-    jumpToDetail(type, index) {
+    jumpToDetail (type, index) {
       let url = `/ads_detail/?type=${type}`;
       if (type === 'active' || type === 'banner') {
         url += `&index=${index}`;
       };
-      this.$router.push(url)
+      this.$router.push(url);
     }
   }
-}
+};
 
 export const navLinkClick = {
   methods: {
@@ -65,4 +65,4 @@ export const navLinkClick = {
       return url.includes('http://');
     }
   }
-}
+};

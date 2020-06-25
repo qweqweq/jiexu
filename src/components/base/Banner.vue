@@ -29,11 +29,10 @@
       }
     },
     methods: {
-      handleJump() {
+      handleJump () {
         if (this.canJump) {
-          this.jumpToDetail('banner',this.query)
+          this.jumpToDetail('banner', this.query);
         }
-        return;
       }
     }
   };

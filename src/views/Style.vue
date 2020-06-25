@@ -5,7 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
-           :query="BANNER_KEY && BANNER_KEY.stylepage"
+          :query="BANNER_KEY && BANNER_KEY.stylepage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -114,7 +114,7 @@
 
 <script>
   import {
-    mapGetters, 
+    mapGetters,
     mapActions,
     mapState
   } from 'vuex';

@@ -64,7 +64,7 @@ export default new Vuex.Store({
     aboutPage: (state) => {
       return {
         bannerImg: state.banners.find(v => v.id === BANNER_KEY.aboutpage),
-        content: state.banners.find(v => v.id === '9'),
+        content: state.banners.find(v => v.id === '9')
       };
     },
     activePage: (state) => {
@@ -119,7 +119,7 @@ export default new Vuex.Store({
       return {
         bannerImg: state.banners.find(v => v.id === BANNER_KEY.adsdetailpage),
         actives: state.actives,
-        answerImg: state.banners.find(v => v.id === '13'),
+        answerImg: state.banners.find(v => v.id === '13')
       };
     }
   },
