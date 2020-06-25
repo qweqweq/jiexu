@@ -9,6 +9,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.schoolpage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -62,7 +63,7 @@
   </div>
 </template>
 <script>
-  import { mapGetters, mapActions } from 'vuex';
+  import { mapGetters, mapActions, mapState } from 'vuex';
   import { onResize } from '../mixin/mixin';
   export default {
     name: 'SchoolDetail',
@@ -77,6 +78,7 @@
       };
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['schoolDetails', 'schoolPage']),
       banner () {
         return this.schoolPage && this.schoolPage.bannerImg;

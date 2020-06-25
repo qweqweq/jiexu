@@ -3,8 +3,9 @@
     <background-img>
       <div class="normalHeader">
         <banner
-          v-if="banner.imgLink"
+          v-if="banner && banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.aboutpage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -29,7 +30,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import { mapGetters } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
   export default {
     name: 'About',
     components: {
@@ -38,6 +39,7 @@
     },
     mixins: [onResize],
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['aboutPage']),
       banner () {
         return this.aboutPage && this.aboutPage.bannerImg;

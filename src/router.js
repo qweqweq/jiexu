@@ -10,6 +10,7 @@ import Class from './views/Class.vue';
 import Schedule from './views/Schedule.vue';
 import About from './views/About.vue';
 import SchoolDetail from './views/SchoolDetail.vue';
+import AdsDetail from './views/AdsDetail.vue';
 import Page404 from './views/page404.vue';
 
 Vue.use(Router);
@@ -66,6 +67,11 @@ export default new Router({
             path: '/school_detail/:id',
             name: 'detail',
             component: SchoolDetail
+        },
+        {
+            path: '/ads_detail',
+            name: 'adsdetail',
+            component: AdsDetail
         }
 
     ]

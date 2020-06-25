@@ -132,6 +132,7 @@ export const getActives = () => {
         header
         desc
         subDesc
+        adsDetail
       }
     }`
   };
@@ -144,6 +145,7 @@ export const getBanners = () => {
       banners{
         id
         imgLink{url}
+        adsDetail
       }
     }`
   };

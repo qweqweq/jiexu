@@ -5,6 +5,7 @@
         <banner
           v-if="banner && banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.schedulepage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -115,7 +116,7 @@
 
 <script>
   import { onResize } from '../mixin/mixin';
-  import { mapGetters, mapActions } from 'vuex';
+  import { mapState, mapGetters, mapActions } from 'vuex';
   export default {
     name: 'Schedule',
     components: {
@@ -129,6 +130,7 @@
       };
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['schedulePage']),
       banner () {
         return this.schedulePage && this.schedulePage.bannerImg;

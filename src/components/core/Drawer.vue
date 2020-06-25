@@ -23,9 +23,10 @@
     mapGetters,
     mapMutations
   } from 'vuex';
-
+  import { navLinkClick } from '@/mixin/mixin.js';
   export default {
     name: 'CoreDrawer',
+    mixins: [ navLinkClick ],
     computed: {
       ...mapGetters(['links']),
       drawer: {
@@ -39,18 +40,6 @@
     },
     methods: {
       ...mapMutations(['setDrawer']),
-      onClick (e, item) {
-        e.stopPropagation();
-        if (this.isUrl(item.to)) {
-          window.open(item.to, '_blank');
-        } else {
-          this.$router.push(item.to);
-        }
-        this.setDrawer(false);
-      },
-      isUrl (url) {
-        return url.includes('http://');
-      }
     }
   };
 </script>

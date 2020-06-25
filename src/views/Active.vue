@@ -5,6 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.activepage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex';
+  import { mapGetters, mapState } from 'vuex';
   export default {
     name: 'Active',
     components: {
@@ -23,6 +24,7 @@
       MarketAds: () => import('@/components/base/MarketAds')
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['actives', 'activePage']),
       banner () {
         return this.activePage && this.activePage.bannerImg;

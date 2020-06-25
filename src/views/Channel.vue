@@ -5,6 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.channelpage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -114,7 +115,8 @@
 <script>
   import {
     mapGetters,
-    mapActions
+    mapActions,
+    mapState
   } from 'vuex';
   export default {
     name: 'Channel',
@@ -130,6 +132,7 @@
       };
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['channels', 'channelPage', 'actives']),
       banner () {
         return this.channelPage && this.channelPage.bannerImg;

@@ -15,11 +15,23 @@ import {
 } from '@/graphql/api.js';
 // import { schedules } from '@/data/mutable.js';
 import sortBy from 'lodash/sortBy';
-
+const BANNER_KEY = {
+  aboutpage: '2',
+  activepage: '1',
+  adsdetailpage: '4',
+  channelpage: '3',
+  classpage: '4',
+  homepage: '5',
+  projectpage: '6',
+  schedulepage: '4',
+  schoolpage: '7',
+  stylepage: '8'
+};
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    BANNER_KEY,
     schedules: [],
     drawer: false,
     channels: [],
@@ -51,29 +63,29 @@ export default new Vuex.Store({
     schoolDetails: (state) => state.schoolDetails,
     aboutPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '2'),
-        content: state.banners.find(v => v.id === '9')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.aboutpage),
+        content: state.banners.find(v => v.id === '9'),
       };
     },
     activePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '1')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.activepage)
       };
     },
     channelPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '3')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.channelpage)
       };
     },
     classPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '4'),
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.classpage),
         content: state.banners.find(v => v.id === '10')
       };
     },
     homePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '5'),
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.homepage),
         content: state.banners.find(v => v.id === '9'),
         activeImg: state.actives.filter(v => v.id === '1' || v.id === '2'),
         downloadImg: state.banners.filter(v => v.id === '11' || v.id === '12'),
@@ -84,23 +96,30 @@ export default new Vuex.Store({
     },
     projectPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '6')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.projectpage)
       };
     },
     schoolPage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '7')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.schoolpage)
       };
     },
     stylePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '8')
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.stylepage)
       };
     },
     schedulePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === '4'),
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.schedules),
         schedules: state.schedules
+      };
+    },
+    adsDetailPage: (state) => {
+      return {
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.adsdetailpage),
+        actives: state.actives,
+        answerImg: state.banners.find(v => v.id === '13'),
       };
     }
   },

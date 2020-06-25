@@ -4,6 +4,7 @@
       <banner
         v-if="banner.imgLink"
         :src="banner.imgLink"
+        :query="BANNER_KEY && BANNER_KEY.homepage"
       />
     </articles>
     <v-container>
@@ -55,6 +56,7 @@
               v-for="(item, index) in active"
               :key="index"
               style="display: flex; flex-direction:row; margin-top: 5px;"
+              @click="jumpToDetail('active', index)"
             >
               <v-img
                 v-if="item.imgUrl"
@@ -74,6 +76,7 @@
           width="33%"
           flat
           style="min-width: 300px;"
+          @click="jumpToDetail('answer')"
         >
           <v-card-text class="project_name">
             MBA之问答
@@ -84,7 +87,7 @@
             width="100%"
             height="250px"
           />
-          <v-card-text>每年研究生考试，目前阶段最关键的是考试网上报名（10月10日-10月31日），错过网报意味着不能参加11月份现场（在线）确认，也就不能参加12月22日的全国研究生统一考试。</v-card-text>
+          <v-card-text v-html="answer.adsDetail" />
         </v-card>
         <v-card
           width="33%"
@@ -303,8 +306,8 @@
 </template>
 
 <script>
-  import { onResize } from '../mixin/mixin';
-  import { mapGetters, mapActions } from 'vuex';
+  import { mapState, mapGetters, mapActions } from 'vuex';
+  import { onResize, utils } from '@/mixin/mixin.js';
   export default {
     name: 'Home',
     components: {
@@ -314,13 +317,14 @@
       SchoolCard: () => import('@/components/base/SchoolCard'),
       FormModal: () => import('@/components/base/FormModal')
     },
-    mixins: [onResize],
+    mixins: [onResize, utils],
     data () {
       return {
         dialog: false
       };
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['schools', 'homeProjects', 'homePage', 'actives']),
       schoolCards: function () {
         return this.schools.slice(0, 3);

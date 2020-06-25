@@ -16,6 +16,7 @@
           class="pa-2"
           outlined
           tile
+          @click="jumpToDetail('active', i)"
         >
           <v-card-text style="font-size: 18px;font-weight: bold;">
             {{ item.title }}
@@ -33,8 +34,10 @@
 </template>
 
 <script>
+  import { utils } from '@/mixin/mixin.js';
   export default {
     name: 'MarketAds',
+    mixins: [utils],
     props: {
       actives: {
         type: Array,

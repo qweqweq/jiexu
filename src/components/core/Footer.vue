@@ -140,8 +140,10 @@
 </template>
 
 <script>
+  import { navLinkClick } from '@/mixin/mixin.js';
   export default {
     name: 'CoreFooter',
+    mixins: [ navLinkClick ],
     props: {
       items: {
         type: Array,
@@ -164,21 +166,10 @@
       backtoTop () {
         window.scrollTo(0, 0);
       },
-      onClick (e, item) {
-        if (this.isUrl(item.to)) {
-          window.open(item.to, '_blank');
-        } else {
-          this.$router.push(item.to);
-        }
-      },
       iconClick () {
         this.$router.push('/');
-      },
-      isUrl (url) {
-        return url.includes('http://');
       }
     }
-
   };
 </script>
 <style lang="less">

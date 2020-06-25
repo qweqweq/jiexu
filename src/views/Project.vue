@@ -9,6 +9,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.projectpage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -73,7 +74,8 @@
 <script>
   import {
     mapGetters,
-    mapActions
+    mapActions,
+    mapState
   } from 'vuex';
   export default {
     name: 'Project',
@@ -82,6 +84,7 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['projects', 'projectPage']),
       banner () {
         return this.projectPage && this.projectPage.bannerImg;

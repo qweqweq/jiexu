@@ -5,6 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.schoolpage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -18,7 +19,8 @@
 <script>
   import {
     mapGetters,
-    mapActions
+    mapActions,
+    mapState
   } from 'vuex';
   export default {
     name: 'School',
@@ -28,6 +30,7 @@
       SchoolCard: () => import('@/components/base/SchoolCard')
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['schools', 'schoolPage']),
       banner () {
         return this.schoolPage && this.schoolPage.bannerImg;

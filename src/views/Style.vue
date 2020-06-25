@@ -5,6 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
+           :query="BANNER_KEY && BANNER_KEY.stylepage"
         />
         <!-- <div class="nhCover" /> -->
       </div>
@@ -113,7 +114,9 @@
 
 <script>
   import {
-    mapGetters, mapActions
+    mapGetters, 
+    mapActions,
+    mapState
   } from 'vuex';
   export default {
     name: 'Style',
@@ -122,6 +125,7 @@
       BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     computed: {
+      ...mapState(['BANNER_KEY']),
       ...mapGetters(['teachers', 'stylePage']),
       banner () {
         return this.stylePage && this.stylePage.bannerImg;

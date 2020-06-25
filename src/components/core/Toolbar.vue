@@ -43,26 +43,18 @@
     mapGetters,
     mapMutations
   } from 'vuex';
-
+  import { navLinkClick } from '@/mixin/mixin.js';
   export default {
+    name: 'tool-bar',
+    mixins: [ navLinkClick ],
     computed: {
       ...mapGetters(['links'])
     },
     methods: {
       ...mapMutations(['toggleDrawer']),
-      onClick (e, item) {
-        if (this.isUrl(item.to)) {
-          window.open(item.to, '_blank');
-        } else {
-          this.$router.push(item.to);
-        }
-      },
       iconClcik () {
         this.$router.push('/');
       },
-      isUrl (url) {
-        return url.includes('http://');
-      }
     }
   };
 </script>
