@@ -111,7 +111,7 @@ export default new Vuex.Store({
     },
     schedulePage: (state) => {
       return {
-        bannerImg: state.banners.find(v => v.id === BANNER_KEY.schedules),
+        bannerImg: state.banners.find(v => v.id === BANNER_KEY.schedulepage),
         schedules: state.schedules
       };
     },
