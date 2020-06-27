@@ -18,41 +18,41 @@
               style="padding: 0px 5%;"
             >
               <v-text-field
+                v-model="name"
                 label="姓名*"
                 solo
-                v-model="name"
                 :rules="[rules.required]"
               />
               <v-text-field
+                v-model="phone"
                 label="手机号*"
                 solo
-                v-model="phone"
                 :rules="[rules.required, rules.isPhoneNum]"
               />
               <v-text-field
+                v-model="profession"
                 label="报考专业"
                 solo
-                v-model="profession"
               />
               <v-text-field
+                v-model="industry"
                 label="所在行业"
                 solo
-                v-model="industry"
               />
               <v-text-field
+                v-model="company_size"
                 label="公司规模"
                 solo
-                v-model="company_size"
               />
               <v-text-field
+                v-model="company_position"
                 label="公司职位"
                 solo
-                v-model="company_position"
               />
               <v-text-field
+                v-model="graduated_school"
                 label="毕业院校"
                 solo
-                v-model="graduated_school"
               />
             </v-layout>
           </v-container>
@@ -82,18 +82,13 @@
 </template>
 <script>
   import { postClients } from '@/graphql/api.js';
-  import isEmpty from  'lodash/isEmpty';
+  import isEmpty from 'lodash/isEmpty';
   export default {
     name: 'FormModal',
     props: {
       show: {
         type: Boolean,
         default: false
-      }
-    },
-    watch: {
-      show(newVal, oldVal) {
-        if (newVal !== oldVal) this.visible = !this.visible;
       }
     },
     data () {
@@ -113,11 +108,16 @@
         formData: {}
       };
     },
+    watch: {
+      show (newVal, oldVal) {
+        if (newVal !== oldVal) this.visible = !this.visible;
+      }
+    },
     methods: {
       changeStatus () {
         this.$emit('showModal', false);
       },
-      sendInfos() {
+      sendInfos () {
         this.formData = {
           name: this.name,
           phone: this.phone,
@@ -132,22 +132,22 @@
           return;
         }
         postClients(this.formData)
-        .then(res => {
-          this.resetFormData();
-          this.changeStatus();
-        })
-        .catch(e => {
-          throw new Error(e)
-        })
+          .then(res => {
+            this.resetFormData();
+            this.changeStatus();
+          })
+          .catch(e => {
+            throw new Error(e);
+          });
       },
-      resetFormData() {
+      resetFormData () {
         this.name = null;
         this.phone = null;
         this.profession = null;
         this.industry = null;
         this.company_size = null;
         this.company_position = null;
-        this.graduated_school =null
+        this.graduated_school = null;
         this.formData = {};
       }
     }

@@ -173,4 +173,4 @@ export const getSchedules = () => {
 
 export const postClients = (data) => {
   return request.post('clients', data);
-}
+};
