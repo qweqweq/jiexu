@@ -27,11 +27,48 @@
       >
       <v-card-text v-html="pageData.desc" />
       <v-card-text v-html="pageData.detail" />
+       <v-form>
+          <v-container>
+            <v-layout
+              column
+              style="padding: 0px 5%;"
+            >
+              <v-text-field
+                style="width: 300px;"
+                label="姓名*"
+                solo
+                v-model="name"
+                :rules="[rules.required]"
+              />
+              <v-text-field
+                style="width: 300px;"
+                label="手机号*"
+                solo
+                v-model="phone"
+                :rules="[rules.required, rules.isPhoneNum]"
+              />
+              <v-text-field
+                style="width: 300px;"
+                label="报考专业"
+                solo
+                v-model="profession"
+              />
+              <v-btn
+                color="info"
+                @click="sendInfos"
+              >
+                提交
+              </v-btn>
+            </v-layout>
+          </v-container>
+        </v-form>
     </v-layout>
   </div>
 </template>
 
 <script>
+  import { postClients } from '@/graphql/api.js';
+  import isEmpty from  'lodash/isEmpty';
   import { onResize } from '../mixin/mixin';
   import { mapGetters, mapState } from 'vuex';
   export default {
@@ -47,7 +84,15 @@
           imgUrl: '',
           detail: '',
           desc: ''
-        }
+        },
+        rules: {
+          required: value => !!value || '必填项哦',
+          isPhoneNum: value => !!/^1(3|4|5|6|7|8|9)\d{9}$/.test(value) || '请输入正确的手机号哦'
+        },
+        name: null,
+        phone: null,
+        profession: null,
+        formData: {},
       };
     },
     watch: {
@@ -96,6 +141,25 @@
           desc,
           detail
         };
+      },
+      sendInfos() {
+        this.formData = {
+          name: this.name,
+          phone: this.phone,
+          profession: this.profession,
+        };
+        if (isEmpty(this.formData)) return;
+        postClients(this.formData)
+        .then(res => this.resetFormData())
+        .catch(e => {
+          throw new Error(e)
+        })
+      },
+      resetFormData() {
+        this.name = null;
+        this.phone = null;
+        this.profession = null;
+        this.formData = {};
       }
     }
   };

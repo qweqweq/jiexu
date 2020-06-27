@@ -10,7 +10,7 @@ export const getHomePage = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getChannels = () => {
@@ -26,7 +26,7 @@ export const getChannels = () => {
             }
           }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getProjects = () => {
@@ -53,7 +53,7 @@ export const getProjects = () => {
           }
         `
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getLinks = () => {
@@ -68,7 +68,7 @@ export const getLinks = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getTeachers = () => {
@@ -83,7 +83,7 @@ export const getTeachers = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getSchools = () => {
@@ -99,7 +99,7 @@ export const getSchools = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getSchoolDetails = () => {
@@ -119,7 +119,7 @@ export const getSchoolDetails = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getActives = () => {
@@ -136,7 +136,7 @@ export const getActives = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getBanners = () => {
@@ -149,7 +149,7 @@ export const getBanners = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
 
 export const getSchedules = () => {
@@ -168,5 +168,9 @@ export const getSchedules = () => {
       }
     }`
   };
-  return request(data);
+  return request.get(data);
 };
+
+export const postClients = (data) => {
+  return request.post('clients', data);
+}
