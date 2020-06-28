@@ -49,7 +49,7 @@
           style="padding: 5px; min-width: 300px;"
         >
           <v-card-text class="project_name">
-            杰旭日新闻
+            杰旭新闻
           </v-card-text>
           <v-flex style="display: flex; flex-direction:column; align-items:center;">
             <div
