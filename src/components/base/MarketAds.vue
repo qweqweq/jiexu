@@ -25,7 +25,7 @@
           <v-card-text style="color: #0d3084;font-size: 14px;font-weight: bold;">
             {{ item.header }}
           </v-card-text>
-          <v-card-text>{{ item.desc }}</v-card-text>
+          <v-card-text v-html="item.desc" />
         </v-card>
       </v-flex>
     </v-layout>

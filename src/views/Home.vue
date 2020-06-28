@@ -66,9 +66,8 @@
               />
               <v-card-text
                 style="padding-top: 0px;"
-              >
-                {{ item.subDesc }}
-              </v-card-text>
+                v-html="item.subDesc"
+              />
             </div>
           </v-flex>
         </v-card>

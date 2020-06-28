@@ -20,8 +20,8 @@
       <img
         v-if="pageData.imgUrl"
         :src="pageData.imgUrl"
-        height="50%"
-        width="50%"
+        height="90%"
+        width="90%"
         contain
         :aspect-ratio="aspectRatio"
       >
