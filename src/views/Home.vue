@@ -1,12 +1,12 @@
 <template>
   <div id="home">
-    <articles>
+    <background-img>
       <banner
         v-if="banner.imgLink"
         :src="banner.imgLink"
         :query="BANNER_KEY && BANNER_KEY.home_ads"
       />
-    </articles>
+    </background-img>
     <v-container>
       <v-flex
         row
@@ -310,7 +310,6 @@
   export default {
     name: 'Home',
     components: {
-      Articles: () => import('@/components/home/Articles'),
       Banner: () => import('@/components/base/Banner'),
       MarketAds: () => import('@/components/base/MarketAds'),
       SchoolCard: () => import('@/components/base/SchoolCard'),

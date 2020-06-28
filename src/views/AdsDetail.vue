@@ -1,15 +1,13 @@
 <template>
   <div id="adsDetail">
-    <background-img>
-      <div class="normalHeader">
-        <banner
-          v-if="banner && banner.imgLink"
-          :src="banner.imgLink"
-          :can-jump="false"
-        />
-        <!-- <div class="nhCover" /> -->
-      </div>
-    </background-img>
+    <div class="normalHeader">
+      <banner
+        v-if="banner && banner.imgLink"
+        :src="banner.imgLink"
+        :can-jump="false"
+      />
+      <!-- <div class="nhCover" /> -->
+    </div>
     <v-layout
       class="normalContainer"
       flex
@@ -17,14 +15,16 @@
       justify-center
       style="flex-direction: column;"
     >
-      <img
-        v-if="pageData.imgUrl"
-        :src="pageData.imgUrl"
-        height="90%"
-        width="90%"
-        contain
-        :aspect-ratio="aspectRatio"
-      >
+      <div class="container grid-list-xl">
+        <img
+          v-if="pageData.imgUrl"
+          :src="pageData.imgUrl"
+          width="100%"
+          height="100%"
+          contain
+          :aspect-ratio="aspectRatio"
+        >
+      </div>
       <v-card-text
         style="text-align: center"
         v-html="pageData.desc"
@@ -80,8 +80,8 @@
   export default {
     name: 'AdsDetail',
     components: {
-      Banner: () => import('@/components/base/Banner'),
-      BackgroundImg: () => import('@/components/base/BackgroundImg')
+      Banner: () => import('@/components/base/Banner')
+      // BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     mixins: [onResize],
     data () {
