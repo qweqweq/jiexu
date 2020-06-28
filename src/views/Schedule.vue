@@ -33,6 +33,7 @@
           v-for="(item, i) in schedules"
           :key="i"
           :href="`#tab-${i}`"
+          @click="tabItemClick"
         >
           {{ item.title }}
         </v-tab>
@@ -145,6 +146,9 @@
     },
     methods: {
       ...mapActions(['fetchSchedules']),
+      tabItemClick () {
+        this.activeIndex = 0;
+      },
       listItemClick (index) {
         this.activeIndex = index;
       },
