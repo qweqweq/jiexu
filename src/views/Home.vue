@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <background-img>
-      <div class="normalHeader">
+      <div class="container grid-list-xl">
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
