@@ -127,7 +127,7 @@ export default new Vuex.Store({
     adsDetailPage: (state) => {
       return {
         bannerImg: state.banners.find(v => v.id === BANNER_KEY.adsdetailpage),
-        actives: state.banners.filter(v => ['16','17','18'].includes(v.id)),
+        actives: state.banners.filter(v => ['16', '17', '18'].includes(v.id)),
         answerImg: state.banners.find(v => v.id === '19')
       };
     }
