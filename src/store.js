@@ -18,14 +18,23 @@ import sortBy from 'lodash/sortBy';
 const BANNER_KEY = {
   aboutpage: '2',
   activepage: '1',
-  adsdetailpage: '4',
+  adsdetailpage: '28',
   channelpage: '3',
   classpage: '4',
   homepage: '5',
   projectpage: '6',
-  schedulepage: '4',
+  schedulepage: '29',
   schoolpage: '7',
-  stylepage: '8'
+  stylepage: '8',
+  home_ads: '15',
+  active_ads: '20',
+  channel_ads: '21',
+  college_ads: '22',
+  famous_ads: '23',
+  class_ads: '24',
+  schedule_ads: '25',
+  about_ads: '26',
+  project_ads: '27'
 };
 Vue.use(Vuex);
 
@@ -118,8 +127,8 @@ export default new Vuex.Store({
     adsDetailPage: (state) => {
       return {
         bannerImg: state.banners.find(v => v.id === BANNER_KEY.adsdetailpage),
-        actives: state.actives,
-        answerImg: state.banners.find(v => v.id === '13')
+        actives: state.banners.filter(v => ['16','17','18'].includes(v.id)),
+        answerImg: state.banners.find(v => v.id === '19')
       };
     }
   },

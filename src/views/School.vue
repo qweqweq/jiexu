@@ -3,9 +3,9 @@
     <background-img>
       <div class="normalHeader">
         <banner
-          v-if="banner.imgLink"
+          v-if="banner && banner.imgLink"
           :src="banner.imgLink"
-          :query="BANNER_KEY && BANNER_KEY.schoolpage"
+          :query="BANNER_KEY && BANNER_KEY.college_ads"
         />
         <!-- <div class="nhCover" /> -->
       </div>

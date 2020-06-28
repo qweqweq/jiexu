@@ -25,8 +25,8 @@
         contain
         :aspect-ratio="aspectRatio"
       >
-      <v-card-text v-html="pageData.desc" />
-      <v-card-text v-html="pageData.detail" />
+      <v-card-text style="text-align: center" v-html="pageData.desc" />
+      <v-card-text style="text-align: center;" v-html="pageData.detail" />
       <v-form>
         <v-container>
           <v-layout
@@ -123,8 +123,8 @@
         const { index = 0, type } = this.$route.query || {};
         let imgUrl = ''; let desc = ''; let detail = '';
         if (type === 'active' && this.actives[index]) {
-          imgUrl = this.actives[index].imgUrl;
-          desc = this.actives[index].desc;
+          debugger
+          imgUrl = this.actives[index].imgLink;
           detail = this.actives[index].adsDetail;
         }
         if (type === 'answer') {

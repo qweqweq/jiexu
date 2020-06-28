@@ -5,7 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
-          :query="BANNER_KEY && BANNER_KEY.activepage"
+          :query="BANNER_KEY && BANNER_KEY.active_ads"
         />
         <!-- <div class="nhCover" /> -->
       </div>

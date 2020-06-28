@@ -5,7 +5,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
-          :query="BANNER_KEY && BANNER_KEY.channelpage"
+          :query="BANNER_KEY && BANNER_KEY.channel_ads"
         />
         <!-- <div class="nhCover" /> -->
       </div>

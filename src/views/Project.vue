@@ -9,7 +9,7 @@
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
-          :query="BANNER_KEY && BANNER_KEY.projectpage"
+          :query="BANNER_KEY && BANNER_KEY.project_ads"
         />
         <!-- <div class="nhCover" /> -->
       </div>

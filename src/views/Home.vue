@@ -4,7 +4,7 @@
       <banner
         v-if="banner.imgLink"
         :src="banner.imgLink"
-        :query="BANNER_KEY && BANNER_KEY.homepage"
+        :query="BANNER_KEY && BANNER_KEY.home_ads"
       />
     </articles>
     <v-container>
