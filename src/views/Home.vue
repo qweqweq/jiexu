@@ -1,11 +1,13 @@
 <template>
   <div id="home">
     <background-img>
-      <banner
-        v-if="banner.imgLink"
-        :src="banner.imgLink"
-        :query="BANNER_KEY && BANNER_KEY.home_ads"
-      />
+      <div class="normalHeader">
+        <banner
+          v-if="banner.imgLink"
+          :src="banner.imgLink"
+          :query="BANNER_KEY && BANNER_KEY.home_ads"
+        />
+      </div>
     </background-img>
     <v-container>
       <v-flex
@@ -367,6 +369,20 @@
   };
 </script>
 <style lang="less">
+.normalHeader{
+  position: relative;
+  width: 100%;
+  & .nhCover{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #0d3080;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+  }
+}
 .url_text {
   font-size: 16px;
   font-weight: bold;
