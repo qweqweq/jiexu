@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background: #fff">
+  <v-app style="background: #fff; padding-top: 25px;">
     <core-toolbar />
     <core-drawer />
     <core-view />

@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <background-img>
-      <div class="container grid-list-xl">
+      <div class="normalHeader">
         <banner
           v-if="banner.imgLink"
           :src="banner.imgLink"
@@ -315,7 +315,8 @@
       Banner: () => import('@/components/base/Banner'),
       MarketAds: () => import('@/components/base/MarketAds'),
       SchoolCard: () => import('@/components/base/SchoolCard'),
-      FormModal: () => import('@/components/base/FormModal')
+      FormModal: () => import('@/components/base/FormModal'),
+      BackgroundImg: () => import('@/components/base/BackgroundImg')
     },
     mixins: [onResize, utils],
     data () {

@@ -3,6 +3,7 @@
     app
     flat
     color="#1867c0"
+    absolute
   >
     <view-headline
       class="hidden-md-and-up white--text font-22"
