@@ -33,8 +33,8 @@
         style="text-align: left;padding-left: 15%;padding-right: 15%;"
         v-html="pageData.detail"
       />
-      <div style="display: flex; ">
-        <v-card color="#ccc">
+      <div class="container grid-list-xl order_box">
+        <v-card style="flex: 1; padding: 20px;">
           <v-container style="display: flex;">
             <v-layout
               column
@@ -42,27 +42,24 @@
             >
               <v-text-field
                 v-model="name"
-                style="width: 300px;"
                 label="姓名*"
                 solo
                 :rules="[rules.required]"
               />
               <v-text-field
                 v-model="phone"
-                style="width: 300px;"
                 label="手机号*"
                 solo
                 :rules="[rules.required, rules.isPhoneNum]"
               />
               <v-text-field
                 v-model="profession"
-                style="width: 300px;"
                 label="报考专业"
                 solo
               />
               <v-btn
                 color="info"
-                style="width: 300px;margin:0px;"
+                style="margin:0px;"
                 @click="sendInfos"
               >
                 提交
@@ -70,13 +67,19 @@
             </v-layout>
           </v-container>
         </v-card>
-       <v-spacer></v-spacer>
-        <v-card color="#ccc" style="display: flex; align-items: center;">
-         <v-layout column>
-            <account-question class="icon-style"></account-question>
-            <v-card-text style="text-align: center;">在线客服</v-card-text>
-            <v-btn color="info" @click="jumpToChat">立即咨询</v-btn>
-        </v-layout>
+        <v-card style="display: flex; align-items: center; min-width: 200px; padding: 49px;">
+          <v-layout column>
+            <account-question class="icon-style" />
+            <v-card-text style="text-align: center;">
+              在线客服
+            </v-card-text>
+            <v-btn
+              color="info"
+              @click="jumpToChat"
+            >
+              立即咨询
+            </v-btn>
+          </v-layout>
         </v-card>
       </div>
     </v-layout>
@@ -177,8 +180,8 @@
         this.profession = null;
         this.formData = {};
       },
-      jumpToChat() {
-        window.open('https://ww25.53kf.com/webCompany.php?kf_sign=zQ0MDMTU5McwMTExNDg1Njg1ODIyMDA3NzIyMjYxODA=&arg=10226180&style=1&language=zh-cn&charset=GBK&kflist=off&kf=&zdkf_type=1&lnk_overflow=0&callback_id6ds=&referer=http%3A%2F%2Flocalhost%3A8080%2F%23%2F&keyword=http%3A%2F%2Flocalhost%3A8080%2F&tfrom=1&tpl=crystal_blue&uid=7e2e9821a2f132feae838586058a167b&is_group=&is_group=&timeStamp=1593441628642&ucust_id=', '_blank')
+      jumpToChat () {
+        window.open('https://ww25.53kf.com/webCompany.php?kf_sign=zQ0MDMTU5McwMTExNDg1Njg1ODIyMDA3NzIyMjYxODA=&arg=10226180&style=1&language=zh-cn&charset=GBK&kflist=off&kf=&zdkf_type=1&lnk_overflow=0&callback_id6ds=&referer=http%3A%2F%2Flocalhost%3A8080%2F%23%2F&keyword=http%3A%2F%2Flocalhost%3A8080%2F&tfrom=1&tpl=crystal_blue&uid=7e2e9821a2f132feae838586058a167b&is_group=&is_group=&timeStamp=1593441628642&ucust_id=', '_blank');
       }
     }
   };
@@ -201,5 +204,9 @@
 .icon-style{
   color: #2196f3e0;
   font-size: 42px;;
+}
+.order_box{
+  display: flex;
+  justify-content: center;
 }
 </style>
