@@ -102,7 +102,7 @@
             v-for="(item, index) in download"
             :key="index"
             style="display: flex; flex-direction: column; align-items: center;"
-            @click="dialog = true"
+            @click="handleClick(index + 1)"
           >
             <v-card-text style="padding-top:0px;text-align: center;">
               下载{{ index + 1 }}
@@ -300,6 +300,7 @@
       </v-card-text>
       <form-modal
         :show="dialog"
+        :clickIndex="clickIndex"
         @showModal="showModal"
       />
     </v-container>
@@ -321,7 +322,8 @@
     mixins: [onResize, utils],
     data () {
       return {
-        dialog: false
+        dialog: false,
+        clickIndex: 0,
       };
     },
     computed: {
@@ -365,6 +367,10 @@
       },
       showModal (data) {
         this.dialog = data;
+      },
+      handleClick(index) {
+        this.dialog = true;
+        this.clickIndex = index;
       }
     }
   };

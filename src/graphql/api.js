@@ -132,7 +132,6 @@ export const getActives = () => {
         header
         desc
         subDesc
-        adsDetail
       }
     }`
   };
@@ -174,3 +173,19 @@ export const getSchedules = () => {
 export const postClients = (data) => {
   return request.post('clients', data);
 };
+
+export const downloadFiles = () => {
+  let data = {
+    query: `query{
+      mbaFiles {
+        index
+        type
+        linkUrl {
+          url
+          name
+        }
+      }
+    }`
+  }
+  return request.get(data);
+}

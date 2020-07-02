@@ -81,14 +81,18 @@
   </v-layout>
 </template>
 <script>
-  import { postClients } from '@/graphql/api.js';
+  import { postClients, downloadFiles } from '@/graphql/api.js';
   import isEmpty from 'lodash/isEmpty';
+  import HOST from '@/graphql/env.js';
   export default {
     name: 'FormModal',
     props: {
       show: {
         type: Boolean,
         default: false
+      },
+      clickIndex: {
+        type: Number
       }
     },
     data () {
@@ -114,8 +118,16 @@
       }
     },
     methods: {
-      changeStatus () {
+      async changeStatus (confirm) {
         this.$emit('showModal', false);
+        if (confirm) {
+          const { mbaFiles = [] } = await downloadFiles() || {};
+          if (!isEmpty(mbaFiles)) {
+            let result = mbaFiles.find(v => v.index === this.clickIndex);
+            result.linkUrl && result.linkUrl.url &&
+            window.open(HOST + result.linkUrl.url, '_blank');
+          }
+        }
       },
       sendInfos () {
         this.formData = {
@@ -134,7 +146,7 @@
         postClients(this.formData)
           .then(res => {
             this.resetFormData();
-            this.changeStatus();
+            this.changeStatus(true);
           })
           .catch(e => {
             throw new Error(e);
