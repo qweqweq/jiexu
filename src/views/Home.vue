@@ -300,7 +300,7 @@
       </v-card-text>
       <form-modal
         :show="dialog"
-        :clickIndex="clickIndex"
+        :click-index="clickIndex"
         @showModal="showModal"
       />
     </v-container>
@@ -323,7 +323,7 @@
     data () {
       return {
         dialog: false,
-        clickIndex: 0,
+        clickIndex: 0
       };
     },
     computed: {
@@ -368,7 +368,7 @@
       showModal (data) {
         this.dialog = data;
       },
-      handleClick(index) {
+      handleClick (index) {
         this.dialog = true;
         this.clickIndex = index;
       }

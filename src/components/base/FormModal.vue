@@ -125,7 +125,7 @@
           if (!isEmpty(mbaFiles)) {
             let result = mbaFiles.find(v => v.index === this.clickIndex);
             result.linkUrl && result.linkUrl.url &&
-            window.open(HOST + result.linkUrl.url, '_blank');
+              window.open(HOST + result.linkUrl.url, '_blank');
           }
         }
       },

@@ -186,6 +186,6 @@ export const downloadFiles = () => {
         }
       }
     }`
-  }
+  };
   return request.get(data);
-}
+};
