@@ -2,31 +2,48 @@
   <v-app style="background: #fff;">
     <div class="header_tool_box">
       <div class="header_title">
-        <img :src="require('@/assets/logo.png')" style="width:65px;"/>
+        <img
+          :src="require('@/assets/logo.png')"
+          style="width:65px;"
+        >
         <div style="display: flex; align-items: center;">
           <div class="icon_box">
             <a href="https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Ffriends%3Fleftnav%3D1%26wvr%3D6%26isfriends%3D1%26step%3D2%26sudaref%3Dschool.jiexuedu.com%26display%3D0%26retcode%3D6102&domain=.weibo.com&ua=php-sso_sdk_client-0.6.36&_rand=1593829533.6143">
-              <sina-weibo  class="icon_font_size" />
+              <sina-weibo class="icon_font_size" />
             </a>
           </div>
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <div class="icon_box wechat_icon">
-                <we-chat v-on="on" dark class="icon_font_size" />
+                <we-chat
+                  dark
+                  class="icon_font_size"
+                  v-on="on"
+                />
               </div>
             </template>
             <span v-if="popOverImage">
-             <img :src="popOverImage" style="width: 120px;height: 120px;" />
+              <img
+                :src="popOverImage"
+                style="width: 120px;height: 120px;"
+              >
             </span>
           </v-tooltip>
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <div class="icon_box apple_icon">
-                <apple v-on="on" dark class="icon_font_size" />
+                <apple
+                  dark
+                  class="icon_font_size"
+                  v-on="on"
+                />
               </div>
             </template>
             <span>
-             <img :src="require('@/assets/apple.png')" style="width: 120px;height: 120px;" />
+              <img
+                :src="require('@/assets/apple.png')"
+                style="width: 120px;height: 120px;"
+              >
             </span>
           </v-tooltip>
         </div>
@@ -57,9 +74,9 @@
     computed: {
       ...mapState(['wxImgs']),
       ...mapGetters(['links']),
-      popOverImage() {
+      popOverImage () {
         return this.wxImgs[1] && this.wxImgs[1].icon;
-      },
+      }
 
     },
     mounted () {
@@ -103,7 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 64px; 
+    height: 64px;
   }
   .icon_font_size {
     font-size: 28px;
