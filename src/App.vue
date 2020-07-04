@@ -3,15 +3,10 @@
     <div class="header_tool_box">
       <div class="header_title">
         <img
-          :src="require('@/assets/logo.png')"
-          style="width:65px;"
+          :src="require('@/assets/logo_blue.png')"
+          style="width:120px;"
         >
         <div style="display: flex; align-items: center;">
-          <div class="icon_box">
-            <a href="https://passport.weibo.com/visitor/visitor?entry=miniblog&a=enter&url=https%3A%2F%2Fweibo.com%2Ffriends%3Fleftnav%3D1%26wvr%3D6%26isfriends%3D1%26step%3D2%26sudaref%3Dschool.jiexuedu.com%26display%3D0%26retcode%3D6102&domain=.weibo.com&ua=php-sso_sdk_client-0.6.36&_rand=1593829533.6143">
-              <sina-weibo class="icon_font_size" />
-            </a>
-          </div>
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
               <div class="icon_box wechat_icon">
@@ -29,23 +24,26 @@
               >
             </span>
           </v-tooltip>
-          <v-tooltip bottom>
-            <template v-slot:activator="{ on }">
-              <div class="icon_box apple_icon">
-                <apple
-                  dark
-                  class="icon_font_size"
-                  v-on="on"
-                />
-              </div>
-            </template>
-            <span>
+          <div
+            class="icon_box"
+            style="background: #fff; border-color: #fff;"
+          >
+            <a href="https://zhuanlan.zhihu.com/c_1221388396922466304">
               <img
-                :src="require('@/assets/apple.png')"
-                style="width: 120px;height: 120px;"
+                :src="require('@/assets/zhihu.png')"
+                style="width:44px; height:44px; margin-left: 0px;"
+                class="icon_font_size"
               >
-            </span>
-          </v-tooltip>
+            </a>
+          </div>
+          <div
+            class="icon_box"
+            style="margin-top: 5px;margin-left: 5px;"
+          >
+            <a href="https://weibo.com/p/1006066618230866/home?from=page_100606&mod=TAB&is_all=1#place">
+              <sina-weibo class="icon_font_size" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -113,14 +111,14 @@
     height: 64px;
     position: absolute;
     width: 100%;
-    background: #82aeff;
     line-height: 64px;
   }
   .header_title {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 64px;
+    padding: 0 10%;
   }
   .icon_font_size {
     font-size: 28px;
@@ -139,6 +137,7 @@
   .wechat_icon {
     border-color: #1ec354;
     background: #1ec354;
+    margin-top: 5px;
   }
   .icon_box .icon_font_size {
     margin-bottom: 8px;
