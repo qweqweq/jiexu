@@ -63,7 +63,7 @@
             color="white"
             style="background: gray;"
             flat="flat"
-            @click="changeStatus"
+            @click="changeStatus(false)"
           >
             取消
           </v-btn>
