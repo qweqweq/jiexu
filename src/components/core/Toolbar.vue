@@ -4,6 +4,7 @@
     flat
     color="#1867c0"
     absolute
+    style="margin-top: 64px;"
   >
     <view-headline
       class="hidden-md-and-up white--text font-22"
@@ -14,7 +15,7 @@
       py-0
     >
       <v-layout>
-        <v-img
+        <!-- <v-img
           :src="require('@/assets/logo.png')"
           class="mr-5"
           contain
@@ -22,7 +23,7 @@
           width="48"
           max-width="48"
           @click="iconClcik"
-        />
+        /> -->
         <v-btn
           v-for="(link, i) in links"
           :key="i"
