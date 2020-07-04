@@ -140,8 +140,8 @@
           company_position: this.company_position,
           graduated_school: this.graduated_school
         };
-        if (isEmpty(this.formData)) {
-          this.changeStatus();
+        if (!this.name || !this.phone) {
+          alert(`请输入姓名和电话哦～`);
           return;
         }
         postClients(this.formData)

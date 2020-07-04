@@ -41,7 +41,7 @@
             style="margin-top: 5px;margin-left: 5px;"
           >
             <a href="https://weibo.com/p/1006066618230866/home?from=page_100606&mod=TAB&is_all=1#place">
-              <sina-weibo class="icon_font_size" />
+              <sina-weibo class="icon_font_size weibo_icon" />
             </a>
           </div>
         </div>
@@ -148,5 +148,8 @@
   }
   .wechat_icon .icon_font_size {
     margin-bottom: 5px;
+  }
+  .weibo_icon {
+    color: #fff;
   }
   </style>
