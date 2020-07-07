@@ -14,7 +14,7 @@
       mx-auto
       py-0
     >
-      <v-layout>
+      <v-layout justify-center>
         <!-- <v-img
           :src="require('@/assets/logo.png')"
           class="mr-5"
