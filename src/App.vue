@@ -5,6 +5,7 @@
         <img
           :src="require('@/assets/logo_blue.png')"
           style="width:120px;"
+          @click="iconClcik"
         >
         <div style="display: flex; align-items: center;">
           <v-tooltip bottom>
@@ -83,7 +84,10 @@
       this.fetchActives();
     },
     methods: {
-      ...mapActions(['fetchLinks', 'fetchBanners', 'fetchActives'])
+      ...mapActions(['fetchLinks', 'fetchBanners', 'fetchActives']),
+      iconClcik () {
+        this.$router.push('/');
+      }
     }
   };
 </script>
@@ -109,7 +113,6 @@
   }
   .header_tool_box {
     height: 64px;
-    position: absolute;
     width: 100%;
     line-height: 64px;
   }

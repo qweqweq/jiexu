@@ -4,7 +4,7 @@
     flat
     color="#1867c0"
     absolute
-    style="margin-top: 64px;"
+    style="top: 64px;"
   >
     <view-headline
       class="hidden-md-and-up white--text font-22"
@@ -53,10 +53,7 @@
       ...mapGetters(['links'])
     },
     methods: {
-      ...mapMutations(['toggleDrawer']),
-      iconClcik () {
-        this.$router.push('/');
-      }
+      ...mapMutations(['toggleDrawer'])
     }
   };
 </script>
