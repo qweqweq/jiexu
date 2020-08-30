@@ -80,7 +80,7 @@
           @click="jumpToDetail('answer')"
         >
           <v-card-text class="project_name">
-            MBA之问答
+            高效活动
           </v-card-text>
           <v-img
             v-if="answer.imgLink"
